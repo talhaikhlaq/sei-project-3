@@ -1,2 +1,4 @@
 # SEI-41-PROJECT-3
-Talha
+Amy - Git Master
+Talha - Git Buddy
+Kasia - Git Buddy
