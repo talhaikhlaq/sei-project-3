@@ -11,7 +11,7 @@ const humanProfileSchema = new mongoose.Schema({
 const petProfileSchema = new mongoose.Schema({
   petName: { type: String, required: true },
   petAge: { type: Number, required: true },
-  hobbies: { type: String, required: true },
+  hobbies: { type: Array, required: true },
   aboutMe: { type: String, required: true },
   image: { type: String, required: true },
   owner: { type: mongoose.Schema.ObjectId, ref: 'Human', required: true }
