@@ -1,15 +1,41 @@
 const mongoose = require('mongoose')
 const { dbURI } = require('../config/environment')
 const Human = require('../models/humanProfile')
+const User = require('../models/user')
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, db) => {
   if (err) console.log(err)
   db.dropDatabase()
-    // .then(() => {
-    //   return User.create([
-    //
-    //   ])
-    // })
+    .then(() => {
+      return User.create([
+        {
+          username: 'tal',
+          email: 'tal@email',
+          password: 'pass',
+          passwordConfirmation: 'pass'
+        }, {
+          username: 'amy',
+          email: 'amy@email',
+          password: 'pass',
+          passwordConfirmation: 'pass'
+        }, {
+          username: 'kasia',
+          email: 'kasia@email',
+          password: 'pass',
+          passwordConfirmation: 'pass'
+        }, {
+          username: 'wesleydale',
+          email: 'wes@email',
+          password: 'pass',
+          passwordConfirmation: 'pass'
+        }, {
+          username: 'jack',
+          email: 'jack@email',
+          password: 'pass',
+          passwordConfirmation: 'pass'
+        }
+      ])
+    })
     .then(users => {
       console.log(`${users.length} users created`)
       return Human.create([
@@ -24,8 +50,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             hobbies: ['Running, ', 'Drinking water straight from the tap'],
             aboutMe: 'Prefers the term collector rather than hoarder. Likes batting fragile things off tables to hear them smash and currently at war with neighborhood pigeons. ',
             image: 'https://i.imgur.com/Io6f0Eo.jpg?1'
-          }]
-          // user: users[0]
+          }],
+          user: users[0]
         },
         {
           ownerName: 'Ruby Charlton',
@@ -38,10 +64,11 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             hobbies: ['Jangling Keys Manically '],
             aboutMe: 'Loves bright colors and soft fabrics. Using the litter box is a continuous struggle that is continuously up for debate.',
             image: 'https://i.imgur.com/w0wFWaQ.jpg?1'
-          }]
-          // user: users[0]
+          }],
+          user: users[1]
         },
         {
+
           ownerName: 'Rian Brantle',
           ownerAge: 30,
           ownerOccupation: 'Producer',
@@ -52,10 +79,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             hobbies: ['Bounding about, ', 'Giving Kisses'],
             aboutMe: 'Greedy eater and stubborn. I was stubborn to house train. Unable to look straight ahead. ',
             image: 'https://i.imgur.com/hyS04HX.jpg?1'
-          }]
-          // user: users[0]
-<<<<<<< HEAD
-=======
+          }],
+          user: users[2]
         },
         {
           ownerName: 'Victoria Lancaster',
@@ -68,9 +93,36 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             hobbies: ['Bounding about, ', 'Giving Kisses'],
             aboutMe: 'Greedy eater and stubborn. I was stubborn to house train. Unable to look straight ahead. ',
             image: 'https://i.imgur.com/hyS04HX.jpg?1'
-          }]
-          // user: users[0]
->>>>>>> development
+          }],
+          user: users[3]
+        },
+        {
+          ownerName: 'Marlon McArthur',
+          ownerAge: 52,
+          ownerOccupation: 'Rapid prototyper',
+          pet: [{
+            petName: 'Rueben',
+            petAge: 6,
+            petSpecies: 'Dog',
+            hobbies: ['Treat hunting, ', 'Leaping at the beach'],
+            aboutMe: 'I am an intelligent dog but I was difficult to train. A classic wanderer, I often get lost. ',
+            image: 'https://i.imgur.com/yX4sQUE.jpg?1'
+          }],
+          user: users[4]
+        },
+        {
+          ownerName: 'Xanthe Deleon',
+          ownerAge: 34,
+          ownerOccupation: 'Marine Engineer',
+          pet: [{
+            petName: 'Insane Chalupa',
+            petAge: 10,
+            petSpecies: 'Cat',
+            hobbies: ['Treat hunting, ', 'Leaping at the beach'],
+            aboutMe: 'I am an intelligent dog but I was difficult to train. A classic wanderer, I often get lost. ',
+            image: 'https://i.imgur.com/u7E1rQ7.jpg?1'
+          }],
+          user: users[4]
         }
       ])
     })
