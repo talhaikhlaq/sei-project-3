@@ -27,6 +27,11 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           email: 'wes@email',
           password: 'pass',
           passwordConfirmation: 'pass'
+        }, {
+          username: 'jack',
+          email: 'jack@email',
+          password: 'pass',
+          passwordConfirmation: 'pass'
         }
       ])
     })
