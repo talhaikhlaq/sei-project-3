@@ -95,6 +95,34 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             image: 'https://i.imgur.com/hyS04HX.jpg?1'
           }],
           user: users[3]
+        },
+        {
+          ownerName: 'Marlon McArthur',
+          ownerAge: 52,
+          ownerOccupation: 'Rapid prototyper',
+          pet: [{
+            petName: 'Rueben',
+            petAge: 6,
+            petSpecies: 'Dog',
+            hobbies: ['Treat hunting, ', 'Leaping at the beach'],
+            aboutMe: 'I am an intelligent dog but I was difficult to train. A classic wanderer, I often get lost. ',
+            image: 'https://i.imgur.com/yX4sQUE.jpg?1'
+          }],
+          user: users[4]
+        },
+        {
+          ownerName: 'Xanthe Deleon',
+          ownerAge: 34,
+          ownerOccupation: 'Marine Engineer',
+          pet: [{
+            petName: 'Insane Chalupa',
+            petAge: 10,
+            petSpecies: 'Cat',
+            hobbies: ['Treat hunting, ', 'Leaping at the beach'],
+            aboutMe: 'I am an intelligent dog but I was difficult to train. A classic wanderer, I often get lost. ',
+            image: 'https://i.imgur.com/u7E1rQ7.jpg?1'
+          }],
+          user: users[4]
         }
       ])
     })
