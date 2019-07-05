@@ -54,6 +54,23 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             image: 'https://i.imgur.com/hyS04HX.jpg?1'
           }]
           // user: users[0]
+<<<<<<< HEAD
+=======
+        },
+        {
+          ownerName: 'Victoria Lancaster',
+          ownerAge: 42,
+          ownerOccupation: 'Application Analyst',
+          pet: [{
+            petName: 'Rainy Gooberton',
+            petAge: 12,
+            petSpecies: 'Dog',
+            hobbies: ['Bounding about, ', 'Giving Kisses'],
+            aboutMe: 'Greedy eater and stubborn. I was stubborn to house train. Unable to look straight ahead. ',
+            image: 'https://i.imgur.com/hyS04HX.jpg?1'
+          }]
+          // user: users[0]
+>>>>>>> development
         }
       ])
     })
