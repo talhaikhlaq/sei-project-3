@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const app = express()
 const { dbURI, port } = require('./config/environment')
-const router = require('./config/router')
+const routerAmy = require('./config/routerAmy')
 const logger = require('./lib/logger')
 // const errorHandler = require('./lib/errorHandler')
 
@@ -13,7 +13,8 @@ app.use(bodyParser.json())
 
 app.use(logger)
 
-app.use('/api', router)
+// Remember to revert back to router!!!!!!
+app.use('/api', routerAmy)
 
 // app.use(errorHandler)
 
