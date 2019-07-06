@@ -10,7 +10,7 @@ function indexRoute(req, res) {
 }
 
 // Show all profiles
-function showRoute (req, res) {
+function showRoute (req, res, next) {
   Human
     .findById(req.params.id)
     .populate('user')
@@ -18,20 +18,20 @@ function showRoute (req, res) {
       if (!human) return res.status(404).json({ message: 'Not Found' })
       return res.status(200).json(human)
     })
-    .catch(err => res.status(404).json(err))
+    .catch(next)
 }
 
 // Create a new profile
-function createRoute(req, res) {
+function createRoute(req, res, next) {
   req.body.user = req.currentUser
   Human
     .create(req.body)
     .then(humans => res.status(201).json(humans))
-    .catch(err => res.status(422).json(err))
+    .catch(next)
 }
 
 // Edit existing profile
-function editRoute(req, res) {
+function editRoute(req, res, next) {
   Human
     .findById(req.params.id)
     .then(human => {
@@ -40,15 +40,15 @@ function editRoute(req, res) {
       return human.save()
     })
     .then(human => res.status(202).json(human))
-    .catch(err => res.status(422).json(err))
+    .catch(next)
 }
 
 // Delete profile
-function deleteRoute(req, res) {
+function deleteRoute(req, res, next) {
   Human
     .findByIdAndRemove(req.params.id)
     .then(() => res.sendStatus(204))
-    .catch(err => res.status(404).json(err))
+    .catch(next)
 }
 
 module.exports = {
