@@ -19,3 +19,5 @@ app.use('/api', router)
 
 console.log('Backend is rocking')
 app.listen(port, () => console.log(`App is listening on port ${port}`))
+
+module.exports = app
