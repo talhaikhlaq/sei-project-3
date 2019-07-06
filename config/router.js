@@ -11,5 +11,11 @@ router.route('/login')
 
 router.route('/profiles')
   .get(profiles.indexProfiles)
+  .post(profiles.createProfile)
+
+router.route('/profiles/:id')
+  .get(profiles.showProfile)
+  .put(profiles.editProfile)
+  .delete(profiles.deleteProfile)
 
 module.exports = router
