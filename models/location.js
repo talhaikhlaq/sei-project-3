@@ -8,8 +8,11 @@ const locationSchema =  new mongoose.Schema({
     buildingNumber: { type: String },
     street: { type: String, required: true },
     city: { type: String },
-    postcode: { type: String, required: true },
-    coordinates: { lat: Number, lng: Number  }
+    postcode: { type: String, required: true }
+  },
+  coordinates: {
+    lat: { type: Number },
+    lng: { type: Number }
   },
   website: { type: String },
   image: { type: String },

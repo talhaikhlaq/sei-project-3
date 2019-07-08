@@ -1,8 +1,9 @@
 import React from 'react'
 import mapboxgl from 'mapbox-gl'
 import axios from 'axios'
+import MapSecond from './MapSecond'
 
-import Markers from './Markers'
+
 
 mapboxgl.accessToken = process.env.MAPBOX
 
@@ -14,16 +15,14 @@ class Map extends React.Component {
 
   }
 
-
   componentDidMount(){
     this.getLocationList()
   }
 
-  // gst the list of countries using the restcountries API and select the name, flat and latlng.
   getLocationList() {
     axios.get('/api/locations/')
       .then(res => {
-        this.setState({ points: res.data.result.postcode },() => console.log(this.state.points))
+        this.setState({ points: res.data },() => console.log(this.state.points))
       })
       .catch(err => console.log(err))
   }
@@ -31,9 +30,10 @@ class Map extends React.Component {
 
 
   render() {
+    if (!this.state.points) return null
     return (
       <main>
-        <Markers
+        <MapSecond
           center={this.mapCenter}
           markers={this.state.points}
 

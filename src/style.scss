@@ -1,3 +1,11 @@
+@import '~mapbox-gl/dist/mapbox-gl.css';
+
+.map {
+  width: 100vw;
+  height: 50vh;
+}
+
+
 * {
   box-sizing: border-box;
 }
