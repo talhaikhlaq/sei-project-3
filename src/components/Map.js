@@ -1,18 +1,29 @@
 import React from 'react'
+import mapboxgl from 'mapbox-gl'
 
 // const express = require('express')
 // const app = express()
 const axios = require('axios')
 
-require('dotenv').config()
-const mapbox = process.env.MAPBOX
+mapboxgl.accessToken = process.env.MAPBOX
+// const mapbox = process.env.MAPBOX
 
 class Map extends React.Component {
-  render() {
-    return (
-      <div>Map</div>
-    )
+render() {
+  componentDidMount() {
+    this.map = new mapboxgl.Map({
+      container: this.mapDiv,
+      style: 'mapbox://styles/gaebar/cjx3dxidn01941comlfwaysve',
+
+      zoom: 1
+    })
   }
+
+
+}
+
+
+
 }
 
 export default Map
