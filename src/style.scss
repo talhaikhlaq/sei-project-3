@@ -1,11 +1,53 @@
 @import '~mapbox-gl/dist/mapbox-gl.css';
 
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+
 .map {
   width: 100vw;
   height: 50vh;
 }
 
+}
 
-* {
-  box-sizing: border-box;
+#home {
+  background-image: url('https://i.imgur.com/MpfEGnT.jpg');
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#home-title {
+  font-size: 150px;
+  color: white;
+}
+
+.navbar {
+  background-color: Tomato;
+  font-weight: bold;
+  height: 70px;
+  a.navbar-item:hover {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+  a.navbar-item:active {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+  a.navbar-item:visited {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+  .pet-meet {
+    font-size: 25px;
+  }
+}
+
+.map {
+  height: 100vh;
 }
