@@ -7,7 +7,7 @@ import axios from 'axios'
 // const axios = require('axios')
 
 mapboxgl.accessToken = process.env.MAPBOX
-// const mapbox = process.env.MAPBOX
+
 
 class Map extends React.Component {
 
