@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import 'bootstrap'
 
 class App extends React.Component {
   render() {
     return (
-      <div>PET SOCIAL BY TAL KASIA & AMY</div>
+      <div>PET THINGY</div>
     )
   }
 }

@@ -2,11 +2,9 @@ const router = require('express').Router()
 const users = require('../controllers/auth')
 // const secureRoute = require('../lib/secureRoute')
 const profiles = require('../controllers/usersAndPets')
-// <<<<<<< HEAD
-const locations  = require('../controllers/locations')
-// =======
 
-// >>>>>>> development
+const locations  = require('../controllers/locations')
+
 
 router.route('/register')
   .post(users.register)
@@ -23,10 +21,6 @@ router.route('/profiles/:id')
   .put(profiles.editProfile)
   .delete(profiles.deleteProfile)
 
-// <<<<<<< HEAD
-
-// =======
-// >>>>>>> development
 router.route('/locations')
   .get(locations.indexLocations)
   .post(locations.createLocation)
@@ -36,10 +30,5 @@ router.route('/locations/:id')
   .put(locations.editLocation)
   .delete(locations.deleteLocation)
 
-// <<<<<<< HEAD
-// =======
 
-
-
-// >>>>>>> development
 module.exports = router
