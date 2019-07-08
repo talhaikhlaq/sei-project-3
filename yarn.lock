@@ -4119,13 +4119,6 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-mapbox-geocoding@^0.1.5:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/mapbox-geocoding/-/mapbox-geocoding-0.1.5.tgz#97c4048669eb4431088cef2ea9a9078c6eb9f8ed"
-  integrity sha512-XiPfqfwvZ8LoTBVwMyG7EqoRfui7P0SF0J7UzjJRApsrqaFlHSVeP0NFBu3X2K9SplVAVDl/bBeqRsoZfh0D4w==
-  dependencies:
-    request "^2.67.0"
-
 mapbox-gl-geocoder@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/mapbox-gl-geocoder/-/mapbox-gl-geocoder-2.0.1.tgz#4776f9c5fd770e756006a5ac1849e529a8d1de94"
@@ -5616,7 +5609,7 @@ repeating@^2.0.0:
   dependencies:
     is-finite "^1.0.0"
 
-request@^2.67.0, request@^2.87.0, request@^2.88.0:
+request@^2.87.0, request@^2.88.0:
   version "2.88.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.88.0.tgz#9c2fca4f7d35b592efe57c7f0a55e81052124fef"
   integrity sha512-NAqBSrijGLZdM0WZNsInLJpkJokL72XYjUpnB0iwsRgxh7dB6COrHnTBNwN0E+lHDAJzu7kLAkDeY08z2/A0hg==

@@ -1,8 +1,8 @@
 import React from 'react'
 import mapboxgl from 'mapbox-gl'
-import axios from 'axios'
+// import axios from 'axios'
 // import Geocoder from 'geocoder'
-// import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder'
+import MapboxGeocoder from 'mapbox-gl-geocoder'
 
 
 mapboxgl.accessToken = process.env.MAPBOX
@@ -25,8 +25,11 @@ class MapSecond extends React.Component {
     this.props.markers.map(point => {
       const el = document.createElement('div')
       el.className = 'marker'
-      el.style.backgroundImage = 'url(' + point.image + ')'
+
+      // el.style.backgroundImage = 'url(' + point.image + ')'
       // customise markers based on category here
+
+
 
       return new mapboxgl.Marker() // add el inside brackets for custom marker
         .setLngLat({ lat: point.coordinates.lat, lng: point.coordinates.lng })
@@ -39,19 +42,31 @@ class MapSecond extends React.Component {
 
            <h2 class="subtitle is-6">${point.address.buildingNumber}  ${point.address.street}, ${point.address.postcode}</h2>
            <a href=${point.website} class="subtitle is-6 is-link" target="_blank" rel="noopener noreferrer">Go to their website</a>
-          <div style="background-image: url('${point.image}'); height: 100px; min-width: 150px; background-repeat: no-repeat; background-size: cover; background-position: center;">
+
+          <div style="background-image: url('${point.image}'); height: 120px; min-width: 150px; background-repeat: no-repeat; background-size: cover; background-position: center;">
             </main>
           `))
     })
+
+    this.map.addControl(new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken
+    }), 'top-left')
+
     this.map.addControl(new mapboxgl.NavigationControl())
-    this.map.on('click', this.handleClick)
+
+
+
+
+
+
+    // this.map.on('click', this.handleClick)
 
   }
 
-  handleClick(e) {
-    console.log(e)
-    // console.log(e.lngLat.lat, e.lngLat.lng)
-  }
+  // handleClick(e) {
+  //   console.log(e)
+  //   // console.log(e.lngLat.lat, e.lngLat.lng)
+  // }
 
   render() {
     return (
