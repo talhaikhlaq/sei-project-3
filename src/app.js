@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'mdbreact/dist/css/mdb.css'
 import './assets/scss/mdb.scss'
+import './assets/scss/style.scss'
 
 import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'
