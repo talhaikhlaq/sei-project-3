@@ -3,8 +3,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import ReactDOM from 'react-dom'
 import 'bootstrap/dist/css/bootstrap.css'
 
-import Home from '../common/Home'
-import Navbar from '../common/Navbar'
+import Home from './components/common/Home'
+import Navbar from './components/common/Navbar'
 import Map from './components/Map'
 
 class App extends React.Component {
