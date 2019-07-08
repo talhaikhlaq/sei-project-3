@@ -587,6 +587,10 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             city: 'London',
             postcode: 'N1 2TB'
           },
+          coordinates: {
+            lat: 51.54318,
+            lng: -0.09535
+          },
           image: 'https://media-cdn.tripadvisor.com/media/photo-s/07/de/7e/24/king-and-co-pub.jpg',
           website: 'https://static.wixstatic.com/media/96851f_cc647a5b9465413986c8e083954f6be4~mv2_d_1280_1280_s_2.jpg/v1/fill/w_421,h_421,al_c,q_80,usm_0.66_1.00_0.01/96851f_cc647a5b9465413986c8e083954f6be4~mv2_d_1280_1280_s_2.webp',
           user: users[0]
@@ -1323,7 +1327,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             lat: 51.48366,
             lng: 0.00741
           },
-          image: 'https://pubshistory.com/LondonPubs/Kensington/BritanniaAllen.jpghttps://thevanbrugh.co.uk/2013/wp-content/uploads/2015/07/IMG_15021.jpg',
+          image: 'https://thevanbrugh.co.uk/2013/wp-content/uploads/2015/07/IMG_15021.jpg',
           website: 'https://thevanbrugh.co.uk/',
           user: users[0]
         }, {
