@@ -240,7 +240,6 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
     })
     // .then(profiles => console.log(`${profiles.length} profiles created`))
     .then(users => {
-
       return Location.create([
         {
           name: 'The Carpenters Arms',
@@ -252,10 +251,9 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             postcode: 'E2 6EG'
           },
           image: 'http://www.londondateguide.com/wp-content/uploads/2013/11/Carpenters-Arms.jpg',
-          website: '',
-          user: users[0]
-        },
-        {
+          website: 'https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d2527679-Reviews-The_Carpenter_s_Arms-London_England.html',
+          user: users[2]
+        }, {
           name: 'The Stonhouse',
           category: 'pub',
           address: {
@@ -842,7 +840,873 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           image: 'https://static.designmynight.com/uploads/2019/04/best-beer-gardens-brixton-optimised.jpg',
           website: 'https://www.trinityarms.co.uk/',
           user: users[0]
+        }, {
+          name: 'Goat',
+          category: 'restaurant',
+          address: {
+            buildingNumber: '333',
+            street: 'Fulham Road',
+            city: 'London',
+            postcode: 'SW10 9QL'
+          },
+          image: 'https://whatpub.com/img/WLD/16323/goat-chelsea/298/224',
+          website: 'https://goatchelsea.com/',
+          user: users[0]
+        }, {
+          name: 'The Sir Richard Steele',
+          category: 'pub',
+          address: {
+            buildingNumber: '97',
+            street: 'Haverstock Hill',
+            city: 'London',
+            postcode: 'NW3 4RL'
+          },
+          image: 'https://assets.londonist.com/uploads/2014/01/i875/steeleold.jpg',
+          website: 'https://www.thesteelespub.co/',
+          user: users[0]
+        },  {
+          name: 'Blue Anchor',
+          category: 'pub',
+          address: {
+            buildingNumber: '13',
+            street: 'Lower Mall',
+            city: 'London',
+            postcode: 'W6 9DJ'
+          },
+          image: 'https://c8.alamy.com/comp/CB48G4/blue-anchor-est-1722-lower-mall-hammersmith-london-england-CB48G4.jpg',
+          website: 'https://www.blueanchorlondon.com/',
+          user: users[0]
+        },  {
+          name: 'The Queen Adelaide',
+          category: 'pub',
+          address: {
+            buildingNumber: '35',
+            street: 'Putney Bridge Road',
+            city: 'London',
+            postcode: 'SW18 1NP'
+          },
+          image: 'https://media.timeout.com/images/102940925/630/472/image.jpg',
+          website: 'https://www.thequeenadelaide.co.uk/',
+          user: users[0]
+        }, {
+          name: 'The Castle',
+          category: 'pub',
+          address: {
+            buildingNumber: '38',
+            street: 'Tooting High Street',
+            city: 'London',
+            postcode: 'SW17 0RG'
+          },
+          image: 'https://media.timeout.com/images/101590443/630/472/image.jpg',
+          website: 'https://www.castletooting.com/',
+          user: users[0]
+        },{
+          name: 'Old Ship',
+          category: 'pub',
+          address: {
+            buildingNumber: '3',
+            street: 'King Street',
+            city: 'London',
+            postcode: 'TW9 1ND'
+          },
+          image: 'http://www.rampubcompany.co.uk/data/venues/431_image.rampub.jpg?1533383133',
+          website: 'https://www.theoldshiprichmond.com/',
+          user: users[0]
+        }, {
+          name: 'The Pilot',
+          category: 'pub',
+          address: {
+            buildingNumber: '56',
+            street: 'Wellesley Road',
+            city: 'London',
+            postcode: 'W4 4BZ'
+          },
+          image: 'https://media-cdn.tripadvisor.com/media/photo-s/0a/76/96/37/the-pilot-chiswick.jpg',
+          website: 'https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d733510-Reviews-The_Pilot-London_England.html',
+          user: users[0]
+        }, {
+          name: 'No.1 Duke Street',
+          category: 'pub',
+          address: {
+            buildingNumber: '1',
+            street: 'Duke Street',
+            city: 'London',
+            postcode: 'TW9 1HP'
+          },
+          image: 'https://static1.squarespace.com/static/55f951eae4b0c432ff79fcd7/t/5bf28b80f950b7299bbc3ec4/1542622084545/No1.DukeSt_171%402x.jpg?format=2500w',
+          website: 'https://www.no1adukestreet.co.uk/',
+          user: users[0]
+        },  {
+          name: 'Old Stationhouse',
+          category: 'pub',
+          address: {
+            buildingNumber: '2',
+            street: 'Grove Park Road',
+            city: 'London',
+            postcode: 'W4 3SG'
+          },
+          image: 'https://whatpub.com/img/WLD/16255/station-house-chiswick/298/224/43143',
+          website: 'https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d4368305-Reviews-Old_Station_House_Pub-London_England.html',
+          user: users[0]
+        },  {
+          name: 'Hand in Hand',
+          category: 'pub',
+          address: {
+            buildingNumber: '6',
+            street: 'Crooked Billet',
+            city: 'London',
+            postcode: 'SW19 4RQ'
+          },
+          image: 'https://www.theresident.co.uk/wp-content/uploads/sites/10/2016/05/1074_HandinHand_Sept14-110-.jpg',
+          website: 'https://www.thehandinhandwimbledon.co.uk/',
+          user: users[0]
+        }, {
+          name: 'County Arms',
+          category: 'pub',
+          address: {
+            buildingNumber: '345',
+            street: 'Trinity Road',
+            city: 'London',
+            postcode: 'SW18 3SH'
+          },
+          image: 'hhttps://pubshistory.com/LondonPubs/Wandsworth/CountyArms.jpg',
+          website: 'https://www.countyarms.co.uk/',
+          user: users[0]
+        }, {
+          name: 'The Thatched House',
+          category: 'pub',
+          address: {
+            buildingNumber: '115',
+            street: 'Dalling Road',
+            city: 'London',
+            postcode: 'W6 0ET'
+          },
+          image: 'https://pbs.twimg.com/media/DRF1AWKW0AEgRmq.jpg',
+          website: 'https://www.thatchedhouse.com/',
+          user: users[0]
+        }, {
+          name: 'The Broadway Bar and Grill',
+          category: 'pub',
+          address: {
+            buildingNumber: '474 - 476',
+            street: 'Fulham Road',
+            city: 'London',
+            postcode: 'SW6 1BY'
+          },
+          image: 'https://media-cdn.tripadvisor.com/media/photo-s/0c/87/06/d1/the-broadway-bar-and.jpg',
+          website: 'http://www.broadwaybandg.co.uk/',
+          user: users[0]
+        }, {
+          name: 'Villa di Geggiano',
+          category: 'restaurant',
+          address: {
+            buildingNumber: '66-68',
+            street: 'Chiswick High Road',
+            city: 'London',
+            postcode: 'W4 1SY'
+          },
+          image: 'https://img.static-bookatable.com/villa-di-geggiano-chiswick-london-45.jpg?id=da733e24-c962-4308-bdda-ed25e809e9ff.jpg&404=bat2/404-restaurant.jpg&width=600&height=400&scale=both&mode=crop',
+          website: 'http://www.villadigeggiano.co.uk/',
+          user: users[0]
+        }, {
+          name: 'The Old Frizzle',
+          category: 'pub',
+          address: {
+            buildingNumber: '74-78',
+            street: 'The Broadway',
+            city: 'London',
+            postcode: 'SW19 1RQ'
+          },
+          image: 'https://lovewimbledon.org/wp-content/uploads/2017/03/The-Old-Frizzle.jpg',
+          website: 'https://www.theoldfrizzle.co.uk/',
+          user: users[0]
+        }, {
+          name: 'The British Queen, Locksbottom',
+          category: 'pub',
+          address: {
+            buildingNumber: '427',
+            street: 'Crofton Road',
+            city: 'London',
+            postcode: 'BR6 8NL'
+          },
+          image: 'https://britishqueenlocksbottom.com/wp-content/uploads/sites/12/2016/11/The-British-Queen-020.jpg',
+          website: 'https://britishqueenlocksbottom.com/',
+          user: users[0]
+        }, {
+          name: 'Bishop out of Residence',
+          category: 'pub',
+          address: {
+            buildingNumber: '1',
+            street: 'Allen Street',
+            city: 'London',
+            postcode: 'W8 6UX'
+          },
+          image: 'https://pubshistory.com/LondonPubs/Kensington/BritanniaAllen.jpg',
+          website: 'https://www.britanniakensington.co.uk/',
+          user: users[0]
+        }, {
+          name: 'The Vanbrugh',
+          category: 'pub',
+          address: {
+            buildingNumber: '91',
+            street: 'Colomb Street',
+            city: 'London',
+            postcode: 'SE10 9EZ'
+          },
+          image: 'https://pubshistory.com/LondonPubs/Kensington/BritanniaAllen.jpghttps://thevanbrugh.co.uk/2013/wp-content/uploads/2015/07/IMG_15021.jpg',
+          website: 'https://thevanbrugh.co.uk/',
+          user: users[0]
+        }, {
+          name: 'Coach & Horses',
+          category: 'pub',
+          address: {
+            buildingNumber: '183',
+            street: 'London Road',
+            city: 'London',
+            postcode: 'TW7 5BQ'
+          },
+          image: 'https://media-cdn.tripadvisor.com/media/photo-s/0d/78/ec/57/main-entrance.jpg',
+          website: 'http://www.coachandhorsesisleworth.co.uk/',
+          user: users[0]
+        }, {
+          name: 'The George Pub',
+          category: 'pub',
+          address: {
+            buildingNumber: '114',
+            street: 'Glengall Grove',
+            city: 'London',
+            postcode: 'E14 3ND'
+          },
+          image: 'https://media-cdn.tripadvisor.com/media/photo-s/15/29/4f/5b/the-george.jpg',
+          website: 'https://www.georgepub.co.uk/',
+          user: users[0]
+        }, {
+          name: 'Duke of Wellington',
+          category: 'pub',
+          address: {
+            buildingNumber: '179',
+            street: 'Portobello Road',
+            city: 'London',
+            postcode: 'W11 2ED'
+          },
+          image: 'https://www.thedukeofwellingtonpub.com/youngs/uploads/sites/95/2017/10/dukeofwellington-131-1770x1180.jpg',
+          website: 'https://www.thedukeofwellingtonpub.com/',
+          user: users[0]
+        }, {
+          name: 'Dial Arch',
+          category: 'pub',
+          address: {
+            buildingNumber: '',
+            street: 'Major Draper Street',
+            city: 'London',
+            postcode: 'SE18 6GH'
+          },
+          image: 'https://media-cdn.tripadvisor.com/media/photo-s/11/09/3a/ea/grade-ii-listed-building.jpg',
+          website: 'https://www.dialarch.com/',
+          user: users[0]
+        }, {
+          name: 'Alexandra',
+          category: 'pub',
+          address: {
+            buildingNumber: '33',
+            street: 'Wimbledon Hill Road',
+            city: 'London',
+            postcode: 'SW19 7NE'
+          },
+          image: 'https://pbs.twimg.com/profile_images/1441138641/370.JPG',
+          website: 'https://www.alexandrawimbledon.com/',
+          user: users[0]
+        }, {
+          name: 'The Duke\'s Head',
+          category: 'pub',
+          address: {
+            buildingNumber: '8',
+            street: 'Lower Richmond Road',
+            city: 'London',
+            postcode: 'SW15 1JN'
+          },
+          image: 'https://static.designmynight.com/uploads/2016/05/1052_DukesHead_Aug14-135-optimised.jpg',
+          website: 'https://www.dukesheadputney.com/',
+          user: users[0]
+        }, {
+          name: 'The Cumberland Arms',
+          category: 'pub',
+          address: {
+            buildingNumber: '29',
+            street: 'North End Road',
+            city: 'London',
+            postcode: 'W14 8SZ'
+          },
+          image: 'https://lh3.googleusercontent.com/R1sZdrF2i0WoXVdNa45btH8EXbyeORhg0rV6MFxJMVgRlbr7hac3iszqOSdGPnrdOM9h953P45YKTBwC=s0',
+          website: 'http://www.thecumberlandarmspub.co.uk/',
+          user: users[0]
+        }, {
+          name: 'The White Bears',
+          category: 'pub',
+          address: {
+            buildingNumber: '',
+            street: 'Ickenham Road',
+            city: 'London',
+            postcode: 'HA4 7DF'
+          },
+          image: 'https://whitebearruislip.com/wp-content/uploads/sites/10/2016/11/BB-THE-WHITE-BEAR-10.jpg',
+          website: 'https://whitebearruislip.com/',
+          user: users[0]
+        }, {
+          name: 'The Hare, Old Redding',
+          category: 'pub',
+          address: {
+            buildingNumber: '',
+            street: 'Brookshill Harrow Weald',
+            city: 'London',
+            postcode: 'HA3 6SD'
+          },
+          image: 'https://media-cdn.tripadvisor.com/media/photo-s/07/ec/76/62/the-hare-at-old-redding.jpg',
+          website: 'https://hareoldredding.com/',
+          user: users[0]
+        }, {
+          name: 'Halfway House',
+          category: 'pub',
+          address: {
+            buildingNumber: '521',
+            street: 'Garratt Lane',
+            city: 'London',
+            postcode: 'SW18 4SR'
+          },
+          image: 'https://www.thehalfway.com/youngs/uploads/sites/89/2017/06/halfwayhouse-101-1770x1259.jpg',
+          website: 'https://www.thehalfway.com/',
+          user: users[0]
+        }, {
+          name: 'White Hart',
+          category: 'pub',
+          address: {
+            buildingNumber: '521',
+            street: 'The Terrace',
+            city: 'London',
+            postcode: 'SW13 0NR'
+          },
+          image: 'https://c8.alamy.com/comp/AD8DBR/ye-white-hart-public-house-the-terrace-barnes-london-AD8DBR.jpg',
+          website: 'https://www.whitehartbarnes.co.uk/terrace-kitchen?id=504255',
+          user: users[0]
+        }, {
+          name: 'The White Swan',
+          category: 'pub',
+          address: {
+            buildingNumber: '521',
+            street: 'Riverside',
+            city: 'London',
+            postcode: 'TW1 3DN'
+          },
+          image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB-1i6VKVpCaP7Lpob0eXYB5P3Gh7ZMnUTrZ7jLfc2tUXUVvqA',
+          website: 'http://www.whiteswantwickenham.co.uk/',
+          user: users[0]
+        }, {
+          name: 'Megan\'s Fulham',
+          category: 'restaurant',
+          address: {
+            buildingNumber: '571',
+            street: 'Kings Road',
+            city: 'London',
+            postcode: 'SW6 2EB'
+          },
+          image: 'https://megans.co.uk/wp-content/uploads/2016/01/megans-offers-specials.jpg',
+          website: 'https://megans.co.uk/',
+          user: users[0]
+        }, {
+          name: 'The King\'s Head',
+          category: 'pub',
+          address: {
+            buildingNumber: '123',
+            street: 'High Street',
+            city: 'London',
+            postcode: 'TW11 8HG'
+          },
+          image: 'https://whatpub.com/img/HOU/6826/kings-head-teddington/298/224',
+          website: 'https://kingsheadteddington.com/',
+          user: users[0]
+        }, {
+          name: 'Pearl and Groove',
+          category: 'cafe',
+          address: {
+            buildingNumber: '341',
+            street: 'Portobello Road',
+            city: 'London',
+            postcode: 'W10 5SA'
+          },
+          image: 'https://glowcation.com/wp-content/uploads/2019/02/Photo-06-02-2019-09-59-50-800x1067.jpg',
+          website: 'https://www.pearlandgroove.com/',
+          user: users[0]
+        }, {
+          name: 'Green Man',
+          category: 'pub',
+          address: {
+            buildingNumber: '',
+            street: 'Wildcroft Road',
+            city: 'London',
+            postcode: 'SW15 3NG'
+          },
+          image: 'https://www.greenmanputney.co.uk/youngs/uploads/sites/164/2018/09/1067_GreenMan_Sept16_33.jpg',
+          website: 'https://www.greenmanputney.co.uk/',
+          user: users[0]
+        }, {
+          name: 'Marlborough',
+          category: 'pub',
+          address: {
+            buildingNumber: '46',
+            street: 'Friars Stile Road',
+            city: 'London',
+            postcode: 'TW10 6NQ'
+          },
+          image: 'http://www.themarlboroughrichmond.co.uk/assets/img/transition/index/02.jpg',
+          website: 'http://www.themarlboroughrichmond.co.uk/',
+          user: users[0]
+        }, {
+          name: 'Dog & Fox',
+          category: 'pub',
+          address: {
+            buildingNumber: '24',
+            street: 'High Street',
+            city: 'London',
+            postcode: 'SW19 5EA'
+          },
+          image: 'https://enjoyminded.com/media/uploads/places/261/thumb_ae779ced-e548-4e75-b869-acee9a89fab3.small.jpg',
+          website: 'https://www.dogandfoxwimbledon.co.uk/',
+          user: users[0]
+        }, {
+          name: 'Coffee in the Wood',
+          category: 'cafe',
+          address: {
+            buildingNumber: '99',
+            street: 'Colliers Wood High Street',
+            city: 'London',
+            postcode: 'SW19 2JF'
+          },
+          image: 'https://enjoyminded.com/media/uploads/places/261/thumb_ae779ced-e548-4e75-b869-acee9a89fab3.small.jpg',
+          website: 'https://www.coffeeinthewood.co.uk/',
+          user: users[0]
+        }, {
+          name: 'Porchester',
+          category: 'pub',
+          address: {
+            buildingNumber: '88',
+            street: 'Bishop\'s Bridge Road',
+            city: 'London',
+            postcode: 'W2 5AA'
+          },
+          image: 'https://whatpub.com/img/WLD/16128/porchester-paddington/298/224',
+          website: 'http://www.theporchester.co.uk/',
+          user: users[0]
+        }, {
+          name: 'The Park Tavern',
+          category: 'pub',
+          address: {
+            buildingNumber: '212',
+            street: 'Merton Road',
+            city: 'London',
+            postcode: 'SW18 5SW'
+          },
+          image: 'https://media-cdn.tripadvisor.com/media/photo-s/0b/48/35/95/welcome-to-the-park-tavern.jpg',
+          website: 'https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d5572679-Reviews-The_Park_Tavern-London_England.html',
+          user: users[0]
+        }, {
+          name: 'Coopers Arms',
+          category: 'pub',
+          address: {
+            buildingNumber: '87',
+            street: 'Flood Street',
+            city: 'London',
+            postcode: 'SW3 5TB'
+          },
+          image: 'https://media-cdn.tripadvisor.com/media/photo-s/13/73/f2/64/ground-floor-bar-area.jpg',
+          website: 'https://www.coopersarms.co.uk/',
+          user: users[0]
+        }, {
+          name: 'George IV',
+          category: 'pub',
+          address: {
+            buildingNumber: '185',
+            street: 'Chiswick High Road',
+            city: 'London',
+            postcode: 'W4 2DR'
+          },
+          image: 'https://www.georgeiv.co.uk/-/media/sites/microsites/g/the-george-iv-_-p034/images/2017-new-images/august2017gallery/george-iv-2017/ext/exteriorfront001.jpg',
+          website: 'https://www.georgeiv.co.uk/',
+          user: users[0]
+        }, {
+          name: 'Coach & Horses',
+          category: 'pub',
+          address: {
+            buildingNumber: '27',
+            street: 'High Street',
+            city: 'London',
+            postcode: 'SW13 9LW'
+          },
+          image: 'https://www.coachandhorsesbarnes.co.uk/youngs/uploads/sites/68/2017/10/349A6530.jpg',
+          website: 'https://www.coachandhorsesbarnes.co.uk/',
+          user: users[0]
+        }, {
+          name: 'Belle Vue',
+          category: 'pub',
+          address: {
+            buildingNumber: '1',
+            street: 'Clapham Common Southside',
+            city: 'London',
+            postcode: 'SW4 7AAW'
+          },
+          image: 'https://whatpub.com/img/SWL/2698/belle-vue-clapham/298/224',
+          website: 'https://www.bellevueclapham.com/',
+          user: users[0]
+        }, {
+          name: 'The Bolton',
+          category: 'pub',
+          address: {
+            buildingNumber: '326',
+            street: 'Earls Court Road',
+            city: 'London',
+            postcode: 'SW5 9BQ'
+          },
+          image: 'https://www.theboltonearlscourt.co.uk/content/dam/castle/pub-images/theboltonearlscourt/theboltonearlscourt-home-1.jpg.asset/1561976000701.jpg',
+          website: 'https://www.theboltonearlscourt.co.uk/',
+          user: users[0]
+        }, {
+          name: 'Mitre',
+          category: 'pub',
+          address: {
+            buildingNumber: '24',
+            street: 'Craven Terrace',
+            city: 'London',
+            postcode: 'W2 3QH'
+          },
+          image: 'https://whatpub.com/img/WLD/15941/mitre-paddington/298/224',
+          website: 'http://www.mitrelancastergate.com/',
+          user: users[0]
+        }, {
+          name: 'Urban Meadow',
+          category: 'cafe',
+          address: {
+            buildingNumber: '150',
+            street: 'Bayswater',
+            city: 'London',
+            postcode: 'W2 4RT'
+          },
+          image: 'https://media.timeout.com/images/103379933/630/472/image.jpg',
+          website: 'https://urbanmeadowcafe.com/',
+          user: users[0]
+        }, {
+          name: 'Spring Grove',
+          category: 'pub',
+          address: {
+            buildingNumber: '13',
+            street: 'Bloomfield Road',
+            city: 'London',
+            postcode: 'KT1 2SF'
+          },
+          image: 'https://media-cdn.tripadvisor.com/media/photo-s/0f/1e/fa/b8/the-spring-grove.jpg',
+          website: 'https://www.thespringgrove.co.uk/menu',
+          user: users[0]
+        }, {
+          name: 'Hare and Hounds',
+          category: 'pub',
+          address: {
+            buildingNumber: '216',
+            street: 'Upper Richmond Road West',
+            city: 'London',
+            postcode: 'SW14 8AH'
+          },
+          image: 'https://whatpub.com/img/HOU/6814/hare-hounds-east-sheen/298/224g',
+          website: 'https://www.theharesheen.co.uk/',
+          user: users[0]
+        }, {
+          name: 'Waterfront',
+          category: 'pub',
+          address: {
+            buildingNumber: '',
+            street: 'Juniper Drive',
+            city: 'London',
+            postcode: 'SW18 1TS'
+          },
+          image: 'https://www.thewaterfrontlondon.co.uk/youngs/uploads/sites/84/2019/03/thewaterfront-73-1.jpg',
+          website: 'https://www.thewaterfrontlondon.co.uk/ju',
+          user: users[0]
+        }, {
+          name: 'Star and Anchor',
+          category: 'pub',
+          address: {
+            buildingNumber: '94',
+            street: 'Uxbridge Road',
+            city: 'London',
+            postcode: 'W13 8RA'
+          },
+          image: 'https://whatpub.com/img/MDX/12145/star-anchor-west-ealing/298/224',
+          website: 'https://www.starandanchor.com/',
+          user: users[0]
+        }, {
+          name: 'The Hammersmith Ram',
+          category: 'pub',
+          address: {
+            buildingNumber: '81',
+            street: 'King Street',
+            city: 'London',
+            postcode: 'W6 0HW'
+          },
+          image: 'https://whatpub.com/img/WLD/16130/hammersmith-ram-hammersmith/298/224',
+          website: 'https://www.thehammersmithram.co.uk/',
+          user: users[0]
+        }, {
+          name: 'Duke of Cambridge',
+          category: 'pub',
+          address: {
+            buildingNumber: '228',
+            street: 'Battersea Bridge Road',
+            city: 'London',
+            postcode: 'SW11 3AA'
+          },
+          image: 'https://media-cdn.tripadvisor.com/media/photo-s/09/ca/3a/02/duke-of-cambridge.jpg',
+          website: 'http://www.thedukeofcambridge.com/',
+          user: users[0]
+        }, {
+          name: 'Snaps + Rye',
+          category: 'cafe',
+          address: {
+            buildingNumber: '93',
+            street: 'Golborne Road',
+            city: 'London',
+            postcode: 'W10 5NL'
+          },
+          image: 'https://theresident.wpms.greatbritishlife.co.uk/wp-content/uploads/sites/10/2016/01/MAIN-Snaps-and-Rye.jpg',
+          website: 'https://snapsandrye.com/',
+          user: users[0]
+        }, {
+          name: 'Leather Bottle',
+          category: 'pub',
+          address: {
+            buildingNumber: '538',
+            street: 'Garratt Lane',
+            city: 'London',
+            postcode: 'SW17 0NY'
+          },
+          image: 'https://secretldn.com/wp-content/uploads/2016/08/london-beer-gardens.jpg',
+          website: 'https://www.leatherbottlepub.co.uk/',
+          user: users[0]
+        }, {
+          name: 'Prince Alfred',
+          category: 'pub',
+          address: {
+            buildingNumber: '5A',
+            street: 'Formosa Street',
+            city: 'London',
+            postcode: 'W9 1EE'
+          },
+          image: 'http://www.fullpint.com/i/pubs/488.jpg',
+          website: 'http://www.theprincealfred.com/',
+          user: users[0]
+        }, {
+          name: 'The Chelsea Pensioner',
+          category: 'pub',
+          address: {
+            buildingNumber: '358',
+            street: 'Fulham Road',
+            city: 'London',
+            postcode: 'SW10 9UU'
+          },
+          image: 'https://media-cdn.tripadvisor.com/media/photo-s/13/17/e9/54/our-pride-and-joy.jpg',
+          website: 'https://www.thechelseapensioner.co.uk/',
+          user: users[0]
+        }, {
+          name: 'The Cat & Mutton',
+          category: 'pub',
+          address: {
+            buildingNumber: '76',
+            street: 'Broadway Market',
+            city: 'London',
+            postcode: 'E8 4QJ'
+          },
+          image: 'https://pubshistory.com/LondonPubs/Hackney/CatMut3.jpg',
+          website: 'https://www.catandmutton.com/',
+          user: users[0]
+        }, {
+          name: 'The White Cross',
+          category: 'pub',
+          address: {
+            buildingNumber: '',
+            street: 'Riverside',
+            city: 'London',
+            postcode: 'TW9 1TH'
+          },
+          image: 'http://thewhitecrossrichmond.com/assets/img/hero/index/2.jpg',
+          website: 'http://thewhitecrossrichmond.com/',
+          user: users[0]
+        },  {
+          name: 'The Lillie Langtry',
+          category: 'pub',
+          address: {
+            buildingNumber: '19',
+            street: 'Lillie Road',
+            city: 'London',
+            postcode: 'SW6 1UE'
+          },
+          image: 'https://media-cdn.tripadvisor.com/media/photo-s/15/29/63/38/the-lillie-langtry.jpg',
+          website: 'https://www.thelillielangtry.co.uk/',
+          user: users[0]
+        }, {
+          name: 'The Princess Victoria',
+          category: 'pub',
+          address: {
+            buildingNumber: '217',
+            street: 'Uxbridge Road',
+            city: 'London',
+            postcode: 'W12 9DH'
+          },
+          image: 'https://media-cdn.tripadvisor.com/media/photo-s/11/ce/41/2c/looking-stunning-at-night.jpg',
+          website: 'http://princessvictoria.co.uk/',
+          user: users[0]
+        }, {
+          name: 'The Rylston',
+          category: 'pub',
+          address: {
+            buildingNumber: '197',
+            street: 'Lillie Road',
+            city: 'London',
+            postcode: 'SW6 7LW'
+          },
+          image: 'https://www.therylston.com/wp-content/uploads/2012/09/MG_1477_resize1.jpg',
+          website: 'https://www.therylston.com/',
+          user: users[0]
+        }, {
+          name: 'The Elm Park Tavern',
+          category: 'pub',
+          address: {
+            buildingNumber: '76',
+            street: 'Elm Park',
+            city: 'London',
+            postcode: 'SW2 2UB'
+          },
+          image: 'https://whatpub.com/img/SWL/3922/elm-park-tavern-brixton/298/224',
+          website: 'https://elmparktavern.co.uk/',
+          user: users[0]
+        }, {
+          name: 'The Ship',
+          category: 'pub',
+          address: {
+            buildingNumber: '41',
+            street: 'Jews Row',
+            city: 'London',
+            postcode: 'SW18 1TB'
+          },
+          image: 'http://cdn.ltstatic.com/2007/April/GH657347_942long.jpg',
+          website: 'https://www.theship.co.uk/',
+          user: users[0]
+        }, {
+          name: 'The Windmill Pub',
+          category: 'pub',
+          address: {
+            buildingNumber: '',
+            street: 'Clapham Common South Side',
+            city: 'London',
+            postcode: 'SW4 9DE'
+          },
+          image: 'https://media-cdn.tripadvisor.com/media/photo-s/0a/4f/b0/11/the-windmill-pub.jpg',
+          website: 'https://www.windmillclapham.co.uk/',
+          user: users[0]
+        }, {
+          name: 'Prince of Wales',
+          category: 'pub',
+          address: {
+            buildingNumber: '23',
+            street: 'Bridge Road',
+            city: 'London',
+            postcode: 'KT8 9EU'
+          },
+          image: 'https://media-cdn.tripadvisor.com/media/photo-s/10/16/7e/87/the-prince-of-wales.jpg',
+          website: 'https://www.tripadvisor.co.uk/Restaurant_Review-g504169-d2628247-Reviews-The_Prince_of_Wales-East_Molesey_Molesey_Surrey_England.html',
+          user: users[0]
+        }, {
+          name: 'Wags N Tales Coffee Bar',
+          category: 'cafe',
+          address: {
+            buildingNumber: '7-9',
+            street: 'Brighton Road',
+            city: 'London',
+            postcode: 'KT6 5LX'
+          },
+          image: 'https://media-cdn.tripadvisor.com/media/photo-s/12/db/c5/01/exterior.jpg',
+          website: 'https://www.tripadvisor.co.uk/Restaurant_Review-g1752250-d11907014-Reviews-Wags_N_Tales-Surbiton_Kingston_upon_Thames_Greater_London_England.html',
+          user: users[0]
+        }, {
+          name: 'The Albert',
+          category: 'pub',
+          address: {
+            buildingNumber: '57',
+            street: 'Kingston Hill',
+            city: 'London',
+            postcode: 'KT2 7PX'
+          },
+          image: 'https://www.thealbertkingston.co.uk/youngs/uploads/sites/169/2019/06/image.png',
+          website: 'https://www.thealbertkingston.co.uk/',
+          user: users[0]
+        }, {
+          name: 'Duke of York',
+          category: 'pub',
+          address: {
+            buildingNumber: '64-65',
+            street: 'Victoria Road',
+            city: 'London',
+            postcode: 'KT6 4NQ'
+          },
+          image: 'https://media-cdn.tripadvisor.com/media/photo-s/0b/7e/5a/41/sunflowers-summer-is.jpg',
+          website: 'https://www.greeneking-pubs.co.uk/pubs/surrey/duke-of-york/',
+          user: users[0]
+        }, {
+          name: 'The Cricketers',
+          category: 'pub',
+          address: {
+            buildingNumber: '',
+            street: 'Downside Common',
+            city: 'London',
+            postcode: 'KT11 3NX'
+          },
+          image: 'https://media-cdn.tripadvisor.com/media/photo-s/0a/ef/85/07/outside.jpg',
+          website: 'https://cricketerscobham.com/',
+          user: users[0]
+        }, {
+          name: 'The Haycutter',
+          category: 'pub',
+          address: {
+            buildingNumber: '',
+            street: 'Tanhouse Road',
+            city: 'London',
+            postcode: 'RH8 9PE'
+          },
+          image: 'https://media-cdn.tripadvisor.com/media/photo-s/11/01/7a/50/the-haycutter-oxted.jpg',
+          website: 'https://www.brunningandprice.co.uk/haycutter/',
+          user: users[0]
+        }, {
+          name: 'Bishop out of Residence',
+          category: 'pub',
+          address: {
+            buildingNumber: '2',
+            street: 'Bishop\'s Hall',
+            city: 'London',
+            postcode: 'KT1 1PY'
+          },
+          image: 'https://live.staticflickr.com/3084/3093191243_651e6e1b67_b.jpg',
+          website: 'https://www.thebishopkingston.co.uk/',
+          user: users[0]
+        }, {
+          name: 'The Victoria',
+          category: 'pub',
+          address: {
+            buildingNumber: '',
+            street: 'High Street ',
+            city: 'London',
+            postcode: 'KT22 0JR'
+          },
+          image: 'https://media-cdn.tripadvisor.com/media/photo-s/0b/45/19/32/a-traditional-pub.jpg',
+          website: 'https://victoriaoxshott.com/',
+          user: users[0]
         }
+
+
       ])
     })
     .then(locations => console.log(`${locations.length} locations created`))
