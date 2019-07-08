@@ -44,11 +44,7 @@ function editRoute(req, res, next) {
 
 // Delete profile
 function deleteRoute(req, res, next) {
-<<<<<<< HEAD
   Location
-=======
-  location
->>>>>>> development
     .findByIdAndRemove(req.params.id)
     .then(() => res.sendStatus(204))
     .catch(next)
