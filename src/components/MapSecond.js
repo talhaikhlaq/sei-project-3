@@ -25,18 +25,22 @@ class MapSecond extends React.Component {
     this.props.markers.map(point => {
       const el = document.createElement('div')
       el.className = 'marker'
+      el.style.backgroundImage = 'url(' + point.image + ')'
       // customise markers based on category here
 
       return new mapboxgl.Marker() // add el inside brackets for custom marker
         .setLngLat({ lat: point.coordinates.lat, lng: point.coordinates.lng })
         .addTo(this.map)
 
-        // add popup with location information
-        // .setPopup(new mapboxgl.Popup({ offset: 25 })
-        //   .setHTML(`
-        //     <div>
-        //     </div>
-        //   `))
+        .setPopup(new mapboxgl.Popup({ offset: 25 })
+          .setHTML(`
+            <main>
+        
+           <h2>${point.name}</h2>
+
+            <div style="background-image: url('${point.image}'); height: 100px; min-width: 150px; background-repeat: no-repeat; background-size: cover; background-position: center;">
+            </main>
+          `))
     })
     this.map.addControl(new mapboxgl.NavigationControl())
     this.map.on('click', this.handleClick)
