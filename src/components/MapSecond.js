@@ -49,7 +49,10 @@ class MapSecond extends React.Component {
     })
 
     this.map.addControl(new MapboxGeocoder({
-      accessToken: mapboxgl.accessToken
+      accessToken: mapboxgl.accessToken,
+      country: 'gb',
+      city: 'london'
+
     }), 'top-left')
 
     this.map.addControl(new mapboxgl.NavigationControl())
