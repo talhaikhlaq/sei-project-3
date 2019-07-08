@@ -10,7 +10,11 @@ const locationSchema =  new mongoose.Schema({
     city: { type: String },
     postcode: { type: String, required: true }
   },
-  openingHours: { type: String },
+  coordinates: {
+    lat: { type: Number },
+    lng: { type: Number }
+  },
+  website: { type: String },
   image: { type: String },
   user: { type: mongoose.Schema.ObjectId, ref: 'User' }
 })

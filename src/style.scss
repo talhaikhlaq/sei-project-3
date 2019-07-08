@@ -1,8 +1,16 @@
+@import '~mapbox-gl/dist/mapbox-gl.css';
+
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 
 * {
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
+
+.map {
+  width: 100vw;
+  height: 50vh;
+}
+
 }
 
 #home {
