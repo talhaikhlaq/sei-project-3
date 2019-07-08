@@ -250,6 +250,10 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             city: 'London',
             postcode: 'E2 6EG'
           },
+          coordinates: {
+            lat: 51.52408,
+            lng: -0.06665
+          },
           image: 'http://www.londondateguide.com/wp-content/uploads/2013/11/Carpenters-Arms.jpg',
           website: 'https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d2527679-Reviews-The_Carpenter_s_Arms-London_England.html',
           user: users[2]
@@ -262,6 +266,10 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             city: 'London',
             postcode: 'SW4 6BJ'
           },
+          coordinates: {
+            lat: 51.46442,
+            lng: -0.13694
+          },
           image: 'https://www.thestonhouse.co.uk/assets/DSC_6062-1158x500.jpg',
           website: 'https://www.thestonhouse.co.uk/',
           user: users[2]
@@ -272,9 +280,13 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             buildingNumber: '174',
             street: 'Northcote Road',
             city: 'London',
-            postcode: 'SW11 6RE '
+            postcode: 'SW11 6RE'
           },
-          image: 'https://www.thebolingbroke.com/wp-content/themes/bolingbroke-child/assets/slides/bolingbroke08.jpg',
+          coordinates: {
+            lat: 51.45371,
+            lng: -0.16403
+          },
+          age: 'https://www.thebolingbroke.com/wp-content/themes/bolingbroke-child/assets/slides/bolingbroke08.jpg',
           website: 'https://www.thebolingbroke.com/',
           user: users[2]
         },{
@@ -285,6 +297,10 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             street: 'Battersea Park Road',
             city: 'London',
             postcode: 'SW8 4DS '
+          },
+          coordinates: {
+            lat: 51.47886,
+            lng: -0.14306
           },
           image: 'https://duchessbelle.wpengine.com/wp-content/uploads/2018/09/4882c1b4-323c-49f1-82e6-28d561e3ff79.jpg',
           website: 'http://www.duchessbelle.co.uk/',
@@ -298,6 +314,10 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             city: 'London',
             postcode: 'SW12 9EB'
           },
+          coordinates: {
+            lat: 51.45066,
+            lng: -0.14819
+          },
           image: 'https://www.theavalonlondon.com/wp-content/themes/avalon-child/assets/slides/avalon08.jpg',
           website: 'https://www.theavalonlondon.com/',
           user: users[2]
@@ -310,6 +330,10 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             city: 'London',
             postcode: 'SW4 9JW'
           },
+          coordinates: {
+            lat: 51.45484,
+            lng: -0.13971
+          },
           image: 'https://img.static-bookatable.com/33-abbeville-road-clapham-london-9.jpg?id=264345b9-e020-4e30-b12f-a348a857125b.jpg&404=bat2/404-restaurant.jpg&width=600&height=400&scale=both&mode=crop',
           website: 'https://www.theabbeville.co.uk/',
           user: users[2]
@@ -320,7 +344,11 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             buildingNumber: '65',
             street: 'Rosendale Road',
             city: 'London',
-            postcode: 'SE21 8EZ '
+            postcode: 'SE21 8EZ'
+          },
+          coordinates: {
+            lat: 51.43679,
+            lng: -0.09473
           },
           image: 'https://www.therosendale.co.uk/assets/jonathon-flint-photography-1158x500.jpg',
           website: 'https://www.therosendale.co.uk/',
@@ -332,7 +360,11 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             buildingNumber: '185',
             street: 'Kennington Lane',
             city: 'London',
-            postcode: 'SE11 4EZ '
+            postcode: 'SE11 4EZ'
+          },
+          coordinates: {
+            lat: 51.48894,
+            lng: -0.11042
           },
           image: 'http://www.fancyapint.com/media/61/3073_exterior.jpg',
           website: 'https://www.thetommyfield.com/',
@@ -346,6 +378,10 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             city: 'London',
             postcode: 'SW1V 1QT'
           },
+          coordinates: {
+            lat: 51.49255,
+            lng: -0.13947
+          },
           image: 'http://www.foodandfuel.co.uk/our-pubs/the-queens-arms-pimlico/wp-content/uploads/2013/01/queens-arms-home.jpg',
           website: 'http://www.foodandfuel.co.uk/',
           user: users[2]
@@ -357,6 +393,10 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             street: 'Kennington Road',
             city: 'London',
             postcode: 'SE1 7PZ'
+          },
+          coordinates: {
+            lat: 51.49689,
+            lng: -0.11134
           },
           image: 'http://www.london-se1.co.uk//restaurants/images/031011_threestags.jpg',
           website: 'https://www.thethreestags.london/',

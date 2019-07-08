@@ -8,6 +8,12 @@ mapboxgl.accessToken = process.env.MAPBOX
 
 
 class Map extends React.Component {
+  constructor() {
+    super()
+    this.state = { points: null }
+
+  }
+
 
   componentDidMount(){
     this.getLocationList()
@@ -16,10 +22,12 @@ class Map extends React.Component {
   // gst the list of countries using the restcountries API and select the name, flat and latlng.
   getLocationList() {
     axios.get('/api/locations/')
-
-      .then(res => console.log(res))
+      .then(res => {
+        this.setState({ points: res.data.result.postcode },() => console.log(this.state.points))
+      })
       .catch(err => console.log(err))
   }
+
 
 
   render() {
@@ -27,6 +35,8 @@ class Map extends React.Component {
       <main>
         <Markers
           center={this.mapCenter}
+          markers={this.state.points}
+
         />
       </main>
     )
