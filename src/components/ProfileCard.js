@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const ProfileCard = ({ ownerName, image, pet }) => {
+const ProfileCard = ({ ownerName, image }) => {
   return (
     <div className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
       <div className="card">
         <div className="card-header">
-          <h4 className="card-header-title">{ownerName} & {pet[0]}</h4>
+          <h4 className="card-header-title">{ownerName}</h4>
         </div>
         <div className="card-image">
           <figure className="image">
