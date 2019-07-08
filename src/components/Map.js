@@ -1,51 +1,33 @@
 import React from 'react'
-import mapboxgl from 'mapbox-gl'
 import axios from 'axios'
 
-// const express = require('express')
-// const app = express()
-// const axios = require('axios')
+import Markers from './Markers'
 
-mapboxgl.accessToken = process.env.MAPBOX
-// const mapbox = process.env.MAPBOX
 
 class Map extends React.Component {
 
-  componentDidMount() {
-    this.map = new mapboxgl.Map({
-      container: this.mapDiv,
-      style: 'mapbox://styles/mapbox/streets-v10',
-      zoom: 10,
-      center: [-0.1, 51.5074]
-    })
-
-
-
+  componentDidMount(){
+    this.getLocationList()
   }
 
+  // gst the list of countries using the restcountries API and select the name, flat and latlng.
+  getLocationList() {
+    axios.get('/api/locations/')
 
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+  }
 
 
   render() {
     return (
-
-      <div className="map" ref={el => this.mapDiv = el}/>
-
+      <main>
+        <Markers
+          center={this.mapCenter}
+        />
+      </main>
     )
   }
 }
-
-
-
-
-//   this.getLocations()
-// getLocations() {
-// axios.get('http://localhost:4000/api/locations/')
-//
-//
-//
-//
-
-
 
 export default Map
