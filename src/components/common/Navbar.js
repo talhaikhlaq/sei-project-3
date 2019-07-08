@@ -59,12 +59,12 @@ class Navbar extends React.Component {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <a className="button is-dark">
+                <Link to="/register"><a className="button is-dark">
                   <strong>Sign up</strong>
-                </a>
-                <a className="button is-light">
+                </a></Link>
+                <Link to="/login"><a className="button is-light">
                   Log in
-                </a>
+                </a></Link>
               </div>
             </div>
           </div>
