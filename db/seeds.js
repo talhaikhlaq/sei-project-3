@@ -286,7 +286,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             lat: 51.45371,
             lng: -0.16403
           },
-          age: 'https://www.thebolingbroke.com/wp-content/themes/bolingbroke-child/assets/slides/bolingbroke08.jpg',
+          image: 'https://www.thebolingbroke.com/wp-content/themes/bolingbroke-child/assets/slides/bolingbroke08.jpg',
           website: 'https://www.thebolingbroke.com/',
           user: users[2]
         },{
@@ -400,139 +400,185 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           },
           image: 'http://www.london-se1.co.uk//restaurants/images/031011_threestags.jpg',
           website: 'https://www.thethreestags.london/',
-          user: users[2] }
-        // }, {
-        //   name: 'The Ranelagh',
-        //   category: 'pub',
-        //   address: {
-        //     buildingNumber: '82',
-        //     street: 'Bounds Green Road',
-        //     city: 'London',
-        //     postcode: 'N11 2EU '
-        //   },image: 'https://www.theranelaghn11.co.uk/content/dam/castle/pub-images/theranelaghn11/theranelaghn11-home-1.jpg.asset/1561976017544.jpg',
-        //   website: 'https://www.theranelaghn11.co.uk/',
-        //   user: users[2]
-        // }, {
-        //   name: 'Near & Far Bar',
-        //   category: 'pub',
-        //   address: {
-        //     buildingNumber: '95a' ,
-        //     street: 'Rye Lane',
-        //     city: 'London',
-        //     postcode: 'SE15 4ST'
-        //   },
-        //   image: 'https://media.drinkup.london/images/media/0c21c22d4259438a65de541a527084c7.jpg',
-        //   website: 'https://www.peckhamlevels.org/member/near-and-far/',
-        //   user: users[2]
-        // }, {
-        //   name: 'Good Neighbour',
-        //   category: 'pub',
-        //   address: {
-        //     buildingNumber: '21',
-        //     street: 'Camberwell Church Street',
-        //     city: 'London',
-        //     postcode: 'SE5 8TR'
-        //   },
-        //   image: 'https://www.justopenedlondon.com/wp-content/uploads/2018/03/good-neighbour-exterior.jpg',
-        //   website: 'https://www.goodneighbour.uk.com/',
-        //   user: users[2]
-        // }, {
-        //   name: 'Pied Bull',
-        //   category: 'pub',
-        //   address: {
-        //     buildingNumber: '498' ,
-        //     street: 'Streatham High Road',
-        //     city: 'London',
-        //     postcode: 'SW16 3QB'
-        //   },
-        //   image: 'https://www.thebullstreatham.co.uk/youngs/uploads/sites/144/2018/07/1111_TheBull_June15_63-1024x683.jpg',
-        //   website: 'https://www.thebullstreatham.co.uk/',
-        //   user: users[2]
-        // }, {
-        //   name: 'Richard the First',
-        //   category: 'pub',
-        //   address: {
-        //     buildingNumber: '52-54',
-        //     street: 'Royal Hill',
-        //     city: 'London',
-        //     postcode: 'SE10 8RT '
-        //   },
-        //   image: 'https://www.allthingsgreenwich.co.uk/images/richardthefirst-404(600px).jpg',
-        //   website: 'https://www.richardthefirst.co.uk/',
-        //   user: users[2]
-        // }, {
-        //   name: 'The Rosemary Branch',
-        //   category: 'pub',
-        //   address: {
-        //     buildingNumber: '2' ,
-        //     street: 'Shepperton Road',
-        //     city: 'London',
-        //     postcode: 'N1 3DT '
-        //   },
-        //   image: 'https://media-cdn.tripadvisor.com/media/photo-s/0f/84/1c/52/shepperton-road-entrance.jpg',
-        //   website: 'https://www.rosemarybranchtheatre.co.uk/',
-        //   user: users[2]
-        // }, {
-        //   name: 'Piebury Corner',
-        //   category: 'pub',
-        //   address: {
-        //     buildingNumber: '3',
-        //     street: 'Caledonian Rd',
-        //     city: 'London',
-        //     postcode: 'N1 9DX '
-        //   },
-        //   image: 'https://www.pieburycorner.com/wp-content/uploads/2017/11/Piebury_065.jpg',
-        //   website: 'https://pieburycorner.com/',
-        //   user: users[0]
-        // }, {
-        //   name: 'Honor Oak Pub',
-        //   category: 'pub',
-        //   address: {
-        //     buildingNumber: '1',
-        //     street: 'St German\'s Road',
-        //     city: 'London',
-        //     postcode: 'SE23 1RH'
-        //   },
-        //   image: 'http://listofpubs.co.uk/uploads/300526/x0.jpg.pagespeed.ic.Tjh2EXjrhp.jpg',
-        //   website: 'https://www.honoroak.pub/',
-        //   user: users[0]
-        // }, {
-        //   name: 'The King & Co',
-        //   category: 'pub',
-        //   address: {
-        //     buildingNumber: '100',
-        //     street: 'Clapham Park Road',
-        //     city: 'London',
-        //     postcode: 'SW4 7BZ'
-        //   },
-        //   image: 'https://media-cdn.tripadvisor.com/media/photo-s/07/de/7e/24/king-and-co-pub.jpg',
-        //   website: 'https://thekingandco.uk/',
-        //   user: users[0]
-        // }, {
-        //   name: 'Megan\'s Old Town',
-        //   category: 'restaurant',
-        //   address: {
-        //     buildingNumber: '55-57',
-        //     street: 'The Pavement',
-        //     city: 'London',
-        //     postcode: 'SW4 0JQ'
-        //   },
-        //   image: 'https://static.designmynight.com/uploads/2019/02/clapham-restaurants-optimised.jpg',
-        //   website: 'https://megans.co.uk//',
-        //   user: users[0]
-        // }, {
-        //   name: 'Bronte',
-        //   category: 'restaurant',
-        //   address: {
-        //     buildingNumber: '1-3',
-        //     street: 'Strand',
-        //     city: 'London',
-        //     postcode: 'WC2N 5EJ '
-        //   },
-        //   image: 'https://www.coventgarden.london/sites/default/d8files/styles/square_image_style_/public/cg_images/Bronte-square-copco%202.jpg?itok=1dQPDyWk',
-        //   website: 'hhttps://www.coventgarden.london/bars/bronte/',
-        //   user: users[0]
-        // }, {
+          user: users[2]
+        }, {
+          name: 'The Ranelagh',
+          category: 'pub',
+          address: {
+            buildingNumber: '82',
+            street: 'Bounds Green Road',
+            city: 'London',
+            postcode: 'N11 2EU'
+          },
+          coordinates: {
+            lat: 51.60784,
+            lng: -0.12547
+          },
+          image: 'https://www.theranelaghn11.co.uk/content/dam/castle/pub-images/theranelaghn11/theranelaghn11-home-1.jpg.asset/1561976017544.jpg',
+          website: 'https://www.theranelaghn11.co.uk/',
+          user: users[2]
+        }, {
+          name: 'Near & Far Bar',
+          category: 'pub',
+          address: {
+            buildingNumber: '95a' ,
+            street: 'Rye Lane',
+            city: 'London',
+            postcode: 'SE15 4ST'
+          },
+          coordinates: {
+            lat: 51.46985,
+            lng: -0.06800
+          },
+          image: 'https://media.drinkup.london/images/media/0c21c22d4259438a65de541a527084c7.jpg',
+          website: 'https://www.peckhamlevels.org/member/near-and-far/',
+          user: users[2]
+        }, {
+          name: 'Good Neighbour',
+          category: 'pub',
+          address: {
+            buildingNumber: '21',
+            street: 'Camberwell Church Street',
+            city: 'London',
+            postcode: 'SE5 8TR'
+          },
+          coordinates: {
+            lat: 51.47405,
+            lng: -0.08959
+          },
+          image: 'https://www.justopenedlondon.com/wp-content/uploads/2018/03/good-neighbour-exterior.jpg',
+          website: 'https://www.goodneighbour.uk.com/',
+          user: users[2]
+        }, {
+          name: 'Pied Bull',
+          category: 'pub',
+          address: {
+            buildingNumber: '498' ,
+            street: 'Streatham High Road',
+            city: 'London',
+            postcode: 'SW16 3QB'
+          },
+          coordinates: {
+            lat: 51.41943,
+            lng: -0.12828
+          },
+          image: 'https://www.thebullstreatham.co.uk/youngs/uploads/sites/144/2018/07/1111_TheBull_June15_63-1024x683.jpg',
+          website: 'https://www.thebullstreatham.co.uk/',
+          user: users[2]
+        }, {
+          name: 'Richard the First',
+          category: 'pub',
+          address: {
+            buildingNumber: '52-54',
+            street: 'Royal Hill',
+            city: 'London',
+            postcode: 'SE10 8RT'
+          },
+          coordinates: {
+            lat: 51.47654,
+            lng: -0.00985
+          },
+          image: 'https://www.allthingsgreenwich.co.uk/images/richardthefirst-404(600px).jpg',
+          website: 'https://www.richardthefirst.co.uk/',
+          user: users[2]
+        }, {
+          name: 'The Rosemary Branch',
+          category: 'pub',
+          address: {
+            buildingNumber: '2' ,
+            street: 'Shepperton Road',
+            city: 'London',
+            postcode: 'N1 3DT'
+          },
+          coordinates: {
+            lat: 51.53762,
+            lng: -0.08696
+          },
+          image: 'https://media-cdn.tripadvisor.com/media/photo-s/0f/84/1c/52/shepperton-road-entrance.jpg',
+          website: 'https://www.rosemarybranchtheatre.co.uk/',
+          user: users[2]
+        }, {
+          name: 'Piebury Corner',
+          category: 'pub',
+          address: {
+            buildingNumber: '3',
+            street: 'Caledonian Rd',
+            city: 'London',
+            postcode: 'N1 9DX'
+          },
+          coordinates: {
+            lat: 51.53146,
+            lng: -0.12122
+          },
+          image: 'https://www.pieburycorner.com/wp-content/uploads/2017/11/Piebury_065.jpg',
+          website: 'https://pieburycorner.com/',
+          user: users[0]
+        }, {
+          name: 'Honor Oak Pub',
+          category: 'pub',
+          address: {
+            buildingNumber: '1',
+            street: 'St German\'s Road',
+            city: 'London',
+            postcode: 'SE23 1RH'
+          },
+          coordinates: {
+            lat: 51.44337,
+            lng: -0.04151
+          },
+          image: 'http://listofpubs.co.uk/uploads/300526/x0.jpg.pagespeed.ic.Tjh2EXjrhp.jpg',
+          website: 'https://www.honoroak.pub/',
+          user: users[0]
+        }, {
+          name: 'The King & Co',
+          category: 'pub',
+          address: {
+            buildingNumber: '100',
+            street: 'Clapham Park Road',
+            city: 'London',
+            postcode: 'SW4 7BZ'
+          },
+          coordinates: {
+            lat: 51.45918,
+            lng: -0.13402
+          },
+          image: 'https://media-cdn.tripadvisor.com/media/photo-s/07/de/7e/24/king-and-co-pub.jpg',
+          website: 'https://thekingandco.uk/',
+          user: users[0]
+        }, {
+          name: 'Megan\'s Old Town',
+          category: 'restaurant',
+          address: {
+            buildingNumber: '55-57',
+            street: 'The Pavement',
+            city: 'London',
+            postcode: 'SW4 0JQ'
+          },
+          coordinates: {
+            lat: 51.46363,
+            lng: -0.14095
+          },
+          image: 'https://static.designmynight.com/uploads/2019/02/clapham-restaurants-optimised.jpg',
+          website: 'https://megans.co.uk//',
+          user: users[0]
+        }, {
+          name: 'Bronte',
+          category: 'restaurant',
+          address: {
+            buildingNumber: '1-3',
+            street: 'Strand',
+            city: 'London',
+            postcode: 'WC2N 5EJ'
+          },
+          coordinates: {
+            lat: 51.50752,
+            lng: -0.12618
+          },
+          image: 'https://www.coventgarden.london/sites/default/d8files/styles/square_image_style_/public/cg_images/Bronte-square-copco%202.jpg?itok=1dQPDyWk',
+          website: 'hhttps://www.coventgarden.london/bars/bronte/',
+          user: users[0]
+        },
+        // {
         //   name: 'Marquess Tavern',
         //   category: 'pub',
         //   address: {

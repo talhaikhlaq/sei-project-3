@@ -35,10 +35,16 @@ class MapSecond extends React.Component {
         .setPopup(new mapboxgl.Popup({ offset: 25 })
           .setHTML(`
             <main>
-        
-           <h2>${point.name}</h2>
 
-            <div style="background-image: url('${point.image}'); height: 100px; min-width: 150px; background-repeat: no-repeat; background-size: cover; background-position: center;">
+           <h1 class="title is-5">${point.name}</h1>
+           
+           <h2 class="subtitle is-6">${point.address.buildingNumber}  ${point.address.street}, ${point.address.postcode}</h2>
+
+           <a href=${point.website} class="subtitle is-6 is-link" target="_blank" rel="noopener noreferrer">Go to their website</a>
+
+          <div style="background-image: url('${point.image}'); height: 100px; min-width: 150px; background-repeat: no-repeat; background-size: cover; background-position: center;">
+
+
             </main>
           `))
     })
