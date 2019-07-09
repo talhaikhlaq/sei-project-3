@@ -44,7 +44,9 @@ class Navbar extends React.Component {
           <div className="navbar-start">
             <Link to="/map" className="navbar-item">Map</Link>
 
-            <Link to="/friends" className="navbar-item">Friends</Link>
+            {Auth.isAuthenticated() && <Link to="/friends" className="navbar-item">Friends</Link>}
+
+            {Auth.isAuthenticated() && <Link to="/friends/new" className="navbar-item">New Profile</Link>}
 
             <div className="navbar-item has-dropdown is-hoverable">
               <a className="navbar-link is-arrowless">

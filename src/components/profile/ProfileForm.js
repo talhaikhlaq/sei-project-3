@@ -110,7 +110,7 @@ const ProfileForm = ({ handleChange, handleSubmit, data }) => (
         />
       </div>
     </div>
-    <button type="submit submit-new" className="button is-dark is-medium">Submit</button>
+    <button type="submit" className="button submit">Submit</button>
   </form>
 )
 
