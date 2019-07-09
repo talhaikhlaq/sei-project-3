@@ -7,7 +7,7 @@ class LocationsEdit extends React.Component {
   constructor() {
     super()
 
-    this.state = { data: {} }
+    this.state = { data: null }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -32,6 +32,8 @@ class LocationsEdit extends React.Component {
   }
 
   render() {
+    if (!this.state.data) return null
+    console.log(this.state.data)
     return (
       <section className="section">
         <div className="main">
