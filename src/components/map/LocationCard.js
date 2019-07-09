@@ -34,6 +34,27 @@ class LocationCard extends React.Component {
   }
 
 
+  //   axios.post(`/api/locations/${this.props.match.params.id}/comments`, this.state.comment, {
+  //     headers: { 'Authorization': `${Auth.getToken()}` }
+  //   })
+  //   .then(() => this.getData())
+  //   .catch(err => console.log(err))
+  // }
+  //
+  // isOwner(comment) {
+  //   return Auth.getPayload().sub === comment.user._id
+  // }
+  //
+  // handleCommentDelete(comment) {
+  //   axios.delete(`/api/locations/${this.props.match.params.id}/comments/${comment._id}`, {
+  //     headers: { 'Authorization': Auth.getToken()}
+  //   })
+  //     .then(() => this.getData())
+  //     .catch(err => console.log(err))
+  // }
+
+
+
   render() {
     if (!this.state.location) return null
     const { location } =  this.state
@@ -71,7 +92,6 @@ class LocationCard extends React.Component {
               </button>
 
 
-
             </div>
           </div>
         </div>
@@ -82,3 +102,42 @@ class LocationCard extends React.Component {
 
 
 export default LocationCard
+
+
+
+
+
+
+
+
+
+
+          //     {location.comments.map(comment => (
+          //     <div key={comment._id} className="card">
+          //       <div className="card-content">
+          //         {comment.text} - {new Date(comment.createdAt).toLocaleString()}
+          //       </div>
+          //       {this.isOwner(comment) && <button
+          //         className="button is-danger"
+          //         onClick={() => this.handleCommentDelete(comment)}
+          //         >Delete
+          //         </button>}
+          //     </div>
+          //   ))}
+          //
+          //   <hr />
+          // {Auth.isAuthenticated() &&
+          // <form onSubmit={this.handleSubmit}>
+          //   <div className="field">
+          //     <div className="control">
+          //       <textarea
+          //         className="textarea"
+          //         placeholder="Comment........."
+          //         onChange={this.handleChange}
+          //         value={this.state.comment.text || ''}
+          //       >
+          //       </textarea>
+          //     </div>
+          //   </div>
+          //   <button className="button" type="submit">Comment</button>
+          // </form>}

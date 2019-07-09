@@ -12,7 +12,7 @@ const NewLocationForm = ({ handleChange, handleSubmit }) => (
           name="name"
           placeholder="Name"
           onChange={handleChange}
-          value={''}
+          value={null}
         />
       </div>
     </div>
@@ -39,7 +39,7 @@ const NewLocationForm = ({ handleChange, handleSubmit }) => (
           name="name"
           placeholder="House number"
           onChange={handleChange}
-          value={ ''}
+          value={null}
         />
       </div>
     </div>
@@ -53,7 +53,7 @@ const NewLocationForm = ({ handleChange, handleSubmit }) => (
           name="name"
           placeholder="Street"
           onChange={handleChange}
-          value={ ''}
+          value={null}
         />
       </div>
     </div>
@@ -66,7 +66,7 @@ const NewLocationForm = ({ handleChange, handleSubmit }) => (
           name="name"
           placeholder="Postcode"
           onChange={handleChange}
-          value={''}
+          value={null}
         />
       </div>
     </div>
@@ -80,7 +80,7 @@ const NewLocationForm = ({ handleChange, handleSubmit }) => (
           name="image"
           placeholder="Image"
           onChange={handleChange}
-          value={ ''}
+          value={null}
         />
       </div>
     </div>

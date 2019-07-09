@@ -24,21 +24,45 @@ class LocationsNew extends React.Component {
     this.setState({ data })
   }
 
+  // .then(() => this.props.history.push('/locations'))
 
+
+
+  // make axios request to API to turn postcode into coordinates
+  // add coordinates to this.state.data
+  // then do the rest
 
   handleSubmit(e) {
     e.preventDefault()
+    e.translatePostcode()
+    e.newLocation()
+  }
 
-    // make axios request to API to turn postcode into coordinates
-    // add coordinates to this.state.data
-    // then do the rest
+  translatePostcode() {
+    axios.get('api.postcodes.io/random/postcodes')
+      .then(res => console.log(res))
+      .catch(err => console.log(err.response))
+  }
+  // .then(res => this.setState({ data: res.data }))
 
+  newLocation() {
     axios.post('/api/locations', this.state.data, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(() => this.props.history.push('/locations'))
       .catch(err => console.log(err.response))
+
   }
+
+
+
+
+
+
+
+
+
+
 
   render() {
     return (

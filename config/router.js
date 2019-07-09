@@ -21,6 +21,12 @@ router.route('/profiles/:id')
   .put(profiles.editProfile)
   .delete(profiles.deleteProfile)
 
+router.route('/locations/:id/comments')
+  .post(secureRoute, locations.commentCreate)
+
+router.route('/locations/:id/comments/:commentId')
+  .delete(secureRoute, locations.commentDelete)
+
 router.route('/locations')
   .get(locations.indexLocations)
   .post(locations.createLocation)
