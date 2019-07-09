@@ -74,19 +74,12 @@ class ProfileShow extends React.Component {
               <p>{profile.lookingFor}</p>
               <hr />
               <h4 className="title is-4">Hobbies</h4>
-              <p>{profile.hobbies}</p>
+              <p>{profile.pet[0].hobbies}</p>
               <hr />
               <h4 className="title is-4">About Me</h4>
-              <p>{profile.aboutMe}</p>
+              <p>{profile.pet[0].aboutMe}</p>
             </div>
           </div>
-          {this.isOwner() && <Link
-            className="button is-primary is-medium"
-            to={`/cats/${profile._id}/edit`}
-          >
-            Edit
-          </Link>}
-          {this.isOwner() && <button onClick={this.handleDelete} className="button is-danger is-medium">Delete</button>}
         </div>
       </main>
 
