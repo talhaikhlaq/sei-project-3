@@ -64,7 +64,7 @@ class ProfileShow extends React.Component {
           </div>
 
           {this.isOwner() && <Link
-            className="button edit"
+            className="button"
             to={`/friends/edit/${profile._id}`}
           >
           Edit Profile
