@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
+import Auth from '../../lib/Auth'
 
 class Navbar extends React.Component {
   constructor() {
@@ -7,10 +8,22 @@ class Navbar extends React.Component {
 
     this.state = {}
     this.toggleNavbar = this.toggleNavbar.bind(this)
+    this.logout = this.logout.bind(this)
   }
 
   toggleNavbar() {
     this.setState({ navbarOpen: !this.state.navbarOpen })
+  }
+
+  logout() {
+    Auth.logout()
+    this.props.history.push('/')
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      this.setState({ navbarOpen: false })
+    }
   }
 
 
@@ -59,12 +72,13 @@ class Navbar extends React.Component {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <Link to="/register"><a className="button is-dark">
+                {!Auth.isAuthenticated() && <Link to="/register" className="button is-dark">
                   <strong>Sign up</strong>
-                </a></Link>
-                <Link to="/login"><a className="button is-light">
+                </Link>}
+                {!Auth.isAuthenticated() && <Link to="/login" className="button is-light">
                   Log in
-                </a></Link>
+                </Link>}
+                {Auth.isAuthenticated() && <a className="navbar-item" onClick={this.logout}>Logout</a>}
               </div>
             </div>
           </div>
@@ -74,4 +88,4 @@ class Navbar extends React.Component {
   }
 }
 
-export default Navbar
+export default withRouter(Navbar)
