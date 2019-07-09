@@ -1,27 +1,40 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-
-const LocationCard = ({ name, image, _id, category }) => (
-  <div className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
-    <Link to={`/locations/${_id}`}>
-      <div className="card">
-        <div className="card-header">
-          <h4 className="card-header-title">{name}</h4>
-        </div>
-        <div className="card-image">
-          <figure className="image">
-            <img src={image} alt={name} />
-          </figure>
-        </div>
-        <div className="card-content">
-          <h5 className="title is-6">Category: {category}</h5>
+// import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 
+
+class LocationCard extends React.Component {
+  constructor() {
+    super()
+
+    this.state = { location: null }
+
+  }
+
+  componentDidMount() {
+      axios.get(`/api/locations/ ${this.props.match.params.id}`)
+        .then(res => this.setState({ location: res.data }))
+        .catch(err => console.log(err))
+    }
+
+
+
+  render() {
+    if (!this.state.location) return null
+    const { location } =  this.state
+    return (
+      <section className="section">
+        <div className="container">
+
+          <h2 className="title">{location.name}</h2>
+          <hr />
+
         </div>
-      </div>
-    </Link>
-  </div>
-)
+      </section>
+    )
+  }
+}
 
 
 export default LocationCard
