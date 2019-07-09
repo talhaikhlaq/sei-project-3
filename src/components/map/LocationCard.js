@@ -9,7 +9,6 @@ class LocationCard extends React.Component {
     super()
 
     this.state = { location: null }
-    this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
 
   }
@@ -20,13 +19,19 @@ class LocationCard extends React.Component {
       .catch(err => console.log(err))
   }
 
-  handleChange(e) {
-  this.setState({ comment: { text: e.target.value }})
-}
+
 
 handleSubmit(e) {
   e.preventDefault()
 }
+
+handleDelete() {
+    axios.delete(`/api/locations/${this.props.match.params.id}`, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}`}
+    })
+      .then(() => this.props.history.push('/locations'))
+      .catch(err => console.log(err.response))
+  }
 
 
   render() {
@@ -35,10 +40,10 @@ handleSubmit(e) {
     return (
       <section className="section">
         <div className="container">
-<div className="columns">
-        <div className="column is-half">
-    <figure className="image">
-          <img src={location.image} alt={location.name} />
+          <div className="columns">
+            <div className="column is-half">
+              <figure className="image">
+                <img src={location.image} alt={location.name} />
         </figure>
         </div>
 
@@ -57,6 +62,11 @@ handleSubmit(e) {
           >
             Edit
           </Link>
+
+          <button onClick={this.handleDelete}
+                className="button is-danger">Delete</button>
+
+
 
         </div>
         </div>
