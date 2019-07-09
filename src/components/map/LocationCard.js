@@ -1,31 +1,48 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-
+import Auth from '../../lib/Auth'
 
 
 class LocationCard extends React.Component {
   constructor() {
     super()
 
-    this.state = { location: null }
+    this.state = { location: null, comment: {} }
+    this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-
-
+    this.handleCommentDelete = this.handleCommentDelete.bind(this)
 
   }
 
   componentDidMount() {
-    axios.get(`/api/locations/${this.props.match.params.id}`)
-      .then(res => this.setState({ location: res.data }))
-      .catch(err => console.log(err))
+    this.getData()
+
   }
 
+  handleChange(e) {
+    this.setState({ comment: { text: e.target.value } })
+  }
+  getData() {
+    axios.get(`/api/locations/${this.props.match.params.id}`)
+      .then(res => this.setState({ location: res.data, comment: {} }))
+      .catch(err => console.log(err))
 
+  }
 
   handleSubmit(e) {
     e.preventDefault()
+
+    axios.post(`/api/locations/${this.props.match.params.id}/comments`, this.state.comment, {
+      headers: { 'Authorization': `${Auth.getToken()}` }
+    })
+      .then(() => this.getData())
+      .catch(err => console.log(err))
   }
+
+    // isOwner(comment) {
+    //   return Auth.getPayload().sub === comment.user._id
+    // }
 
   handleDelete() {
     axios.delete(`/api/locations/${this.props.match.params.id}`)
@@ -34,24 +51,13 @@ class LocationCard extends React.Component {
   }
 
 
-  //   axios.post(`/api/locations/${this.props.match.params.id}/comments`, this.state.comment, {
-  //     headers: { 'Authorization': `${Auth.getToken()}` }
-  //   })
-  //   .then(() => this.getData())
-  //   .catch(err => console.log(err))
-  // }
-  //
-  // isOwner(comment) {
-  //   return Auth.getPayload().sub === comment.user._id
-  // }
-  //
-  // handleCommentDelete(comment) {
-  //   axios.delete(`/api/locations/${this.props.match.params.id}/comments/${comment._id}`, {
-  //     headers: { 'Authorization': Auth.getToken()}
-  //   })
-  //     .then(() => this.getData())
-  //     .catch(err => console.log(err))
-  // }
+  handleCommentDelete(comment) {
+    axios.delete(`/api/locations/${this.props.match.params.id}/comments/${comment._id}`, {
+      headers: { 'Authorization': Auth.getToken() }
+    })
+      .then(() => this.getData())
+      .catch(err => console.log(err))
+  }
 
 
 
@@ -80,16 +86,46 @@ class LocationCard extends React.Component {
 
 
 
-              <Link
+              {Auth.isAuthenticated() &&  <Link
                 className="button is-warning"
                 to={`/locations/${location._id}/edit`}
               >
             Edit
-              </Link>
+              </Link>}
 
-              <button onClick={this.handleDelete}
+              {Auth.isAuthenticated() && <button onClick={this.handleDelete}
                 className="button is-danger">Delete
-              </button>
+              </button>}
+
+              {location.comments.map(comment => (
+                <div key={comment._id} className="card">
+                  <div className="card-content">
+                    {comment.text} - {new Date(comment.createdAt).toLocaleString()}
+                  </div>
+                  <button
+                    className="button is-danger"
+                    onClick={() => this.handleCommentDelete(comment)}
+                  >Delete
+                  </button>
+                </div>
+              ))}
+
+              <hr />
+              {Auth.isAuthenticated() &&
+              <form onSubmit={this.handleSubmit}>
+                <div className="field">
+                  <div className="control">
+                    <textarea
+                      className="textarea"
+                      placeholder="Review"
+                      onChange={this.handleChange}
+                      value={this.state.comment.text || ''}
+                    >
+                    </textarea>
+                  </div>
+                </div>
+                <button className="button" type="submit">Sumbit review</button>
+              </form>}
 
 
             </div>
@@ -102,42 +138,3 @@ class LocationCard extends React.Component {
 
 
 export default LocationCard
-
-
-
-
-
-
-
-
-
-
-          //     {location.comments.map(comment => (
-          //     <div key={comment._id} className="card">
-          //       <div className="card-content">
-          //         {comment.text} - {new Date(comment.createdAt).toLocaleString()}
-          //       </div>
-          //       {this.isOwner(comment) && <button
-          //         className="button is-danger"
-          //         onClick={() => this.handleCommentDelete(comment)}
-          //         >Delete
-          //         </button>}
-          //     </div>
-          //   ))}
-          //
-          //   <hr />
-          // {Auth.isAuthenticated() &&
-          // <form onSubmit={this.handleSubmit}>
-          //   <div className="field">
-          //     <div className="control">
-          //       <textarea
-          //         className="textarea"
-          //         placeholder="Comment........."
-          //         onChange={this.handleChange}
-          //         value={this.state.comment.text || ''}
-          //       >
-          //       </textarea>
-          //     </div>
-          //   </div>
-          //   <button className="button" type="submit">Comment</button>
-          // </form>}

@@ -52,7 +52,7 @@ function deleteRoute(req, res, next) {
 
 
 function commentCreateRoute(req, res, next) {
-  // req.body.user = req.currentUser
+  req.body.user = req.currentUser
   Location
     .findById(req.params.id)
     .then(location => {
@@ -71,8 +71,8 @@ function commentDeleteRoute(req, res, next) {
     .then(location => {
       if (!location) return res.status(404).json({ message: 'Not found' })
       const comment = location.comments.id(req.params.commentId)
-      if (!comment) throw new Error('Not Found')
-      if (!comment.user.equals(req.currentUser._id)) throw new Error('Unauthorized')
+      if (!comment) return res.status(404).json({ message: 'Not found' })
+      // if (!comment.user.equals(req.currentUser._id)) return res.status(404).json({ message: 'Not found' })
       comment.remove()
       return location.save()
     })

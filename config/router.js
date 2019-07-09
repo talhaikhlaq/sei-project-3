@@ -22,10 +22,10 @@ router.route('/profiles/:id')
   .delete(profiles.deleteProfile)
 
 router.route('/locations/:id/comments')
-  .post(secureRoute, locations.commentCreate)
+  .post(locations.commentCreate)
 
 router.route('/locations/:id/comments/:commentId')
-  .delete(secureRoute, locations.commentDelete)
+  .delete(locations.commentDelete)
 
 router.route('/locations')
   .get(locations.indexLocations)

@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import LocationsForm from './LocationsForm'
-// import Auth from '../../lib/Auth'
+import Auth from '../../lib/Auth'
 
 class LocationsEdit extends React.Component {
   constructor() {
