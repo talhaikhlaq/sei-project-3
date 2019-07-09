@@ -29,6 +29,10 @@ class LocationsNew extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
 
+    // make axios request to API to turn postcode into coordinates
+    // add coordinates to this.state.data
+    // then do the rest
+
     axios.post('/api/locations', this.state.data, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
