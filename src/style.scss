@@ -110,6 +110,25 @@
 }
 
 
-.locationedit {
-background-color: Tomato;
+.popuptext {
+color: Tomato;
+}
+
+.popupbutton {
+  display: inline-block;
+  margin: 3px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #grey;
+  background-color: white;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 5px #999;
+  .button:hover {
+    background-color: Tomato;
+  }
+
 }
