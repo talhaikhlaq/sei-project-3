@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ProfileForm = ({ handleChange, handleSubmit, data }) => (
+const ProfileForm = ({ handleChange, handleSubmit, data, handleChangePet }) => (
   <form onSubmit={handleSubmit}>
     <div className="field">
       <label className="label">Name</label>
@@ -45,7 +45,7 @@ const ProfileForm = ({ handleChange, handleSubmit, data }) => (
           className="input"
           name="petName"
           placeholder="Pet's Name"
-          onChange={handleChange}
+          onChange={handleChangePet}
           value={data.pet[0].petName || ''}
         />
       </div>
@@ -57,7 +57,7 @@ const ProfileForm = ({ handleChange, handleSubmit, data }) => (
           className="input"
           name="petAge"
           placeholder="Pet's Age"
-          onChange={handleChange}
+          onChange={handleChangePet}
           value={data.pet[0].petAge || ''}
         />
       </div>
@@ -69,7 +69,7 @@ const ProfileForm = ({ handleChange, handleSubmit, data }) => (
           className="input"
           name="petSpecies"
           placeholder="Pet's Species"
-          onChange={handleChange}
+          onChange={handleChangePet}
           value={data.pet[0].petSpecies || ''}
         />
       </div>
@@ -110,7 +110,7 @@ const ProfileForm = ({ handleChange, handleSubmit, data }) => (
         />
       </div>
     </div>
-    <button type="submit" className="button submit">Submit</button>
+    <button type="submit" className="button">Submit</button>
   </form>
 )
 

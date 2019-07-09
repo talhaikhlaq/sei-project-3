@@ -98,7 +98,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             aboutMe: 'Prefers the term collector rather than hoarder. Likes batting fragile things off tables to hear them smash and currently at war with neighborhood pigeons. ',
             image: 'https://i.imgur.com/Io6f0Eo.jpg?1'
           }],
-          user: users[5]
+          user: users[4]
         },
         {
           ownerName: 'Ruby Charlton',
@@ -113,7 +113,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             aboutMe: 'Loves bright colors and soft fabrics. Using the litter box is a continuous struggle that is continuously up for debate.',
             image: 'https://i.imgur.com/w0wFWaQ.jpg?1'
           }],
-          user: users[6]
+          user: users[5]
         },
         {
 
@@ -129,7 +129,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             aboutMe: 'Greedy eater and stubborn. She was stubborn to house train. Unable to look straight ahead. ',
             image: 'https://i.imgur.com/hyS04HX.jpg?1'
           }],
-          user: users[7]
+          user: users[6]
         },
         {
           ownerName: 'Victoria Lancaster',
@@ -144,7 +144,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             aboutMe: 'Rainy jumps alot and she is not at all trained yet. Traded brain cells for friendliness.' ,
             image: 'https://i.imgur.com/4ocv52i.jpg?1'
           }],
-          user: users[8]
+          user: users[7]
         },
         {
           ownerName: 'Marlon McArthur',
@@ -159,7 +159,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             aboutMe: 'I am an intelligent dog but I was difficult to train. A classic wanderer, I often get lost. ',
             image: 'https://i.imgur.com/yX4sQUE.jpg?1'
           }],
-          user: users[9]
+          user: users[8]
         },
         {
           ownerName: 'Xanthe Deleon',
@@ -174,7 +174,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             aboutMe: 'I love to stare intently into the distance at absolutely nothing.',
             image: 'https://i.imgur.com/peslsHh.jpg'
           }],
-          user: users[10]
+          user: users[9]
         },
         {
           ownerName: 'Devin Parry',
@@ -189,7 +189,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             aboutMe: 'Goob is generally disatisfied with all humans and other animals. Shows general distaste at all times.',
             image: 'https://i.imgur.com/YaZz7nk.jpg?1'
           }],
-          user: users[11]
+          user: users[10]
         },
         {
           ownerName: 'Abu Allan',
@@ -204,7 +204,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             aboutMe: 'Only loves one person, still wont listen to them.',
             image: 'https://i.imgur.com/MlKDIAA.jpg?1'
           }],
-          user: users[12]
+          user: users[11]
         },
         {
           ownerName: 'Henley Marquez',
@@ -219,7 +219,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             aboutMe: 'Will not allow you to brush your teeth or wash your hands.',
             image: 'https://i.imgur.com/lPc079Z.jpg?1'
           }],
-          user: users[13]
+          user: users[12]
         },
         {
           ownerName: 'Taha Choi',
@@ -234,7 +234,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
             aboutMe: 'Gentle angel baby or neurotic mess, no inbetween.',
             image: 'https://i.imgur.com/kCPyjPb.jpg?1'
           }],
-          user: users[14]
+          user: users[13]
         }
       ])
     })
