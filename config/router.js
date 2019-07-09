@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const users = require('../controllers/auth')
-// const secureRoute = require('../lib/secureRoute')
+const secureRoute = require('../lib/secureRoute')
 const profiles = require('../controllers/usersAndPets')
 
 const locations  = require('../controllers/locations')
@@ -14,7 +14,7 @@ router.route('/login')
 
 router.route('/profiles')
   .get(profiles.indexProfiles)
-  .post(profiles.createProfile)
+  .post(secureRoute, profiles.createProfile)
 
 router.route('/profiles/:id')
   .get(profiles.showProfile)

@@ -34,7 +34,9 @@ class ProfileNew extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
 
-    axios.post('/api/profiles', this.state.data)
+    axios.post('/api/profiles', this.state.data, {
+      headers: { Authorization: `${Auth.getToken()}` }
+    })
       .then(() => this.props.history.push('/friends'))
       .catch(err => console.log(err.response))
   }
@@ -47,7 +49,7 @@ class ProfileNew extends React.Component {
   render() {
     return (
       <section className="section">
-        <h1> Fill in the profile to create your profile!</h1>
+        <h1 className="title"> Fill in the form to create your profile!</h1>
         <div className="container">
           <ProfileForm
             data={this.state.data}

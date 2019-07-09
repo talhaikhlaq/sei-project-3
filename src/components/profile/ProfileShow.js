@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Auth from '../../lib/Auth'
@@ -23,7 +23,6 @@ class ProfileShow extends React.Component {
   render() {
     if (!this.state.profile) return null
     const { profile } = this.state
-    this.isOwner()
     return (
       <main className="section">
         <div className="container">

@@ -38,6 +38,18 @@ const ProfileForm = ({ handleChange, handleSubmit, data, handleChangePet, addPet
         />
       </div>
     </div>
+    <div className="field">
+      <label className="label">Image</label>
+      <div className="control">
+        <input
+          className="input"
+          name="image"
+          placeholder="Image URL"
+          onChange={handleChange}
+          value={data.image || ''}
+        />
+      </div>
+    </div>
     {data.pet.map((p, index) => (
       <Fragment key={p._id}>
         <div className="field">
@@ -59,7 +71,7 @@ const ProfileForm = ({ handleChange, handleSubmit, data, handleChangePet, addPet
               className="input"
               name="petAge"
               placeholder="Pet's Age"
-              onChange={handleChangePet}
+              onChange={(e) => handleChangePet(e, index)}
               value={p.petAge || ''}
             />
           </div>
@@ -71,7 +83,7 @@ const ProfileForm = ({ handleChange, handleSubmit, data, handleChangePet, addPet
               className="input"
               name="petSpecies"
               placeholder="Pet's Species"
-              onChange={handleChangePet}
+              onChange={(e) => handleChangePet(e, index)}
               value={p.petSpecies || ''}
             />
           </div>
@@ -83,7 +95,7 @@ const ProfileForm = ({ handleChange, handleSubmit, data, handleChangePet, addPet
               className="input"
               name="hobbies"
               placeholder="Hobbies"
-              onChange={handleChange}
+              onChange={(e) => handleChangePet(e, index)}
               value={p.hobbies || ''}
             />
           </div>
@@ -95,7 +107,7 @@ const ProfileForm = ({ handleChange, handleSubmit, data, handleChangePet, addPet
               className="textarea"
               name="aboutMe"
               placeholder="About Me"
-              onChange={handleChange}
+              onChange={(e) => handleChangePet(e, index)}
               value={p.aboutMe || ''}
             />
           </div>
@@ -107,14 +119,14 @@ const ProfileForm = ({ handleChange, handleSubmit, data, handleChangePet, addPet
               className="input"
               name="image"
               placeholder="Image URL"
-              onChange={handleChange}
-              value={data.pet[0].image || ''}
+              onChange={(e) => handleChangePet(e, index)}
+              value={p.image || ''}
             />
           </div>
         </div>
       </Fragment>
     ))}
-    <button type="button" className="button" onClick={addPet}>Add Pet</button>
+    <button type="button" className="button" onClick={addPet}>Add Another Pet</button>
     <button type="submit" className="button">Submit</button>
   </form>
 )
