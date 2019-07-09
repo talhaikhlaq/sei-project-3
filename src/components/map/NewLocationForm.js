@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const EditForm = ({ data, handleChange, handleSubmit }) => (
+const NewLocationForm = ({ handleChange, handleSubmit }) => (
   <form onSubmit={handleSubmit}>
 
     <div className="field">
@@ -12,7 +12,7 @@ const EditForm = ({ data, handleChange, handleSubmit }) => (
           name="name"
           placeholder="Name"
           onChange={handleChange}
-          value={data.name || ''}
+          value={''}
         />
       </div>
     </div>
@@ -21,7 +21,7 @@ const EditForm = ({ data, handleChange, handleSubmit }) => (
     <div className="control">
       <select
         onChange={handleChange} name="Type of the place">
-        <option disabled value={data.category || ''}>Choose</option>
+        <option disabled value={''}>Choose</option>
         <option value="1">Pub</option>
         <option value="2">Restaurant</option>
         <option value="3">Cafe</option>
@@ -39,7 +39,7 @@ const EditForm = ({ data, handleChange, handleSubmit }) => (
           name="name"
           placeholder="House number"
           onChange={handleChange}
-          value={data.address.buildingNumber || ''}
+          value={ ''}
         />
       </div>
     </div>
@@ -53,7 +53,7 @@ const EditForm = ({ data, handleChange, handleSubmit }) => (
           name="name"
           placeholder="Street"
           onChange={handleChange}
-          value={data.address.street || ''}
+          value={ ''}
         />
       </div>
     </div>
@@ -66,7 +66,7 @@ const EditForm = ({ data, handleChange, handleSubmit }) => (
           name="name"
           placeholder="Postcode"
           onChange={handleChange}
-          value={data.address.postcode || ''}
+          value={''}
         />
       </div>
     </div>
@@ -80,7 +80,7 @@ const EditForm = ({ data, handleChange, handleSubmit }) => (
           name="image"
           placeholder="Image"
           onChange={handleChange}
-          value={data.image || ''}
+          value={ ''}
         />
       </div>
     </div>
@@ -94,4 +94,4 @@ const EditForm = ({ data, handleChange, handleSubmit }) => (
 
 
 
-export default EditForm
+export default NewLocationForm
