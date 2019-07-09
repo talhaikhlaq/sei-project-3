@@ -17,6 +17,7 @@ class ProfileNew extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleChangePet = this.handleChangePet.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.additionalPet = this.additionalPet.bind(this)
   }
 
   handleChange({ target: { name, value } }) {
@@ -24,9 +25,9 @@ class ProfileNew extends React.Component {
     this.setState({ data })
   }
 
-  handleChangePet({ target: { name, value } }) {
+  handleChangePet({ target: { name, value } }, index) {
     const data = JSON.parse(JSON.stringify(this.state.data))
-    data.pet[0][name] = value
+    data.pet[index][name] = value
     this.setState({ data })
   }
 
@@ -38,6 +39,10 @@ class ProfileNew extends React.Component {
       .catch(err => console.log(err.response))
   }
 
+  additionalPet() {
+    const data = { ...this.state.data, pet: [...this.state.data.pet, {} ] }
+    this.setState({ data })
+  }
 
   render() {
     return (
@@ -49,6 +54,7 @@ class ProfileNew extends React.Component {
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
             handleChangePet={this.handleChangePet}
+            addPet={this.additionalPet}
           />
         </div>
       </section>
