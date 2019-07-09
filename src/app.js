@@ -13,6 +13,7 @@ import ProfileEdit from './components/profile/ProfileEdit'
 import ProfileNew from './components/profile/ProfileNew'
 import Register from './components/auth/Register'
 import LocationCard from './components/map/LocationCard'
+import LocationsEdit from './components/map/LocationsEdit'
 import Login from './components/auth/Login'
 // SecureRoute to be imported and tested towards the end
 
@@ -31,6 +32,7 @@ class App extends React.Component {
             <Route path="/friends" component={Profiles} />
             <Route path="/map" component={Map} />
             <Route path="/locations/:id" component={LocationCard} />
+            <Route path="/locations/:id/edit" component={LocationsEdit} />
             <Route exact path="/" component={Home} />
           </Switch>
         </main>

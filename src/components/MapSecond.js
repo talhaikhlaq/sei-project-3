@@ -46,7 +46,18 @@ class MapSecond extends React.Component {
 
           <div style="background-image: url('${point.image}'); height: 120px; min-width: 150px; background-repeat: no-repeat; background-size: cover; background-position: center;">
 
-          <Link to={`/locations/${point._id}`} className="title">More</Link>
+
+          <Link to="/locations/location/:id" className="title">More</Link>
+
+
+          <Link className="button is-warning" to={`/locations/${point._id}`} >
+                        More
+                      </Link>
+
+
+          <a href=${`/locations/${point._id}`} class="subtitle is-6 is-link" target="_blank" rel="noopener noreferrer">Go to their website</a>
+
+
 
 
             </main>
