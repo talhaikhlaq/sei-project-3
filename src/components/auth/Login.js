@@ -52,7 +52,7 @@ class Login extends React.Component {
             </div>
             <div className="field">
               <label className="label">Password</label>
-              <div className="control">
+              <div className="control has-icons-left">
                 <input
                   className={`input ${this.state.error ? 'is-danger' : ''}`}
                   type="password"
