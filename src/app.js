@@ -9,7 +9,9 @@ import Navbar from './components/common/Navbar'
 import Map from './components/map/Map'
 import Profiles from './components/profile/Profiles'
 import ProfileShow from './components/profile/ProfileShow'
+import ProfileEdit from './components/profile/ProfileEdit'
 import Register from './components/auth/Register'
+import LocationCard from './components/map/LocationCard'
 import Login from './components/auth/Login'
 
 class App extends React.Component {
@@ -21,9 +23,11 @@ class App extends React.Component {
           <Switch>
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
+            <Route path="/friends/edit/:id" component={ProfileEdit} />
             <Route path="/friends/:id" component={ProfileShow} />
             <Route path="/friends" component={Profiles} />
             <Route path="/map" component={Map} />
+            <Route path="/locations/:id" component={LocationCard} />
             <Route exact path="/" component={Home} />
           </Switch>
         </main>
