@@ -16,16 +16,11 @@ class ProfileShow extends React.Component {
   }
 
   render() {
-<<<<<<< HEAD
     if (!this.state.profile) return null
-=======
-    if (this.state.profile) return null
->>>>>>> development
     const { profile } = this.state
     return (
       <main className="section">
         <div className="container">
-<<<<<<< HEAD
           <div className="columns">
             <div className="column is-half">
               <h2 className="title">{profile.ownerName}</h2>
@@ -34,24 +29,12 @@ class ProfileShow extends React.Component {
                 <img src={profile.image} alt={profile.ownerName} />
               </figure>
               <hr />
-=======
-          <h2 className="title">{profile.ownerName}</h2>
-          <hr />
-          <div className="columns">
-            <div className="column is-half">
-              <figure className="image">
-                <img src={profile.image} alt={profile.ownerName} />
-              </figure>
-            </div>
-            <div className="column is-half">
->>>>>>> development
               <h4 className="title is-4">Age</h4>
               <p>{profile.ownerAge}</p>
               <hr />
               <h4 className="title is-4">Occupation</h4>
               <p>{profile.ownerOccupation}</p>
               <hr />
-<<<<<<< HEAD
             </div>
             <div className="column is-half">
               <h2 className="title">Pet Name: {profile.pet[0].petName} </h2>
@@ -60,43 +43,19 @@ class ProfileShow extends React.Component {
                 <img src={profile.pet[0].image} alt={profile.pet[0].petName} />
               </figure>
               <hr />
-                <h4 className="title is-4">Species</h4>
-                <p>{profile.pet[0].petSpecies}</p>
-                <hr />
-                <h4 className="title is-4">Hobbies</h4>
-                <p>{profile.pet[0].hobbies}</p>
-                <hr />
-                <h4 className="title is-4">About Me</h4>
-                <p>{profile.pet[0].aboutMe}</p>
+              <h4 className="title is-4">Species</h4>
+              <p>{profile.pet[0].petSpecies}</p>
+              <hr />
+              <h4 className="title is-4">Hobbies</h4>
+              <p>{profile.pet[0].hobbies}</p>
+              <hr />
+              <h4 className="title is-4">About Me</h4>
+              <p>{profile.pet[0].aboutMe}</p>
             </div>
           </div>
         </div>
       </main>
 
-=======
-              <h4 className="title is-4">Pet</h4>
-              <p>{profile.pronouns}</p>
-              <hr />
-              <h4 className="title is-4">Looking For: </h4>
-              <p>{profile.lookingFor}</p>
-              <hr />
-              <h4 className="title is-4">Hobbies</h4>
-              <p>{profile.hobbies}</p>
-              <hr />
-              <h4 className="title is-4">About Me</h4>
-              <p>{profile.aboutMe}</p>
-            </div>
-          </div>
-          {this.isOwner() && <Link
-            className="button is-primary is-medium"
-            to={`/cats/${profile._id}/edit`}
-          >
-            Edit
-          </Link>}
-          {this.isOwner() && <button onClick={this.handleDelete} className="button is-danger is-medium">Delete</button>}
-        </div>
-      </main>
->>>>>>> development
     )
   }
 }
