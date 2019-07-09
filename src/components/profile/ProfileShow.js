@@ -43,6 +43,9 @@ class ProfileShow extends React.Component {
                 <img src={profile.pet[0].image} alt={profile.pet[0].petName} />
               </figure>
               <hr />
+              <h4 className="title is-4">Age</h4>
+              <p>{profile.pet[0].petAge}</p>
+              <hr />
               <h4 className="title is-4">Species</h4>
               <p>{profile.pet[0].petSpecies}</p>
               <hr />
@@ -53,6 +56,10 @@ class ProfileShow extends React.Component {
               <p>{profile.pet[0].aboutMe}</p>
             </div>
           </div>
+
+          <Link className="button is-dark is medium" to={`/friends/edit/${profile._id}`}>
+          Edit Profile</Link>
+
         </div>
       </main>
 
