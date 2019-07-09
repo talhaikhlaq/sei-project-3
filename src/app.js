@@ -14,6 +14,7 @@ import ProfileNew from './components/profile/ProfileNew'
 import Register from './components/auth/Register'
 import LocationCard from './components/map/LocationCard'
 import LocationsEdit from './components/map/LocationsEdit'
+import LocationsNew from './components/map/LocationsNew'
 import Login from './components/auth/Login'
 // SecureRoute to be imported and tested towards the end
 
@@ -31,6 +32,7 @@ class App extends React.Component {
             <Route path="/friends/:id" component={ProfileShow} />
             <Route path="/friends" component={Profiles} />
             <Route path="/map" component={Map} />
+            <Route path="/locations/new" component={LocationsNew} />
             <Route path="/locations/:id/edit" component={LocationsEdit} />
             <Route path="/locations/:id" component={LocationCard} />
 
