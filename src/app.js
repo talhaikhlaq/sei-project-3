@@ -10,6 +10,7 @@ import Map from './components/map/Map'
 import Profiles from './components/profile/Profiles'
 import ProfileShow from './components/profile/ProfileShow'
 import Register from './components/auth/Register'
+import Login from './components/auth/Login'
 
 class App extends React.Component {
   render() {
@@ -18,6 +19,7 @@ class App extends React.Component {
         <main>
           <Navbar />
           <Switch>
+            <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/friends/:id" component={ProfileShow} />
             <Route path="/friends" component={Profiles} />

@@ -69,7 +69,7 @@ class Register extends React.Component {
             </div>
             <div className="field">
               <label className="label">Password</label>
-              <div className="control">
+              <div className="control has-icons-left">
                 <input
                   className={`input ${this.state.errors.password ? 'is-danger' : ''}`}
                   type="password"
@@ -77,12 +77,15 @@ class Register extends React.Component {
                   placeholder="Password"
                   onChange={this.handleChange}
                 />
+                <span className="icon is-small is-left">
+                  <i className="fas fa-lock"></i>
+                </span>
               </div>
               {this.state.errors.password && <small className="help is-danger">{this.state.errors.password}</small>}
             </div>
             <div className="field">
               <label className="label">Password Confirmation</label>
-              <div className="control">
+              <div className="control has-icons-left">
                 <input
                   className={`input ${this.state.errors.passwordConfirmation ? 'is-danger' : ''}`}
                   type="password"
@@ -90,6 +93,9 @@ class Register extends React.Component {
                   placeholder="Password Confirmation"
                   onChange={this.handleChange}
                 />
+                <span className="icon is-small is-left">
+                  <i className="fas fa-lock"></i>
+                </span>
               </div>
               {this.state.errors.passwordConfirmation && <small className="help is-danger">{this.state.errors.passwordConfirmation}</small>}
             </div>
