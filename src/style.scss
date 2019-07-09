@@ -85,7 +85,7 @@
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
-.log-in {
+.log-in, .log-out {
   display: inline-block;
   margin: 3px;
   font-size: 24px;
@@ -98,12 +98,12 @@
   border: none;
   border-radius: 25px;
   box-shadow: 0 5px #999;
-  .log-in:hover {
+  .log-in:hover, .log-out:hover {
     background-color: white;
   }
 }
 
-.log-in:active {
+.log-in:active, .log-out:active {
   background-color: #gray;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
