@@ -41,9 +41,13 @@ class MapSecond extends React.Component {
            <h1 class="title is-5">${point.name}</h1>
 
            <h2 class="subtitle is-6">${point.address.buildingNumber}  ${point.address.street}, ${point.address.postcode}</h2>
-           <a href=${point.website} class="subtitle is-6 is-link" target="_blank" rel="noopener noreferrer">Go to their website</a>
 
-          <div style="background-image: url('${point.image}'); height: 120px; min-width: 150px; background-repeat: no-repeat; background-size: cover; background-position: center;">
+           <a href="/locations/${point._id}" class="subtitle is-6 is-link" target="_blank" rel="noopener noreferrer">Edit this location</a>
+              <br/>
+
+          <a href=${point.website} class="subtitle is-6 is-link" target="_blank" rel="noopener noreferrer">Go to their website</a>
+
+          <div style="background-image: url('${point.image}'); height: 120px; min-width: 150px; background-repeat: no-repeat; background-size: cover; background-position: center;"></div>
             </main>
           `))
     })

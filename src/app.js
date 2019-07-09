@@ -31,8 +31,9 @@ class App extends React.Component {
             <Route path="/friends/:id" component={ProfileShow} />
             <Route path="/friends" component={Profiles} />
             <Route path="/map" component={Map} />
-            <Route path="/locations/:id" component={LocationCard} />
             <Route path="/locations/:id/edit" component={LocationsEdit} />
+            <Route path="/locations/:id" component={LocationCard} />
+
             <Route exact path="/" component={Home} />
           </Switch>
         </main>

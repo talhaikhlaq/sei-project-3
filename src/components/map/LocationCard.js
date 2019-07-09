@@ -11,6 +11,8 @@ class LocationCard extends React.Component {
     this.state = { location: null }
     this.handleSubmit = this.handleSubmit.bind(this)
 
+
+
   }
 
   componentDidMount() {
@@ -21,14 +23,12 @@ class LocationCard extends React.Component {
 
 
 
-handleSubmit(e) {
-  e.preventDefault()
-}
+  handleSubmit(e) {
+    e.preventDefault()
+  }
 
-handleDelete() {
-    axios.delete(`/api/locations/${this.props.match.params.id}`, {
-      headers: { Authorization: `Bearer ${Auth.getToken()}`}
-    })
+  handleDelete() {
+    axios.delete(`/api/locations/${this.props.match.params.id}`)
       .then(() => this.props.history.push('/locations'))
       .catch(err => console.log(err.response))
   }
@@ -44,32 +44,36 @@ handleDelete() {
             <div className="column is-half">
               <figure className="image">
                 <img src={location.image} alt={location.name} />
-        </figure>
-        </div>
+              </figure>
+            </div>
 
-    <div className="column is-half">
-          <h1 className="title">{location.name}</h1>
-          <h2 className="subtitle is-5">{location.category}</h2>
-          <h3 className="subtitle is-6">{location.address.buildingNumber} {location.address.street} {location.address.postcode}</h3>
-          <a href={location.website} class="subtitle is-6" target="_blank" rel="noopener noreferrer">See their website</a>
+            <div className="column is-half">
+              <h1 className="title">{location.name}</h1>
+              <h2 className="subtitle is-5">{location.category}</h2>
+              <h3 className="subtitle is-6">{location.address.buildingNumber} {location.address.street} {location.address.postcode}</h3>
+              <a href={location.website} className="subtitle is-6" target="_blank" rel="noopener noreferrer">See their website</a>
 
 
-          <hr />
+              <hr />
 
-          <Link
-            className="button is-warning"
-            to={`/locations/${location._id}/edit`}
-          >
+
+
+
+              <Link
+                className="button is-warning"
+                to={`/locations/${location._id}/edit`}
+              >
             Edit
-          </Link>
+              </Link>
 
-          <button onClick={this.handleDelete}
-                className="button is-danger">Delete</button>
+              <button onClick={this.handleDelete}
+                className="button is-danger">Delete
+              </button>
 
 
 
-        </div>
-        </div>
+            </div>
+          </div>
         </div>
       </section>
     )

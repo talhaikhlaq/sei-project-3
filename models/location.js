@@ -3,12 +3,12 @@ const mongoose = require('mongoose')
 
 const locationSchema =  new mongoose.Schema({
   name: { type: String, required: true },
-  category: { type: String, required: true },
+  category: { type: String, required: false },
   address: {
     buildingNumber: { type: String },
-    street: { type: String, required: true },
+    street: { type: String, required: false },
     city: { type: String },
-    postcode: { type: String, required: true }
+    postcode: { type: String, required: false }
   },
   coordinates: {
     lat: { type: Number },
