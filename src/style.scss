@@ -62,7 +62,7 @@
   padding: 15px;
 }
 
-.sign-up {
+.sign-up, .submit, .edit {
   display: inline-block;
   margin: 3px;
   font-size: 24px;
@@ -75,12 +75,12 @@
   border: none;
   border-radius: 25px;
   box-shadow: 0 5px #999;
-  .sign-up:hover {
+  .sign-up:hover, .submit:hover, .edit:hover {
     background-color: white;
   }
 }
 
-.sign-up:active {
+.sign-up:active, .submit:active, .edit:active {
   background-color: #gray;
   box-shadow: 0 5px #666;
   transform: translateY(4px);

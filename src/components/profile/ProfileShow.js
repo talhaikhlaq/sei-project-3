@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import Auth from '../../lib/Auth'
 
 class ProfileShow extends React.Component {
   constructor() {
@@ -15,9 +16,14 @@ class ProfileShow extends React.Component {
       .catch(err => console.log(err))
   }
 
+  isOwner() {
+    return Auth.isAuthenticated() && Auth.getPayload().sub === this.state.profile.user._id
+  }
+
   render() {
     if (!this.state.profile) return null
     const { profile } = this.state
+    this.isOwner()
     return (
       <main className="section">
         <div className="container">
@@ -57,8 +63,12 @@ class ProfileShow extends React.Component {
             </div>
           </div>
 
-          <Link className="button is-dark is medium" to={`/friends/edit/${profile._id}`}>
-          Edit Profile</Link>
+          {this.isOwner() && <Link
+            className="button edit"
+            to={`/friends/edit/${profile._id}`}
+          >
+          Edit Profile
+          </Link>}
 
         </div>
       </main>
