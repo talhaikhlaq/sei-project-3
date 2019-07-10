@@ -78,10 +78,13 @@
   border: none;
   border-radius: 25px;
   box-shadow: 0 5px #999;
-  width: 150px;
   .button:hover {
     background-color: white;
   }
+}
+
+.edit-button {
+  width: 150px;
 }
 
 .button:active {
@@ -244,21 +247,53 @@
   justify-content: center;
   align-items: center;
   .profile-show {
-    display:flex;
+    display: flex;
     position: relative;
     flex-direction: column;
     width: 90%;
     height: 500px;
-  }
-  .profile-show:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    box-shadow: -5px 5px 20px 5px #777;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      box-shadow: -5px 5px 20px 5px #777;
+    }
+    div.profile-heading {
+      width: 60%
+    }
+    div.profile-body {
+      width: 60%;
+      margin-left: 6.25%;
+      display: flex;
+      p {
+        width: 40%;
+      }
+    }
+
+    div.profile-pictures {
+      width: 40%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      figure {
+        width: 90%;
+      }
+      figure:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: -1;
+          box-shadow: -5px 5px 20px 5px #777;
+      }
+
+    }
   }
   #names {
 
@@ -266,7 +301,8 @@
     font-size: 50px;
     font-weight: bold;
   }
-  #about {
-    width: 200px;
+  #about-owner {
+    // width: 200px;
+    margin: 5px;
   }
 }

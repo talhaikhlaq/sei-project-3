@@ -26,19 +26,32 @@ class ProfileShowTrial extends React.Component {
     return (
       <main className="main-show">
         <div className="profile-show">
-          <h2 id="names">{profile.ownerName} & {profile.pet[0].petName}</h2>
+          <div className="profile-heading">
+            <h2 id="names">{profile.ownerName} & {profile.pet[0].petName}</h2>
+          </div>
 
-          <p id="about">About {profile.ownerName} <br/> Age: {profile.ownerAge} <br/> Occupation: {profile.ownerOccupation}</p>
+          <div className="profile-body">
+            <p>About {profile.ownerName} <br/> Age: {profile.ownerAge} <br/> Occupation: {profile.ownerOccupation}</p>
 
-          <p id="about">About {profile.pet[0].petName} <br/>
-          Age: {profile.pet[0].petAge} <br/>
-          Species: {profile.pet[0].petSpecies} <br/>
-          Hobbies: {profile.pet[0].hobbies} <br/>
-          About Me: {profile.pet[0].aboutMe}
-          </p>
+            <p>About {profile.pet[0].petName} <br/>
+            Age: {profile.pet[0].petAge} <br/>
+            Species: {profile.pet[0].petSpecies} <br/>
+            Hobbies: {profile.pet[0].hobbies} <br/>
+            About Me: {profile.pet[0].aboutMe}
+            </p>
+          </div>
+
+          <div className="profile-pictures">
+          <figure>
+          <img src={profile.image} alt={profile.ownerName} />
+          </figure>
+            <figure>
+              <img src={profile.pet[0].image} alt={profile.pet[0].petName} />
+            </figure>
+          </div>
 
           {this.isOwner() && <Link
-            className="button"
+            className="button edit-button"
             to={`/friends/edit/${profile._id}`}
           >
             Edit Profile
@@ -52,10 +65,3 @@ class ProfileShowTrial extends React.Component {
 }
 
 export default ProfileShowTrial
-
-// <figure>
-//   <img src={profile.pet[0].image} alt={profile.pet[0].petName} />
-// </figure>
-// <figure>
-//   <img src={profile.image} alt={profile.ownerName} />
-// </figure>
