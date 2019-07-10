@@ -49,13 +49,16 @@ class ProfileNew extends React.Component {
   render() {
     return (
       <section className="section">
-        <ProfileForm
-          data={this.state.data}
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-          handleChangePet={this.handleChangePet}
-          addPet={this.additionalPet}
-        />
+        <h1 className="title"> Fill in the form to create your profile!</h1>
+        <div className="container">
+          <ProfileForm
+            data={this.state.data}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+            handleChangePet={this.handleChangePet}
+            addPet={this.additionalPet}
+          />
+        </div>
       </section>
 
     )
