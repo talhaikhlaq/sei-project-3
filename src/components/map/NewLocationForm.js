@@ -12,7 +12,7 @@ const NewLocationForm = ({ handleChange, handleSubmit }) => (
           name="name"
           placeholder="Name"
           onChange={handleChange}
-          value={''}
+          value={null}
         />
       </div>
     </div>
@@ -36,10 +36,10 @@ const NewLocationForm = ({ handleChange, handleSubmit }) => (
       <div className="control">
         <input
           className="input"
-          name="name"
+          name="buildingNumber"
           placeholder="House number"
           onChange={handleChange}
-          value={ ''}
+          value={null}
         />
       </div>
     </div>
@@ -50,10 +50,10 @@ const NewLocationForm = ({ handleChange, handleSubmit }) => (
       <div className="control">
         <input
           className="input"
-          name="name"
+          name="street"
           placeholder="Street"
           onChange={handleChange}
-          value={ ''}
+          value={null}
         />
       </div>
     </div>
@@ -63,10 +63,10 @@ const NewLocationForm = ({ handleChange, handleSubmit }) => (
       <div className="control">
         <input
           className="input"
-          name="name"
+          name="postcode"
           placeholder="Postcode"
           onChange={handleChange}
-          value={''}
+          value={null}
         />
       </div>
     </div>
@@ -80,7 +80,7 @@ const NewLocationForm = ({ handleChange, handleSubmit }) => (
           name="image"
           placeholder="Image"
           onChange={handleChange}
-          value={ ''}
+          value={null}
         />
       </div>
     </div>

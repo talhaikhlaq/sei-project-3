@@ -50,10 +50,43 @@ function deleteRoute(req, res, next) {
     .catch(next)
 }
 
+
+function commentCreateRoute(req, res, next) {
+  req.body.user = req.currentUser
+  Location
+    .findById(req.params.id)
+    .then(location => {
+      if (!location) return res.status(404).json({ message: 'Not found' })
+      location.comments.push(req.body)
+      return location.save()
+    })
+    .then(location => res.status(201).json(location))
+    .catch(next)
+}
+
+
+function commentDeleteRoute(req, res, next) {
+  Location
+    .findById(req.params.id)
+    .then(location => {
+      if (!location) return res.status(404).json({ message: 'Not found' })
+      const comment = location.comments.id(req.params.commentId)
+      if (!comment) return res.status(404).json({ message: 'Not found' })
+      // if (!comment.user.equals(req.currentUser._id)) return res.status(404).json({ message: 'Not found' })
+      comment.remove()
+      return location.save()
+    })
+    .then(location => res.status(200).json(location))
+    .catch(next)
+}
+
+
 module.exports = {
   indexLocations: indexRoute,
   showLocation: showRoute,
   createLocation: createRoute,
   editLocation: editRoute,
-  deleteLocation: deleteRoute
+  deleteLocation: deleteRoute,
+  commentCreate: commentCreateRoute,
+  commentDelete: commentDeleteRoute
 }

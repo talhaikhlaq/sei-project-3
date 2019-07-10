@@ -9,6 +9,7 @@ class LocationsEdit extends React.Component {
 
     this.state = { data: null }
     this.handleChange = this.handleChange.bind(this)
+    this.handleAddressChange = this.handleAddressChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
@@ -23,9 +24,34 @@ class LocationsEdit extends React.Component {
     this.setState({ data })
   }
 
+  handleAddressChange({ target: { name, value } }) {
+    const address = { ...this.state.data.address, [name]: value }
+    const data = { ...this.state.data, address }
+    this.setState({ data })
+  }
+
   handleSubmit(e) {
     e.preventDefault()
+    this.translatePostcode()
 
+  }
+
+  translatePostcode() {
+    const { postcode } = this.state.data.address
+    axios.get(`https://postcodes.io/postcodes/${postcode}`)
+      .then(res => {
+        const coordinates = {
+          ...this.state.data.address.coordinates,
+          lat: res.data.result.latitude,
+          lng: res.data.result.longitude
+        }
+        const data = { ...this.state.data, coordinates }
+        this.setState({ data }, () => this.editLocation())
+      })
+      .catch(err => console.log(err.response))
+  }
+
+  editLocation() {
     axios.put(`/api/locations/${this.props.match.params.id}`, this.state.data)
       .then(() => this.props.history.push(`/locations/${this.props.match.params.id}`))
       .catch(err => console.log(err.response))
@@ -40,6 +66,7 @@ class LocationsEdit extends React.Component {
           <LocationsForm
             data={this.state.data}
             handleChange={this.handleChange}
+            handleAddressChange={this.handleAddressChange}
             handleSubmit={this.handleSubmit}
           />
         </div>
