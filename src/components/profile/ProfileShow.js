@@ -31,12 +31,14 @@ class ProfileShow extends React.Component {
               <h2 id="names">{profile.firstName} & {profile.pet[0].petName}</h2>
             </div>
             <div className="profile-body">
-              <p className="about-p">About {profile.firstName} <br/> Age: {profile.ownerAge} <br/> Occupation: {profile.ownerOccupation}</p>
-              <p className="about-p">About {profile.pet[0].petName} <br/>
-              Age: {profile.pet[0].petAge} <br/>
+              <p className="about-p">About {profile.firstName}</p>
+              <p className="about-info"> Age: {profile.ownerAge} <br/> Occupation: {profile.ownerOccupation}</p>
+
+              <p className="about-p">About {profile.pet[0].petName} </p>
+              <p className="about-info"> Age: {profile.pet[0].petAge} <br/>
               Species: {profile.pet[0].petSpecies} <br/>
               Hobbies: {profile.pet[0].hobbies} <br/>
-              About Me: {profile.pet[0].aboutMe}
+              Personality: {profile.pet[0].aboutMe}
               </p>
             </div>
             {this.isOwner() && <Link

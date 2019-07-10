@@ -260,8 +260,19 @@
       width: 100%;
       margin-left: 10%;
       display: flex;
-      .about-p {
+      // flex-direction: column;
+      flex-wrap: wrap;
+      .about-p, .about-info {
         width: 40%;
+      }
+      .owner-info {
+        margin-bottom: 10px;
+      }
+      .about-p {
+        font-size: 30px
+      }
+      .about-info {
+        font-size: 19px;
       }
     }
 
