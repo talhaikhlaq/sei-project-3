@@ -1,80 +1,76 @@
 import React from 'react'
 import axios from 'axios'
 import Auth from '../../lib/Auth'
-import NewLocationForm from './NewLocationForm'
+import LocationsForm from './LocationsForm'
 
 class LocationsNew extends React.Component {
   constructor() {
     super()
 
-    this.state = { data: {} }
+    this.state = {
+      data: { address: '' }
+    }
+
     this.handleChange = this.handleChange.bind(this)
+    this.handleAddressChange = this.handleAddressChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
 
   }
 
-  componentDidMount() {
-    axios.get(`/api/locations/${this.props.match.params.id}`)
-      .then(res => this.setState({ data: res.data }))
-      .catch(err => console.log(err.response))
-  }
 
   handleChange({ target: { name, value } }) {
     const data = { ...this.state.data, [name]: value }
     this.setState({ data })
   }
 
-  // .then(() => this.props.history.push('/locations'))
+  handleAddressChange({ target: { name, value } }) {
+    const address = { ...this.state.data.address, [name]: value }
+    const data = { ...this.state.data, address }
+    this.setState({ data })
+  }
 
-
-
-  // make axios request to API to turn postcode into coordinates
-  // add coordinates to this.state.data
-  // then do the rest
 
   handleSubmit(e) {
     e.preventDefault()
-    e.translatePostcode()
-    e.newLocation()
+    this.translatePostcode()
   }
 
   translatePostcode() {
-    axios.get('api.postcodes.io/random/postcodes')
-      .then(res => console.log(res))
+    const { postcode } = this.state.data.address
+    axios.get(`https://postcodes.io/postcodes/${postcode}`)
+      .then(res => {
+        const coordinates = {
+          lat: res.data.result.latitude,
+          lng: res.data.result.longitude
+        }
+        const data = { ...this.state.data, coordinates }
+        this.setState({ data }, () => this.newLocation())
+      })
       .catch(err => console.log(err.response))
   }
-  // .then(res => this.setState({ data: res.data }))
 
   newLocation() {
     axios.post('/api/locations', this.state.data, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
-      .then(() => this.props.history.push('/locations'))
+      .then(() => this.props.history.push('/map'))
       .catch(err => console.log(err.response))
 
   }
 
 
-
-
-
-
-
-
-
-
-
   render() {
+    console.log(this.state)
     return (
       <section className="section">
         <div className="container">
-          <NewLocationForm
+          <LocationsForm
             data={this.state.data}
             handleChange={this.handleChange}
+            handleAddressChange={this.handleAddressChange}
             handleSubmit={this.handleSubmit}
           />
         </div>
-
       </section>
     )
   }

@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const EditForm = ({ data, handleChange, handleSubmit }) => (
+const EditForm = ({ data, handleChange, handleAddressChange, handleSubmit }) => (
   <form onSubmit={handleSubmit}>
 
     <div className="field">
@@ -20,8 +20,11 @@ const EditForm = ({ data, handleChange, handleSubmit }) => (
 
     <div className="control">
       <select
-        onChange={handleChange} name="Type of the place">
-        <option disabled value={data.category || ''}>Choose</option>
+        onChange={handleChange}
+        name="category"
+        defaultValue={data.category || 0}
+      >
+        <option disabled selected value="0">Choose</option>
         <option value="1">Pub</option>
         <option value="2">Restaurant</option>
         <option value="3">Cafe</option>
@@ -36,9 +39,9 @@ const EditForm = ({ data, handleChange, handleSubmit }) => (
       <div className="control">
         <input
           className="input"
-          name="name"
+          name="buildingNumber"
           placeholder="House number"
-          onChange={handleChange}
+          onChange={handleAddressChange}
           value={data.address.buildingNumber || ''}
         />
       </div>
@@ -50,9 +53,9 @@ const EditForm = ({ data, handleChange, handleSubmit }) => (
       <div className="control">
         <input
           className="input"
-          name="name"
+          name="street"
           placeholder="Street"
-          onChange={handleChange}
+          onChange={handleAddressChange}
           value={data.address.street || ''}
         />
       </div>
@@ -63,9 +66,9 @@ const EditForm = ({ data, handleChange, handleSubmit }) => (
       <div className="control">
         <input
           className="input"
-          name="name"
+          name="postcode"
           placeholder="Postcode"
-          onChange={handleChange}
+          onChange={handleAddressChange}
           value={data.address.postcode || ''}
         />
       </div>
