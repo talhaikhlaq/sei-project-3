@@ -23,6 +23,7 @@ class MapSecond extends React.Component {
       zoom: 10,
       center: [-0.1, 51.5074]
     })
+    this.map.scrollZoom.disable()
 
     this.props.markers.map(point => {
       const el = document.createElement('div')
