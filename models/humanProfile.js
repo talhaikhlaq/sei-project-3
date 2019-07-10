@@ -10,7 +10,8 @@ const petProfileSchema = new mongoose.Schema({
 })
 
 const humanProfileSchema = new mongoose.Schema({
-  ownerName: { type: String, required: true },
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true },
   ownerAge: { type: Number, required: true },
   ownerOccupation: { type: String, required: true },
   image: { type: String, required: true },

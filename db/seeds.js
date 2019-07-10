@@ -86,7 +86,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
       console.log(`${users.length} users created`)
       return Human.create([
         {
-          ownerName: 'Steven Parker',
+          firstName: 'Steven',
+          lastName: 'Parker',
           ownerAge: 28,
           ownerOccupation: 'Lawyer',
           image: 'https://i.imgur.com/rezP6jv.jpg?1',
@@ -101,7 +102,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           user: users[4]
         },
         {
-          ownerName: 'Ruby Charlton',
+          firstName: 'Ruby',
+          lastName: 'Charlton',
           ownerAge: 30,
           ownerOccupation: '3D Animator',
           image: 'https://i.imgur.com/OtkwJs9.jpg?1',
@@ -117,7 +119,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
 
-          ownerName: 'Rian Brantle',
+          firstName: 'Rian',
+          lastName: 'Brantle',
           ownerAge: 30,
           ownerOccupation: 'Producer',
           image: 'https://i.imgur.com/dQg4fle.jpg?1',
@@ -132,7 +135,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           user: users[6]
         },
         {
-          ownerName: 'Victoria Lancaster',
+          firstName: 'Victoria',
+          lastName: 'Lancaster',
           ownerAge: 32,
           ownerOccupation: 'Application Analyst',
           image: 'https://i.imgur.com/QOTx7EU.jpg?1',
@@ -147,7 +151,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           user: users[7]
         },
         {
-          ownerName: 'Marlon McArthur',
+          firstName: 'Marlon',
+          lastName: 'McArthur',
           ownerAge: 52,
           ownerOccupation: 'Rapid prototyper',
           image: 'https://i.imgur.com/odQdPlw.jpg?1',
@@ -162,7 +167,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           user: users[8]
         },
         {
-          ownerName: 'Xanthe Deleon',
+          firstName: 'Xanthe',
+          lastName: 'Deleon',
           ownerAge: 24,
           ownerOccupation: 'Marine Engineer',
           image: 'https://i.imgur.com/qFtLLUA.jpg?1',
@@ -177,7 +183,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           user: users[9]
         },
         {
-          ownerName: 'Devin Parry',
+          firstName: 'Devin',
+          lastName: 'Parry',
           ownerAge: 49,
           ownerOccupation: 'Safety Inspector',
           image: 'https://i.imgur.com/1j3RhYz.jpg',
@@ -192,7 +199,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           user: users[10]
         },
         {
-          ownerName: 'Abu Allan',
+          firstName: 'Abu',
+          lastName: 'Allan',
           ownerAge: 27,
           ownerOccupation: 'Health Psychologist',
           image: 'https://i.imgur.com/FEscsaQ.jpg?1',
@@ -207,7 +215,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           user: users[11]
         },
         {
-          ownerName: 'Henley Marquez',
+          firstName: 'Henley',
+          lastName: 'Marquez',
           ownerAge: 38,
           ownerOccupation: 'Ultrasound Technologist',
           image: 'https://i.imgur.com/J8gtJj2.jpg?1',
@@ -222,7 +231,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           user: users[12]
         },
         {
-          ownerName: 'Taha Choi',
+          firstName: 'Taha',
+          lastName: 'Choi',
           ownerAge: 26,
           ownerOccupation: 'Aircraft Assembler',
           image: 'https://i.imgur.com/MatVya9.jpg?1',

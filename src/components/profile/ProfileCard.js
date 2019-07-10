@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const ProfileCard = ({ ownerName, image, _id, pet }) => {
+const ProfileCard = ({ firstName, lastName, image, _id, pet }) => {
   return (
     <Link to={`/friends/${_id}`}>
       <body className="body">
@@ -9,11 +9,11 @@ const ProfileCard = ({ ownerName, image, _id, pet }) => {
           <div className="other-outside">
             <div className="outside">
               <div className="imgBx">
-                <img className="owner" src={image} alt={ownerName}/>
+                <img className="owner" src={image} alt={firstName}/>
 
               </div>
               <div className="details">
-                <h2>{ownerName} <span>{pet[0].petSpecies}: {pet[0].petName}</span></h2>
+                <h2>{firstName} {lastName} <span>{pet[0].petSpecies}: {pet[0].petName}</span></h2>
               </div>
             </div>
           </div>

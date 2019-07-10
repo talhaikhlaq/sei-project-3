@@ -32,16 +32,3 @@ class Profiles extends React.Component {
 }
 
 export default Profiles
-
-// <section className="section">
-//   <div className="container">
-//     <div className="columns is-mobile is-multiline">
-//       {this.state.profiles.map(profile => (
-//         <ProfileCardTrial
-//           key={profile._id}
-//           {...profile}
-//         />
-//       ))}
-//     </div>
-//   </div>
-// </section>

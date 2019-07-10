@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Auth from '../../lib/Auth'
 
-class ProfileShowTrial extends React.Component {
+class ProfileShow extends React.Component {
   constructor() {
     super()
 
@@ -28,10 +28,10 @@ class ProfileShowTrial extends React.Component {
         <div className="profile-show">
           <div className="profile-text">
             <div className="profile-heading">
-              <h2 id="names">{profile.ownerName} & {profile.pet[0].petName}</h2>
+              <h2 id="names">{profile.firstName} & {profile.pet[0].petName}</h2>
             </div>
             <div className="profile-body">
-              <p className="about-p">About {profile.ownerName} <br/> Age: {profile.ownerAge} <br/> Occupation: {profile.ownerOccupation}</p>
+              <p className="about-p">About {profile.firstName} <br/> Age: {profile.ownerAge} <br/> Occupation: {profile.ownerOccupation}</p>
               <p className="about-p">About {profile.pet[0].petName} <br/>
               Age: {profile.pet[0].petAge} <br/>
               Species: {profile.pet[0].petSpecies} <br/>
@@ -70,4 +70,4 @@ class ProfileShowTrial extends React.Component {
   }
 }
 
-export default ProfileShowTrial
+export default ProfileShow
