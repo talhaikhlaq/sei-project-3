@@ -3,14 +3,26 @@ import React, { Fragment } from 'react'
 const ProfileForm = ({ handleChange, handleSubmit, data, handleChangePet, addPet }) => (
   <form onSubmit={handleSubmit}>
     <div className="field">
-      <label className="label">Name</label>
+      <label className="label">First Name</label>
       <div className="control">
         <input
           className="input input-newform"
-          name="ownerName"
-          placeholder="Name"
+          name="firstName"
+          placeholder="First Name"
           onChange={handleChange}
-          value={data.ownerName || ''}
+          value={data.firstName || ''}
+        />
+      </div>
+    </div>
+    <div className="field">
+      <label className="label">Last Name</label>
+      <div className="control">
+        <input
+          className="input input-newform"
+          name="lastName"
+          placeholder="Last Name"
+          onChange={handleChange}
+          value={data.lastName || ''}
         />
       </div>
     </div>

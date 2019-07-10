@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Auth from '../../lib/Auth'
@@ -24,52 +24,46 @@ class ProfileShow extends React.Component {
     if (!this.state.profile) return null
     const { profile } = this.state
     return (
-      <main className="section">
-        <div className="container">
-          <div className="columns">
-            <div className="column is-half">
-              <h2 className="title">{profile.ownerName}</h2>
-              <hr />
-              <figure className="image">
-                <img src={profile.image} alt={profile.ownerName} />
-              </figure>
-              <hr />
-              <h4 className="title is-4">Age</h4>
-              <p>{profile.ownerAge}</p>
-              <hr />
-              <h4 className="title is-4">Occupation</h4>
-              <p>{profile.ownerOccupation}</p>
-              <hr />
+      <main className="main-show">
+        <div className="profile-show">
+          <div className="profile-text">
+            <div className="profile-heading">
+              <h2 id="names">{profile.firstName} & {profile.pet[0].petName}</h2>
             </div>
-            <div className="column is-half">
-              <h2 className="title">Pet Name: {profile.pet[0].petName} </h2>
-              <hr />
-              <figure className="image">
-                <img src={profile.pet[0].image} alt={profile.pet[0].petName} />
-              </figure>
-              <hr />
-              <h4 className="title is-4">Age</h4>
-              <p>{profile.pet[0].petAge}</p>
-              <hr />
-              <h4 className="title is-4">Species</h4>
-              <p>{profile.pet[0].petSpecies}</p>
-              <hr />
-              <h4 className="title is-4">Hobbies</h4>
-              <p>{profile.pet[0].hobbies}</p>
-              <hr />
-              <h4 className="title is-4">About Me</h4>
-              <p>{profile.pet[0].aboutMe}</p>
+            <div className="profile-body">
+              <p className="about-p">About {profile.firstName} <br/> Age: {profile.ownerAge} <br/> Occupation: {profile.ownerOccupation}</p>
+              <p className="about-p">About {profile.pet[0].petName} <br/>
+              Age: {profile.pet[0].petAge} <br/>
+              Species: {profile.pet[0].petSpecies} <br/>
+              Hobbies: {profile.pet[0].hobbies} <br/>
+              About Me: {profile.pet[0].aboutMe}
+              </p>
             </div>
+            {this.isOwner() && <Link
+              className="button edit-button"
+              to={`/friends/edit/${profile._id}`}
+            >
+            Edit Profile
+            </Link>}
           </div>
 
-          {this.isOwner() && <Link
-            className="button"
-            to={`/friends/edit/${profile._id}`}
-          >
-          Edit Profile
-          </Link>}
+          <div className="profile-pictures">
+            <div
+              className="profile-picture"
+              style={{
+                backgroundImage: `url(${profile.image})`
+              }}
+            />
+            <div
+              className="profile-picture"
+              style={{
+                backgroundImage: `url(${profile.pet[0].image})`
+              }}
+            />
+          </div>
 
         </div>
+
       </main>
 
     )
