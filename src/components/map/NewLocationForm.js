@@ -36,7 +36,7 @@ const NewLocationForm = ({ handleChange, handleSubmit }) => (
       <div className="control">
         <input
           className="input"
-          name="name"
+          name="buildingNumber"
           placeholder="House number"
           onChange={handleChange}
           value={null}
@@ -50,7 +50,7 @@ const NewLocationForm = ({ handleChange, handleSubmit }) => (
       <div className="control">
         <input
           className="input"
-          name="name"
+          name="street"
           placeholder="Street"
           onChange={handleChange}
           value={null}
@@ -63,7 +63,7 @@ const NewLocationForm = ({ handleChange, handleSubmit }) => (
       <div className="control">
         <input
           className="input"
-          name="name"
+          name="postcode"
           placeholder="Postcode"
           onChange={handleChange}
           value={null}
