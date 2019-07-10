@@ -8,7 +8,7 @@ import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'
 import Map from './components/map/Map'
 import Profiles from './components/profile/Profiles'
-import ProfileShow from './components/profile/ProfileShow'
+import ProfileShowTrial from './components/profile/ProfileShowTrial'
 import ProfileEdit from './components/profile/ProfileEdit'
 import ProfileNew from './components/profile/ProfileNew'
 import Register from './components/auth/Register'
@@ -29,7 +29,7 @@ class App extends React.Component {
             <Route path="/register" component={Register} />
             <Route path="/friends/edit/:id" component={ProfileEdit} />
             <Route path="/friends/new" component={ProfileNew} />
-            <Route path="/friends/:id" component={ProfileShow} />
+            <Route path="/friends/:id" component={ProfileShowTrial} />
             <Route path="/friends" component={Profiles} />
             <Route path="/map" component={Map} />
             <Route path="/locations/new" component={LocationsNew} />
