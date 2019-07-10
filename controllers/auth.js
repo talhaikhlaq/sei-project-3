@@ -4,8 +4,6 @@ const { secret } = require('../config/environment')
 
 // Chatkit
 const Chatkit = require('@pusher/chatkit-server')
-console.log('chatkit is', Chatkit)
-console.log('type chatkit is', typeof Chatkit)
 const instanceLocator = 'v1:us1:8a39e96d-aa83-484a-b425-a7abc05dfa51'
 const key = '1d94c279-dc4d-4097-8260-cf8ba941f686:agv7drAR4w+N9U9ALQs0KxOLgsh3EVY8nUuF5yGT9NE='
 
