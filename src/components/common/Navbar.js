@@ -57,10 +57,9 @@ class Navbar extends React.Component {
               </a>
 
               <div className="navbar-dropdown">
+                {Auth.isAuthenticated() && <Link to="/msg" className="navbar-item">Chatroom</Link>}
                 <a className="navbar-item">
-                  Messaging
-                </a>
-                <a className="navbar-item">
+
                   Reviews & Ratings
                 </a>
                 <a className="navbar-item">
