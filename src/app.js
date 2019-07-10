@@ -4,7 +4,14 @@ import ReactDOM from 'react-dom'
 import 'bulma'
 import './style.scss'
 
-import Home from './components/common/Home'
+// Scrolling Homepage imports *****************************
+// import { HashRouter as Router } from 'react-router-dom'
+import './scrolling.css'
+import FullPage from './components/scrollingComponents/FullPage'
+
+// ******************************************************
+
+// import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'
 import Map from './components/map/Map'
 import Profiles from './components/profile/Profiles'
@@ -35,8 +42,7 @@ class App extends React.Component {
             <Route path="/locations/new" component={LocationsNew} />
             <Route path="/locations/:id/edit" component={LocationsEdit} />
             <Route path="/locations/:id" component={LocationCard} />
-
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={FullPage} />
           </Switch>
         </main>
       </BrowserRouter>
