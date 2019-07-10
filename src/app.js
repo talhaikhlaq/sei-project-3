@@ -16,6 +16,7 @@ import LocationCard from './components/map/LocationCard'
 import LocationsEdit from './components/map/LocationsEdit'
 import LocationsNew from './components/map/LocationsNew'
 import Login from './components/auth/Login'
+import MessageApp from './components/messages/MessageApp'
 // SecureRoute to be imported and tested towards the end
 
 class App extends React.Component {
@@ -35,6 +36,7 @@ class App extends React.Component {
             <Route path="/locations/new" component={LocationsNew} />
             <Route path="/locations/:id/edit" component={LocationsEdit} />
             <Route path="/locations/:id" component={LocationCard} />
+            <Route path="/msg" component={MessageApp} />
 
             <Route exact path="/" component={Home} />
           </Switch>
