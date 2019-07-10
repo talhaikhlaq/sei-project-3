@@ -8,10 +8,10 @@
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
 
-  .map {
-    width: 100vw;
-    height: 50vh;
-  }
+.map {
+  width: 100vw;
+  height: 50vh;
+}
 
 }
 
@@ -83,10 +83,6 @@
   }
 }
 
-.edit-button {
-  width: 150px;
-}
-
 .button:active {
   background-color: #gray;
   box-shadow: 0 5px #666;
@@ -118,7 +114,7 @@
 
 
 .popuptext {
-  color: Tomato;
+color: Tomato;
 }
 
 .popupbutton {
@@ -140,315 +136,173 @@
 
 }
 
-.main-profiles {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  .body{
-    margin: 0;
-    padding: 0;
+  .main-profiles {
     display: flex;
-    justify-content:center;
-    align-items: center;
-    height: 50vh;
-    width: 50vh;
-  }
-  .other-outside{
-    width: 1200px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-gap: 15px;
-    margin: 0 auto;
-  }
-  .outside{
-    position: absolute;
-    width: 300px;
-    height: 350px;
-    background: #fff;
-    margin: 0 auto;
-    border-radius: 4px;
-    box-shadow:0 2px 10px rgba(0,0,0,.2);
-  }
-  .outside:before,
-  .outside:after
-  {
-    content:"";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 4px;
-    background: #fff;
-    transition: 0.5s;
-    z-index: -1;
-  }
-  .outside:hover:before{
-    transform: rotate(20deg);
-    box-shadow: 0 2px 20px rgba(0,0,0,.2);
-  }
-  .outside:hover:after{
-    transform: rotate(10deg);
-    box-shadow: 0 2px 20px rgba(0,0,0,.2);
-  }
-  .outside .imgBx{
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    bottom: 10px;
-    right: 10px;
-    background: #222;
-    transition: 0.5s;
-    z-index: 1;
-  }
-  .outside:hover .imgBx
-  {
-    bottom: 80px;
-  }
-
-  .outside .imgBx .owner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .outside .details{
-    position: absolute;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    height: 60px;
-    text-align: center;
-  }
-
-  .outside .details h2{
-    margin: 0;
-    padding: 0;
-    font-weight: 600;
-    font-size: 20px;
-    color: #777;
-    text-transform: uppercase;
-  }
-
-  .outside .details h2 span{
-    font-weight: 500;
-    font-size: 16px;
-    color: tomato;
-    display: block;
-    margin-top: 5px;
-  }
-}
-
-
-// Profile Show Page
-.main-show {
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  .profile-show {
-    display: flex;
-    position: relative;
-    // flex-wrap: wrap;
-    // flex-direction: column;
-    width: 90%;
-    height: 80%;
-    box-shadow: -5px 5px 20px 5px #777;
-    div.profile-body {
-      width: 100%;
-      margin-left: 10%;
-      display: flex;
-      // flex-direction: column;
-      flex-wrap: wrap;
-      .about-p, .about-info {
-        width: 40%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    .body{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        height: 50vh;
+        width: 50vh;
       }
-      .owner-info {
-        margin-bottom: 10px;
+      .other-outside{
+        width: 1200px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-gap: 15px;
+        margin: 0 auto;
       }
-      .about-p {
-        font-size: 30px
+      .outside{
+        position: absolute;
+        width: 300px;
+        height: 350px;
+        background: #fff;
+        margin: 0 auto;
+        border-radius: 4px;
+        box-shadow:0 2px 10px rgba(0,0,0,.2);
       }
-      .about-info {
-        font-size: 19px;
-      }
-    }
-
-    .edit-button {
-      margin: 10%;
-    }
-    div.profile-text {
-      width: 65%;
-      height: 100%;
-    }
-
-    div.profile-pictures {
-      width: 35%;
-      height: 100%;
-      height: 90vh;
-      right: 50px;
-      top: -40px;
-      position: relative;
-      box-shadow: -5px 5px 20px 5px #777;
-      z-index: 1;
-    }
-
-    div.profile-picture {
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 50%;
-    }
-
-    #names {
-
-      margin: 10% 2% 2% 10%;
-      width: 80%;
-      font-size: 50px;
-      font-weight: bold;
-    }
-    #about-owner {
-      margin: 5px;
-    }
-  }
-
-  @media only screen and (max-width: 700px) {
-    .main-show {
-      display: flex;
-      height: 100vh;
-      justify-content: center;
-      align-items: center;
-    }
-    .profile-show {
-      display: flex;
-      position: relative;
-      flex-direction: column;
-      div.profile-text {
-        width: 100%;
-      }
-      div.profile-pictures {
+      .outside:before,
+      .outside:after
+      {
+        content:"";
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        top: 0;
-        right: 0;
+        border-radius: 4px;
+        background: #fff;
+        transition: 0.5s;
+        z-index: -1;
       }
-      .edit-button {
-        margin-top: 0;
-        margin-left: 15%;
-        margin-right: 0;
-        margin-bottom: 40%;
+      .outside:hover:before{
+      transform: rotate(20deg);
+      box-shadow: 0 2px 20px rgba(0,0,0,.2);
       }
-    }
+      .outside:hover:after{
+      transform: rotate(10deg);
+      box-shadow: 0 2px 20px rgba(0,0,0,.2);
+      }
+      .outside .imgBx{
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      bottom: 10px;
+      right: 10px;
+      background: #222;
+      transition: 0.5s;
+      z-index: 1;
+      }
+      .outside:hover .imgBx
+      {
+        bottom: 80px;
+      }
+
+      .outside .imgBx .owner {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+      }
+      .outside .details{
+          position: absolute;
+          left: 10px;
+          right: 10px;
+          bottom: 10px;
+          height: 60px;
+          text-align: center;
+      }
+
+      .outside .details h2{
+       margin: 0;
+       padding: 0;
+       font-weight: 600;
+       font-size: 20px;
+       color: #777;
+       text-transform: uppercase;
+      }
+
+      .outside .details h2 span{
+      font-weight: 500;
+      font-size: 16px;
+      color: tomato;
+      display: block;
+      margin-top: 5px;
+       }
   }
 
+
+  .msgapp {
+      height: calc(100% - 100px);
   }
 
+  .msgtitle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      color: var(--secondary-color);
+      background: var(--main-color);
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+  }
 
+  .message {
+      margin: 15px 0;
+  }
 
+  .message div:nth-child(1) {
+      font-size: 11px;
+      color: var(--main-text-color);
+      opacity: 0.9;
+      margin-bottom: 6px;
+  }
+  .message div:nth-child(2) {
+      background: var(--main-color);
+      color: var(--secondary-color);
+      display: inline;
+      padding: 4px 8px;
+      border-radius: 8px;
+  }
 
+  .message-list {
+      box-sizing: border-box;
+      padding: 0 0 0 6px;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: scroll;
+      background: white;
+  }
 
+  .send-message-form {
+      background: var(--send-message-form);
+      display: flex;
+      box-sizing: border-box;
+      height: 60px;
+  }
 
+  .send-message-form input {
+      width: 100%;
+      padding: 15px 10px;
+      border: none;
+      margin: 0;
+      background: var(--send-message-form);
+      font-weight: 200;
+  }
 
+  .send-message-form input:focus {
+      outline-width: 0;
+  }
 
-
-
-
-
-
-
-
-//
-// msgroot {
-//     --main-color: #5ea3d0;
-//     --secondary-color: white;
-//     --main-text-color: #3e5869;
-//     --secondary-text-color: #b0c7d6;
-//     --send-message-form: #F5F5F5;
-// }
-
-.msgbody {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: system-ui;
-    font-weight: 200;
-    color: #3e5869;
-
-}
-
-.msgroot {
-    height: 100%;
-}
-
-.msgapp {
-  background-color: pink;
-  height: calc(100% - 100px);
-}
-
-.msgtitle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    color: white;;
-    background: #5ea3d0;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-.message {
-    margin: 15px 0;
-    color: pink;
-}
-
-.message div:nth-child(1) {
-    font-size: 11px;
-    color: #5ea3d0;
-    opacity: 0.9;
-    margin-bottom: 6px;
-}
-.message div:nth-child(2) {
-    background: #5ea3d0;
-    color: white;
-    display: inline;
-    padding: 4px 8px;
-    border-radius: 8px;
-}
-
-.message-list {
-    box-sizing: border-box;
-    padding: 0 0 0 6px;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    overflow: scroll;
-    background: white;
-
-}
-
-.send-message-form {
-    background: pink;
-    display: flex;
-    box-sizing: border-box;
-    height: 60px;
-}
-
-.send-message-form input {
-    width: 100%;
-    padding: 15px 10px;
-    border: none;
-    margin: 0;
-    background: pink;
-    font-weight: 200;
-}
-
-.send-message-form input:focus {
-  outline-width: 0;
-}
-
-.send-message-form input::placeholder {
-  color: black;
-}
+  .send-message-form input::placeholder {
+      color: black;
+  }
