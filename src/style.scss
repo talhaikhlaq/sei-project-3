@@ -405,3 +405,157 @@ color: Tomato;
     }
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .location-main {
+      display: flex;
+      position: relative;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+      .location-show {
+        display: flex;
+        position: relative;
+        // flex-wrap: wrap;
+        // flex-direction: column;
+        width: 90%;
+        height: 80%;
+        box-shadow: -5px 5px 20px 5px #777;
+
+      }
+
+
+        .about-cat {
+          width: 40%;
+          margin-left: 10%;
+          font-size: 30px;
+
+        }
+        .about-loc {
+          width: 200px;
+          margin-left: 10%;
+          font-size: 18px;
+
+        }
+
+        .about-a{
+          width: 200px;
+          margin-left: 10%;
+          font-size: 18px;
+        }
+
+
+        .edit-button-loc {
+          margin: 10%;
+        }
+
+        .delete-button-loc {
+          margin: 10%;
+        }
+
+        div.location-text {
+          width: 65%;
+          height: 100%;
+        }
+
+        div.location-picture-column {
+
+          width: 60%;
+          height: 100%;
+          height: 90vh;
+          margin-left: 10%;
+          right: 50px;
+          top: -40px;
+          position: relative;
+          box-shadow: -5px 5px 20px 5px #777;
+          z-index: 1;
+          background-color: white;
+        }
+
+
+
+        #locationname {
+
+          margin: 10% 2% 2% 10%;
+          width: 80%;
+          font-size: 50px;
+          font-weight: bold;
+
+
+        }
+
+
+      .comclass {
+        margin-left: 10%;
+        width: 50%;
+      }
+
+      .delete-com-button {
+        width: 20%;
+        height: 30px;
+       font-size: 50%;
+
+      }
+
+      .reviewbutton {
+        margin-left: 10%;
+      }
+
+      @media only screen and (max-width: 700px) {
+        .location-main {
+          display: flex;
+          height: 100vh;
+          justify-content: center;
+          align-items: center;
+        }
+        .location-show {
+          display: flex;
+          position: relative;
+          flex-direction: column;
+        }
+
+          div.location-picture-column {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            margin-left: 0;
+          }
+          .edit-button-loc {
+            // display: flex;
+            // margin-top: 0;
+            // margin-left: 15%;
+            // margin-right: 0;
+            // margin-bottom: 40%;
+          }
+
+
+
+
+      }
