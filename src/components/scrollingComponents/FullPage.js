@@ -7,6 +7,7 @@ import Map from '../map/Map'
 import Register from '../auth/Register'
 import Login from '../auth/Login'
 import '../../scrolling.css'
+import Auth from '../../lib/Auth'
 
 
 class FullPage extends React.Component {
@@ -45,8 +46,8 @@ class FullPage extends React.Component {
         <ReactPageScroller ref={c => this._pageScroller = c} pageOnChange={this.pageOnChange}>
           <Home/>
           <Map goToPage={this.goToPage}/>
-          <Register goToPage={this.goToPage}/>
-          <Login goToPage={this.goToPage}/>
+          {!Auth.isAuthenticated() && <Register goToPage={this.goToPage}/>}
+          {!Auth.isAuthenticated() && <Login goToPage={this.goToPage}/>}
         </ReactPageScroller>
       </React.Fragment>
 
