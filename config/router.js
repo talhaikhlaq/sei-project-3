@@ -36,5 +36,7 @@ router.route('/locations/:id')
   .put(locations.editLocation)
   .delete(locations.deleteLocation)
 
+router.route('/chatkit/:id')
+  .get(users.chatkitRegister)
 
 module.exports = router
