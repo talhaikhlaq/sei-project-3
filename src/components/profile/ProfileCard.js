@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const ProfileCard = ({ firstName, lastName, image, _id, pet }) => {
   return (
     <Link to={`/friends/${_id}`}>
-      <body className="body">
+      <div className="body">
         <div className="outside">
           <div className="other-outside">
             <div className="outside">
@@ -18,7 +18,7 @@ const ProfileCard = ({ firstName, lastName, image, _id, pet }) => {
             </div>
           </div>
         </div>
-      </body>
+      </div>
     </Link>
   )
 }
