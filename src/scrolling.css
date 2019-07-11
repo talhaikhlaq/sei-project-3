@@ -3,12 +3,13 @@ html, body {
     height: 100%;
     width: 100%;
     /* overflow: hidden; */
+    background: none;
 }
 
-.title {
+/* .title {
     margin: 20px auto 0;
     text-align: center;
-}
+} */
 
 .links {
     display: flex;
@@ -20,38 +21,38 @@ html, body {
     margin-top: 20px;
 }
 
-.component {
+/* .component {
     height: 100%;
     width: 100%;
     display: flex;
-}
+} */
 
-.component.first-component {
+/* .component.first-component {
     background-color: gray;
     position: relative;
-}
+} */
 
-.first-component--inside-scroller {
+/* .first-component--inside-scroller {
     position: absolute;
     right: 20px;
     top: 100px;
-}
+} */
 
-.component.second-component {
+/* .component.second-component {
     background-color: red;
-}
+} */
 
-.component.third-component {
+/* .component.third-component {
     background-color: blue;
-}
+} */
 
-.component.fourth-component {
+/* .component.fourth-component {
     background-color: yellow;
-}
+} */
 
-.component.fifth-component {
+/* .component.fifth-component {
     background-color: purple;
-}
+} */
 
 h2 {
     margin: auto;
@@ -71,14 +72,14 @@ h2 {
     margin-right: 50px;
 }
 
-.demo-page-contain {
+/* .demo-page-contain {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     flex-direction: column;
-}
+} */
 
-.demo-page-contain__hint {
+/* .demo-page-contain__hint {
     margin-bottom: 20px;
-}
+} */

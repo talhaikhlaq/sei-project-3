@@ -30,9 +30,12 @@
 }
 
 .navbar {
-  background-color: Tomato;
+  // background-color: Tomato;
+  background: rgba(255,99,71,0);
   font-weight: bold;
   height: 80px;
+  margin-bottom: 0;
+  border-radius: 0;
   a.navbar-item:hover {
     background-color: white;
     text-decoration: none !important;
