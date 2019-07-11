@@ -31,7 +31,7 @@
 
 .navbar {
   background: rgba(255,99,71,0);
-  color: white;
+  color: #36B3D4;
   font-weight: bold;
   height: 40px;
   margin-bottom: 0;
@@ -55,7 +55,7 @@
     text-decoration: none;
   }
   .navbar-link {
-    color: white;
+    color: #36B3D4;
     &:hover {
       background: rgba(93, 188, 210, 0.5);
     }
@@ -150,7 +150,7 @@ color: Tomato;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    margin: 40px;
+    margin: 60px;
     .body{
         margin: 0;
         padding: 0;
@@ -242,7 +242,7 @@ color: Tomato;
       .outside .details h2 span{
       font-weight: 500;
       font-size: 16px;
-      color: tomato;
+      color: #36B3D4;
       display: block;
       margin-top: 5px;
        }
@@ -324,6 +324,7 @@ color: Tomato;
     height: 100vh;
     justify-content: center;
     align-items: center;
+    margin: 60px 0;
     .profile-show {
       display: flex;
       position: relative;
@@ -646,7 +647,7 @@ color: Tomato;
   flex-wrap: wrap;
   #newform-title {
   text-align: center;
-  margin: 30px 0 20px 0;
+  margin: 60px;
   font-size: 40px;
   }
   .new-form {
