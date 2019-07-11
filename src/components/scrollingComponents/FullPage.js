@@ -1,5 +1,6 @@
 import React from 'react'
 import { Pager } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 import ReactPageScroller from './ReactPageScroller'
 import Home from '../common/Home'
@@ -8,6 +9,7 @@ import Register from '../auth/Register'
 import Login from '../auth/Login'
 import '../../scrolling.css'
 import Auth from '../../lib/Auth'
+
 
 
 class FullPage extends React.Component {
@@ -46,8 +48,8 @@ class FullPage extends React.Component {
         <ReactPageScroller ref={c => this._pageScroller = c} pageOnChange={this.pageOnChange}>
           <Home/>
           <Map goToPage={this.goToPage}/>
-          {!Auth.isAuthenticated() && <Register goToPage={this.goToPage}/>}
-          {!Auth.isAuthenticated() && <Login goToPage={this.goToPage}/>}
+          {!Auth.isAuthenticated() && <Link to="/register"><Register goToPage={this.goToPage}/></Link>}
+          {!Auth.isAuthenticated() && <Link to="/login"><Login goToPage={this.goToPage}/></Link>}
         </ReactPageScroller>
       </React.Fragment>
 
