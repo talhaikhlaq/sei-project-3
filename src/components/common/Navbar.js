@@ -29,7 +29,7 @@ class Navbar extends React.Component {
 
   render() {
     return (
-      <nav className="navbar">
+      <nav className="navbar is-fixed-top">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item pet-meet">🐾 Pet Meet</Link>
 
