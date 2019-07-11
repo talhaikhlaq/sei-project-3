@@ -82,7 +82,7 @@ class LocationCard extends React.Component {
             <a href={location.website} className="about-a" target="_blank" rel="noopener noreferrer">See their website</a>
 
             {Auth.isAuthenticated() &&
-              <div>
+              <div className="locationButtons">
                 <Link
                   className="button edit-button-loc"
                   to={`/locations/${location._id}/edit`}
@@ -111,10 +111,10 @@ class LocationCard extends React.Component {
 
               {Auth.isAuthenticated() &&
                    <form onSubmit={this.handleSubmit}>
-                     <div className="field comclass">
+                     <div className="field">
                        <div className="control">
                          <textarea
-                           className="textarea"
+                           className="reviewtexarea"
                            placeholder="Review"
                            onChange={this.handleChange}
                            value={this.state.comment.text || ''}
@@ -137,24 +137,13 @@ class LocationCard extends React.Component {
                   </button>
                 </div>
               ))}
-
-
-
-
-
             </div>
-
-
 
           </div>
 
         </div>
 
-
-
-
-
-      </main>
+    </main>
 
     )
 

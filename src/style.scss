@@ -248,22 +248,27 @@ color: Tomato;
        }
   }
 
-
   .msgapp {
-      height: calc(100% - 100px);
-  }
+       height: calc(100% - 100px);
+       display: inline-block;
+       margin: 8% 20%;
+       border: solid 1px #36B3D4;
+
+
+   }
+
 
   .msgtitle {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 40px;
-      color: var(--secondary-color);
-      background: var(--main-color);
+      color: #36B3D4;
       box-sizing: border-box;
       margin: 0;
       padding: 0;
       text-align: center;
+      color: #36B3D4;
   }
 
   .message {
@@ -272,9 +277,10 @@ color: Tomato;
 
   .message div:nth-child(1) {
       font-size: 11px;
-      color: var(--main-text-color);
+      color: #36B3D4;
       opacity: 0.9;
       margin-bottom: 6px;
+
   }
   .message div:nth-child(2) {
       background: var(--main-color);
@@ -287,26 +293,19 @@ color: Tomato;
   .message-list {
       box-sizing: border-box;
       padding: 0 0 0 6px;
-      margin: 0;
       width: 100%;
       height: 100%;
       overflow: scroll;
       background: white;
   }
 
-  .send-message-form {
-      background: var(--send-message-form);
-      display: flex;
-      box-sizing: border-box;
-      height: 60px;
-  }
 
   .send-message-form input {
-      width: 100%;
+    width: 100%;
       padding: 15px 10px;
       border: none;
       margin: 0;
-      background: var(--send-message-form);
+      background: #36B3D4;
       font-weight: 200;
   }
 
@@ -314,7 +313,7 @@ color: Tomato;
       outline-width: 0;
   }
 
-  .send-message-form input::placeholder {
+  .send-message-form input:placeholder {
       color: black;
   }
 
@@ -453,13 +452,14 @@ color: Tomato;
   }
 
 
-  .edit-button-loc {
-    margin: 10%;
+  .locationButtons {
+    margin: 5% 10%;
   }
 
-  .delete-button-loc {
-    margin: 10%;
+  .edit-button-loc{
+    margin-right: 30px;
   }
+
 
   div.location-text {
     width: 65%;
@@ -486,21 +486,18 @@ color: Tomato;
     font-weight: bold;
   }
 
-
-  .comclass {
-    margin-left: 10%;
-    width: 50%;
-  }
-
-  .delete-com-button {
-    width: 20%;
-    height: 30px;
-   font-size: 50%;
-  }
-
   .reviewbutton {
     margin-left: 10%;
   }
+
+  .reviewtexarea{
+
+   height: 20vh;
+   width: 60%;
+     margin-left: 10%;
+   margin-top: 10%;
+  }
+
 
   @media only screen and (max-width: 700px) {
     .location-main {
@@ -522,13 +519,7 @@ color: Tomato;
         right: 0;
         margin-left: 0;
       }
-      .edit-button-loc {
-        // display: flex;
-        // margin-top: 0;
-        // margin-left: 15%;
-        // margin-right: 0;
-        // margin-bottom: 40%;
-      }
+
   }
 
 
