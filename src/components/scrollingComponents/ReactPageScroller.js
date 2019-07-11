@@ -23,7 +23,6 @@ const ANIMATION_TIMER = 200
 const KEY_UP = 38
 const KEY_DOWN = 40
 const DISABLED_CLASS_NAME = 'rps-scroll--disabled'
-
 class ReactPageScroller extends React.Component {
 
   static propTypes = {
@@ -84,7 +83,7 @@ class ReactPageScroller extends React.Component {
 
     window.removeEventListener('resize', this[onWindowResized])
 
-    document.ontouchmove = (e) => { return true }
+    document.ontouchmove = () => true
 
     this._pageContainer.removeEventListener('touchmove', this[touchMove])
     this._pageContainer.removeEventListener('keydown', this[keyPress])
