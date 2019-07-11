@@ -39,7 +39,7 @@ class FullPage extends React.Component {
   }
 
   render() {
-    const pagesNumbers = this.getPagesNumbers()
+
     return (
       <React.Fragment>
         <ReactPageScroller ref={c => this._pageScroller = c} pageOnChange={this.pageOnChange}>
@@ -48,9 +48,6 @@ class FullPage extends React.Component {
           <Register goToPage={this.goToPage}/>
           <Login goToPage={this.goToPage}/>
         </ReactPageScroller>
-        <Pager className="pagination-additional-class" bsSize="large">
-          {pagesNumbers}
-        </Pager>
       </React.Fragment>
 
     )
@@ -58,3 +55,8 @@ class FullPage extends React.Component {
 }
 
 export default FullPage
+
+// const pagesNumbers = this.getPagesNumbers()
+// <Pager className="pagination-additional-class" bsSize="large">
+// {pagesNumbers}
+// </Pager>
