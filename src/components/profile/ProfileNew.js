@@ -48,7 +48,8 @@ class ProfileNew extends React.Component {
 
   render() {
     return (
-      <section className="section">
+      <section className="section-newform">
+        <h1 className="title" id="newform-title">New Profile Form</h1>
         <ProfileForm
           data={this.state.data}
           handleChange={this.handleChange}

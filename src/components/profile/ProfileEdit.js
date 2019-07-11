@@ -35,14 +35,12 @@ class ProfileEdit extends React.Component {
   render() {
     if (!this.state.data) return null
     return (
-      <section className="section">
-        <div className="container">
-          <ProfileForm
-            data={this.state.data}
-            handleChange={this.handleChange}
-            handleSubmit={this.handleSubmit}
-          />
-        </div>
+      <section className="section-newform">
+        <ProfileForm
+          data={this.state.data}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        />
       </section>
     )
   }
