@@ -16,7 +16,7 @@
 }
 
 #home {
-  background-image: url('https://i.imgur.com/MpfEGnT.jpg');
+  background-image: url('https://i.imgur.com/iQ5hkaA.jpg');
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -26,21 +26,19 @@
 
 #home-title {
   font-size: 150px;
-  color: white;
+  color: #36B3D4;
 }
 
 .navbar {
-  // background-color: Tomato;
   background: rgba(255,99,71,0);
+  color: white;
   font-weight: bold;
   height: 40px;
   margin-bottom: 0;
   border-radius: 0;
   a.navbar-item:hover {
-    background-color: rgba(255,99,71,1);
     text-decoration: none !important;
     color: inherit !important;
-    box-shadow: rgba(93, 188, 210, 0.5);
   }
   a.navbar-item:active {
     text-decoration: none !important;
@@ -50,13 +48,14 @@
   a.navbar-item:visited {
     text-decoration: none !important;
     color: inherit !important;
-      background: none;
+    background: none !important;
   }
   .pet-meet {
     font-size: 25px;
+    text-decoration: none;
   }
   .navbar-link {
-    color: #36B3D4;
+    color: white;
     &:hover {
       background: rgba(93, 188, 210, 0.5);
     }
@@ -83,12 +82,11 @@
   font-size: 15px;
   cursor: pointer;
   text-align: center;
-  text-decoration: none;
+  text-decoration: none !important;
   outline: none;
   color: #36B3D4;
   background-color: white;
   border: none;
-  // border-radius: 25px;
   box-shadow: -5px 5px 20px #D3D3D3;
   .button:hover {
     background-color: white;
@@ -103,16 +101,16 @@
 .log-in, .log-out {
   display: inline-block;
   margin: 3px;
-  font-size: 24px;
+  font-size: 15px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   outline: none;
-  color: black;
+  color: #36B3D4;
   background-color: white;
   border: none;
-  border-radius: 25px;
-  box-shadow: 0 5px #999;
+  // border-radius: 25px;
+  box-shadow: -5px 5px 20px #D3D3D3;
   .log-in:hover, .log-out:hover {
     background-color: white;
   }
@@ -120,7 +118,7 @@
 
 .log-in:active, .log-out:active {
   background-color: #gray;
-  box-shadow: 0 5px #666;
+  box-shadow: -5px 5px 20px #36B3D4;
   transform: translateY(4px);
 }
 
@@ -152,6 +150,7 @@ color: Tomato;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    margin: 40px;
     .body{
         margin: 0;
         padding: 0;
