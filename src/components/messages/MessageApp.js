@@ -5,7 +5,9 @@ import MessageList from './MessageList'
 import SendMessageForm from './SendMessageForm'
 import Chatkit from '@pusher/chatkit-client'
 
-const instanceLocator = 'v1:us1:8a39e96d-aa83-484a-b425-a7abc05dfa51'
+console.log('test', process.env.CHATKIT_TEST_TOKEN)
+
+const instanceLocator = process.env.CHATKIT_INSTANCE
 
 const testToken = 'https://us1.pusherplatform.io/services/chatkit_token_provider/v1/8a39e96d-aa83-484a-b425-a7abc05dfa51/token'
 
