@@ -78,9 +78,9 @@ class MapSecond extends React.Component {
       country: 'gb',
       city: 'london'
 
-    }), 'top-left')
+    }), 'bottom-left')
 
-    this.map.addControl(new mapboxgl.NavigationControl())
+    this.map.addControl(new mapboxgl.NavigationControl(), 'bottom-right')
 
 
 
