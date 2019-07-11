@@ -325,8 +325,16 @@ color: Tomato;
         width: 100%;
         margin-left: 10%;
         display: flex;
+        flex-wrap: wrap;
         .about-p {
           width: 40%;
+          margin: 10px;
+          font-size: 30px;
+        }
+        .about-info {
+          width: 200px;
+          margin: 10px;
+          font-size: 18px;
         }
       }
 
