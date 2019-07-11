@@ -29,13 +29,19 @@ class MessageApp extends React.Component {
     this.sendMessage = this.sendMessage.bind(this)
     this.registerChatkitUser = this.registerChatkitUser.bind(this)
     this.startChatkit = this.startChatkit.bind(this)
+    this.setChatroom = this.setChatroom.bind(this)
   }
 
   componentDidMount() {
     this.startChatkit()
   }
 
+  clearMessages() {
+    this.setState({ messages: [] })
+  }
+
   startChatkit() {
+    console.log('starting chat')
     const chatManager = new Chatkit.ChatManager({
       instanceLocator: instanceLocator,
       userId: userId,
@@ -79,20 +85,29 @@ class MessageApp extends React.Component {
 
   setChatroom(e) {
     console.log(e.target.value)
-    // use e.target.value to set state of currentChatroom
+    this.setState({ currentChatroom: e.target.value }, () => {
+      this.clearMessages()
+      this.startChatkit()
+    })
   }
+
+
+
 
   sendMessage(text) {
     this.currentUser.sendMessage({
       text,
       roomId: this.state.currentChatroom
+
     })
   }
 
   render() {
     return (
-      <div>
-        {!this.state.registered &&
+      <section className="msgapp">
+
+        <div>
+          {!this.state.registered &&
           <div>
             <h3>User not registered</h3>
             <h3>User not registered</h3>
@@ -100,10 +115,17 @@ class MessageApp extends React.Component {
             <h3>User not registered</h3>
             <button onClick={this.registerChatkitUser}>Register for chatrooms</button>
           </div>
-        }
-        {this.state.registered && this.state.currentChatroom &&
+          }
+          {this.state.registered && this.state.currentChatroom &&
           <div>
-            <button value="24849940" onClick={this.setChatroom}>Pets</button>
+
+            <br/>  <br/>  <br/>  <br/>  <br/>
+
+            <button className="button" value="24849940" onClick={this.setChatroom}>Our pets</button>
+            <button className="button"  value="24910627" onClick={this.setChatroom}>East London</button>
+            <button className="button" value="24910628" onClick={this.setChatroom}>West London</button>
+            <button className="button" value="24910611" onClick={this.setChatroom}>North London</button>
+            <button className="button"  value="24910607" onClick={this.setChatroom}>South London</button>
             <div className="app">
               <Title />
               <MessageList
@@ -113,17 +135,24 @@ class MessageApp extends React.Component {
                 sendMessage={this.sendMessage} />
             </div>
           </div>
-        }
+          }
 
-      </div>
+        </div>
+      </section>
 
     )
   }
+
+
+
 }
-
-
 function Title() {
-  return <p className="msgtitle">My awesome chat app</p>
+  return <p className="msgtitle">Let's talk about pets</p>
 }
+
+
+
+
+
 
 export default MessageApp

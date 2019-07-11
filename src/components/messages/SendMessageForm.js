@@ -20,10 +20,12 @@ class SendMessageForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
+
     this.props.sendMessage(this.state.message)
     this.setState({
       message: ''
     })
+    window.scrollTo(0,document.body.scrollHeight)
   }
 
   render() {
