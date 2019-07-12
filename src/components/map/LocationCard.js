@@ -30,6 +30,15 @@ class LocationCard extends React.Component {
 
   }
 
+  handleDelete() {
+    axios.delete(`/api/locations/${this.props.match.params.id}`, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
+      .then(() => this.props.history.push('/locations'))
+      .catch(err => console.log(err.response))
+  }
+
+
   handleSubmit(e) {
     e.preventDefault()
 
@@ -40,15 +49,12 @@ class LocationCard extends React.Component {
       .catch(err => console.log(err))
   }
 
-  isOwner(comment) {
-    return Auth.getPayload().sub === comment.user._id
-  }
+  // isOwner(comment) {
+  //   return Auth.getPayload().sub === comment.user._id
+  // }
 
-  handleDelete() {
-    axios.delete(`/api/locations/${this.props.match.params.id}`)
-      .then(() => this.props.history.push('/locations'))
-      .catch(err => console.log(err.response))
-  }
+
+
 
 
   handleCommentDelete(comment) {
@@ -64,7 +70,7 @@ class LocationCard extends React.Component {
   render() {
     if (!this.state.location) return null
     const { location } =  this.state
-
+    console.log('render state', this.state)
 
     return (
       <main className="location-main">
@@ -89,8 +95,7 @@ class LocationCard extends React.Component {
                 >
                 Edit
                 </Link>
-                <button
-                  onClick={this.handleDelete}
+                <button button onClick={this.handleDelete}
                   className="button delete-button-loc"
                 >
                   Delete
@@ -130,7 +135,7 @@ class LocationCard extends React.Component {
                   <div className="card-content">
                     {comment.text} - {new Date(comment.createdAt).toLocaleString()}
                   </div>
-                    {this.isOwner(comment) && <button
+                  <button
                     className="button delete-com-button"
                     onClick={() => this.handleCommentDelete(comment)}
                   >Delete
@@ -139,11 +144,12 @@ class LocationCard extends React.Component {
               ))}
             </div>
 
+
           </div>
 
         </div>
 
-    </main>
+      </main>
 
     )
 
@@ -154,81 +160,3 @@ class LocationCard extends React.Component {
 
 
 export default LocationCard
-
-
-// eturn (
-//   <main className="location-main">
-//     <div className="location-show">
-//       <div className="location-text">
-//         <div className="profile-heading">
-//           <h2 id="names">{location.name}</h2>
-//         </div>
-//         <div className="">
-//           <p className="about-p"> {location.category}</p>
-//           <p className="about-info">   {location.address.buildingNumber} {location.address.street} {location.address.postcode}</p>
-//
-//         <a href={location.website} className="about-p" target="_blank" rel="noopener noreferrer">See their website</a>
-//           {location.comments.map(comment => (
-//             <div key={comment._id} className="card">
-//               <div className="card-content">
-//                 {comment.text} - {new Date(comment.createdAt).toLocaleString()}
-//               </div>
-//               <button
-//                 className="button delete-button"
-//                 onClick={() => this.handleCommentDelete(comment)}
-//               >Delete
-//               </button>
-//             </div>
-//           ))}
-//
-//           <hr />
-//           {Auth.isAuthenticated() &&
-//           <form onSubmit={this.handleSubmit}>
-//             <div className="field">
-//               <div className="control">
-//                 <textarea
-//                   className="textarea"
-//                   placeholder="Review"
-//                   onChange={this.handleChange}
-//                   value={this.state.comment.text || ''}
-//                 >
-//                 </textarea>
-//               </div>
-//             </div>
-//             <button className="button" type="submit">Sumbit review</button>
-//           </form>}
-//
-//           {Auth.isAuthenticated() &&  <Link
-//           className="button edit-button"
-//           to={`/locations/${location._id}/edit`}
-//                     >
-//                   Edit
-//                     </Link>}
-//
-//         {Auth.isAuthenticated() && <button onClick={this.handleDelete}
-//           className="button delete-button">Delete
-//         </button>}
-//       </div>
-//     </div>
-//
-//
-//         <div className="location-pictures">
-//           <figure className="location-picture">
-//             <img src={location.image} alt={location.name} />
-//           </figure>
-//         </div>
-//
-//       </div>
-//
-//
-//
-//
-//
-//   </main>
-//
-// )
-//
-//
-//
-// }
-// }
