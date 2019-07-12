@@ -1,14 +1,34 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import Auth from '../../lib/Auth'
+import axios from 'axios'
+
 
 class Navbar extends React.Component {
   constructor() {
     super()
 
     this.state = {}
+    this.state = { profile: null }
     this.toggleNavbar = this.toggleNavbar.bind(this)
     this.logout = this.logout.bind(this)
+  }
+
+  componentDidMount() {
+    this.getCurrentUser()
+  }
+
+  getCurrentUser() {
+    axios.get('/api/profiles/')
+      .then(res => {
+        const currentUser = res.data.filter(profile => profile.user._id === Auth.getPayload().sub)[0]
+        this.setState({ currentUser })
+      })
+      .catch(err => console.log(err))
+  }
+
+  isOwner() {
+    return Auth.isAuthenticated() && Auth.getPayload().sub === this.state.profile.user._id
   }
 
   toggleNavbar() {
@@ -22,12 +42,15 @@ class Navbar extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.location.pathname !== prevProps.location.pathname) {
+      this.getCurrentUser()
       this.setState({ navbarOpen: false })
     }
+
   }
 
 
   render() {
+    const { currentUser } = this.state
     return (
       <nav className="navbar is-fixed-top">
         <div className="navbar-brand">
@@ -48,29 +71,7 @@ class Navbar extends React.Component {
 
             {Auth.isAuthenticated() && <Link to="/friends/new" className="navbar-item">New Profile</Link>}
 
-
             {Auth.isAuthenticated() && <Link to="/locations/new" className="navbar-item">Add location</Link>}
-
-            <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link is-arrowless">
-                More
-              </a>
-
-              <div className="navbar-dropdown">
-                {Auth.isAuthenticated() && <Link to="/msg" className="navbar-item">Chatroom</Link>}
-                <a className="navbar-item">
-
-                  Reviews & Ratings
-                </a>
-                <a className="navbar-item">
-                  About Us
-                </a>
-                <hr className="navbar-divider"/>
-                <a className="navbar-item">
-                  Report an issue
-                </a>
-              </div>
-            </div>
           </div>
 
           <div className="navbar-end">
@@ -82,7 +83,31 @@ class Navbar extends React.Component {
                 {!Auth.isAuthenticated() && <Link to="/login" className="button log-in">
                   Log in
                 </Link>}
-                {Auth.isAuthenticated() && <a className="navbar-item log-out" onClick={this.logout}>Logout</a>}
+
+                {currentUser && Auth.isAuthenticated() &&
+                  <div className="navbar-item has-dropdown is-hoverable">
+                    <a className="navbar-link is-arrowless">
+                      <img className="" src={currentUser.image} alt={currentUser.firstName}/>
+                    </a>
+
+                    <div className="navbar-dropdown is-right">
+                      <Link to="/msg" className="navbar-item">Chatroom</Link>
+                      <a className="navbar-item">
+
+                        Reviews & Ratings
+                      </a>
+                      <a className="navbar-item">
+                        About Us
+                      </a>
+                      <hr className="navbar-divider"/>
+                      <a className="navbar-item">
+                        Report an issue
+                      </a>
+                      <hr className="navbar-divider"/>
+                      <a className="navbar-item log-out" onClick={this.logout}>Logout</a>
+                    </div>
+                  </div>
+                }
               </div>
             </div>
           </div>
@@ -93,3 +118,5 @@ class Navbar extends React.Component {
 }
 
 export default withRouter(Navbar)
+
+// {Auth.isAuthenticated() && <a className="navbar-item log-out" onClick={this.logout}>Logout</a>}

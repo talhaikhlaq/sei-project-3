@@ -14,6 +14,7 @@ class Register extends React.Component {
   }
 
   handleChange(e) {
+    // console.log(this.state)
     const data = { ...this.state.data, [e.target.name]: e.target.value }
     const errors = { ...this.state.errors, [e.target.name]: '' }
 
@@ -31,7 +32,7 @@ class Register extends React.Component {
 
   render() {
     if (!this.state.data) return null
-    console.log(this.state)
+    // console.log(this.state)
     return (
       <main className="section">
         <section className="container">
