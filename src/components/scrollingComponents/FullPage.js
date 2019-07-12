@@ -26,7 +26,23 @@ class FullPage extends React.Component {
   }
 
   pageOnChange(number) {
-    this.setState({ currentPage: number })
+    this.setState({ currentPage: number }, () => this.setFontColor())
+  }
+
+  setFontColor() {
+    let color
+    const { currentPage } = this.state
+    switch (currentPage) {
+      case 1:
+        color = '#FFFFFF'
+        break
+      case 2:
+        color = '#696969'
+        break
+      default:
+        color = '#36B3D4'
+    }
+    this.props.setNavFontColor(color)
   }
 
   getPagesNumbers() {

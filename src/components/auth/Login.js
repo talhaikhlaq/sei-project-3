@@ -32,37 +32,44 @@ class Login extends React.Component {
 
   render() {
     return (
-      <main className="section">
-        <div className="container">
+      <main className="section-newform">
+        <div className="new-form">
           <form onSubmit={this.handleSubmit}>
-            <h2 className="title">Login For Your Pet Meet Account</h2>
-            <div className="field">
-              <label className="label">Email</label>
-              <div className="control has-icons-left">
-                <input
-                  className={`input ${this.state.error ? 'is-danger' : ''}`}
-                  name="email"
-                  placeholder="Email"
-                  onChange={this.handleChange}
-                />
-                <span className="icon is-small is-left">
-                  <i className="fas fa-envelope"></i>
-                </span>
+            <h2 className="register-title">Login For Your Account</h2>
+            <div className="wrapper">
+              <div className="wrapper-2">
+                <div className="control has-icons-right">
+                  <input
+                    id="input"
+                    className={`input-text2 ${this.state.error ? 'is-danger' : ''}`}
+                    name="email"
+                    placeholder="Email"
+                    onChange={this.handleChange}
+                  />
+                  <label htmlFor="input" className="input-label">Email</label>
+                  <span className="icon is-small is-right">
+                    <i className="fas fa-envelope"></i>
+                  </span>
+                </div>
               </div>
             </div>
-            <div className="field">
-              <label className="label">Password</label>
-              <div className="control has-icons-left">
-                <input
-                  className={`input ${this.state.error ? 'is-danger' : ''}`}
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  onChange={this.handleChange}
-                />
-                <span className="icon is-small is-left">
-                  <i className="fas fa-lock"></i>
-                </span>
+
+            <div className="wrapper">
+              <div className="wrapper-2">
+                <div className="control has-icons-right">
+                  <input
+                    id="input"
+                    className={`input-text2 ${this.state.error ? 'is-danger' : ''}`}
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    onChange={this.handleChange}
+                  />
+                  <label className="input-label">Password</label>
+                  <span className="icon is-small is-right">
+                    <i className="fas fa-lock"></i>
+                  </span>
+                </div>
               </div>
               {this.state.error && <small className="help is-danger">{this.state.error}</small>}
             </div>
