@@ -118,8 +118,8 @@ class MessageApp extends React.Component {
           }
           {this.state.registered && this.state.currentChatroom &&
           <div>
+            <br/>
 
-            <br/>  <br/>  <br/>  <br/>  <br/>
 
             <button className="button" value="24849940" onClick={this.setChatroom}>Our pets</button>
             <button className="button"  value="24910627" onClick={this.setChatroom}>East London</button>
@@ -128,11 +128,14 @@ class MessageApp extends React.Component {
             <button className="button"  value="24910607" onClick={this.setChatroom}>South London</button>
             <div className="app">
               <Title />
+
               <MessageList
                 roomId={this.state.roomId}
                 messages={this.state.messages} />
               <SendMessageForm
                 sendMessage={this.sendMessage} />
+
+
             </div>
           </div>
           }
