@@ -60,17 +60,14 @@ class LocationsNew extends React.Component {
 
 
   render() {
-    console.log(this.state)
     return (
-      <section className="section">
-        <div className="container">
-          <LocationsForm
-            data={this.state.data}
-            handleChange={this.handleChange}
-            handleAddressChange={this.handleAddressChange}
-            handleSubmit={this.handleSubmit}
-          />
-        </div>
+      <section className="section-newform">
+        <LocationsForm
+          data={this.state.data}
+          handleChange={this.handleChange}
+          handleAddressChange={this.handleAddressChange}
+          handleSubmit={this.handleSubmit}
+        />
       </section>
     )
   }

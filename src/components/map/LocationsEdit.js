@@ -61,15 +61,13 @@ class LocationsEdit extends React.Component {
     if (!this.state.data) return null
     console.log(this.state.data)
     return (
-      <section className="section">
-        <div className="main">
-          <LocationsForm
-            data={this.state.data}
-            handleChange={this.handleChange}
-            handleAddressChange={this.handleAddressChange}
-            handleSubmit={this.handleSubmit}
-          />
-        </div>
+      <section className="section-newform">
+        <LocationsForm
+          data={this.state.data}
+          handleChange={this.handleChange}
+          handleAddressChange={this.handleAddressChange}
+          handleSubmit={this.handleSubmit}
+        />
       </section>
     )
   }
