@@ -9,6 +9,7 @@ import Register from '../auth/Register'
 import Login from '../auth/Login'
 import '../../scrolling.css'
 import Auth from '../../lib/Auth'
+import Profiles from '../profile/Profiles'
 
 
 
@@ -26,23 +27,7 @@ class FullPage extends React.Component {
   }
 
   pageOnChange(number) {
-    this.setState({ currentPage: number }, () => this.setFontColor())
-  }
-
-  setFontColor() {
-    let color
-    const { currentPage } = this.state
-    switch (currentPage) {
-      case 1:
-        color = '#FFFFFF'
-        break
-      case 2:
-        color = '#696969'
-        break
-      default:
-        color = '#36B3D4'
-    }
-    this.props.setNavFontColor(color)
+    this.setState({ currentPage: number })
   }
 
   getPagesNumbers() {
@@ -58,18 +43,30 @@ class FullPage extends React.Component {
   }
 
   render() {
+    const userLoggedIn = Auth.isAuthenticated()
+    if (userLoggedIn) {
+      return (
+        <React.Fragment>
+          <ReactPageScroller ref={c => this._pageScroller = c} pageOnChange={this.pageOnChange}>
+            <Home/>
+            <Map goToPage={this.goToPage}/>
 
-    return (
-      <React.Fragment>
-        <ReactPageScroller ref={c => this._pageScroller = c} pageOnChange={this.pageOnChange}>
-          <Home/>
-          <Map goToPage={this.goToPage}/>
-          {!Auth.isAuthenticated() && <Link to="/register"><Register goToPage={this.goToPage}/></Link>}
-          {!Auth.isAuthenticated() && <Link to="/login"><Login goToPage={this.goToPage}/></Link>}
-        </ReactPageScroller>
-      </React.Fragment>
+          </ReactPageScroller>
+        </React.Fragment>
+      )
+    } else {
+      return (
+        <React.Fragment>
+          <ReactPageScroller ref={c => this._pageScroller = c} pageOnChange={this.pageOnChange}>
+            <Home/>
+            <Map goToPage={this.goToPage}/>
+            <Link to="/register"><Register goToPage={this.goToPage}/></Link>
+            <Link to="/login"><Login goToPage={this.goToPage}/></Link>
+          </ReactPageScroller>
+        </React.Fragment>
+      )
+    }
 
-    )
   }
 }
 
