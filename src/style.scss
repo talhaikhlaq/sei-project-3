@@ -7,12 +7,18 @@
 * {
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
+}
 
 .map {
   width: 100vw;
   height: 50vh;
 }
 
+a {
+  color:inherit;
+  &:hover {
+  text-decoration: none;
+  }
 }
 
 #home {
@@ -31,7 +37,7 @@
 
 .navbar {
   background: rgba(255,99,71,0);
-  color: white;
+  color: #36B3D4;
   font-weight: bold;
   height: 40px;
   margin-bottom: 0;
@@ -55,7 +61,7 @@
     text-decoration: none;
   }
   .navbar-link {
-    color: white;
+    color: #36B3D4;
     &:hover {
       background: rgba(93, 188, 210, 0.5);
     }
@@ -98,7 +104,7 @@
   box-shadow: -5px 5px 20px #36B3D4;
   transform: translateY(4px);
 }
-.log-in, .log-out {
+.log-in {
   display: inline-block;
   margin: 3px;
   font-size: 15px;
@@ -111,15 +117,26 @@
   border: none;
   // border-radius: 25px;
   box-shadow: -5px 5px 20px #D3D3D3;
-  .log-in:hover, .log-out:hover {
+  .log-in:hover {
     background-color: white;
   }
 }
 
-.log-in:active, .log-out:active {
-  background-color: #gray;
-  box-shadow: -5px 5px 20px #36B3D4;
-  transform: translateY(4px);
+
+.log-out {
+  display: inline-block;
+  margin: 3px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #36B3D4;
+  background-color: white;
+  border: none;
+.log-out:hover {
+    background-color: white;
+  }
 }
 
 
@@ -129,7 +146,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    margin: 40px;
+    margin: 60px;
     .body{
         margin: 0;
         padding: 0;
@@ -221,7 +238,7 @@
       .outside .details h2 span{
       font-weight: 500;
       font-size: 16px;
-      color: tomato;
+      color: #36B3D4;
       display: block;
       margin-top: 5px;
        }
@@ -302,6 +319,7 @@
     height: 100vh;
     justify-content: center;
     align-items: center;
+    margin: 60px 0;
     .profile-show {
       display: flex;
       position: relative;
@@ -504,8 +522,13 @@
 
   }
 
+<<<<<<< HEAD
 // Forms
 
+=======
+
+// New profile and edit form styling
+>>>>>>> 3d7dc201503544b76fa02e570e724e0b1e910ba1
   :root {
   /* generic */
   --gutterSm: 0.4rem;
@@ -539,7 +562,6 @@
   --inputTransitionDuration: var(--transitionDuration);
   --inputTransitionTF: var(--transitionTF);
 }
-
   .wrapper {
   flex: 0 0 80%;
   max-width: 80%;
@@ -619,7 +641,7 @@
   flex-wrap: wrap;
   #newform-title {
   text-align: center;
-  margin: 30px 0 20px 0;
+  margin: 60px 60px 0 60px;
   font-size: 40px;
   }
   .new-form {
@@ -629,7 +651,7 @@
     height: 50%;
     box-shadow: -5px 5px 20px 5px #D3D3D3;
     justify-content: center;
-    margin: 20px;
+    margin: 60px;
     padding: 20px 0 20px 0;
     background: white;
     border-radius: 5px;
@@ -640,6 +662,7 @@
 }
 
 
+<<<<<<< HEAD
 .popupbutton  {
    display: inline-block;
   margin: 3px;
@@ -662,3 +685,100 @@
 //   box-shadow: -5px 5px 20px #36B3D4;
 //   transform: translateY(4px);
 // }
+=======
+
+// Register & LogIn Form styling
+#register-form {
+  display: flex;
+  margin: 15px;
+  height: 50%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.register-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 20px 20px 40px 20px;
+}
+
+:root {
+/* generic */
+--gutterSm: 0.4rem;
+--gutterMd: 0.8rem;
+--gutterLg: 1.6rem;
+--gutterXl: 2.4rem;
+--gutterXx: 7.2rem;
+--colorPrimary600: #36B3D4;
+--fontSizeSm: 1.2rem;
+--fontSizeMd: 1.6rem;
+--fontSizeLg: 2.1rem;
+--fontSizeXl: 2.8rem;
+--fontSizeXx: 3.6rem;
+--lineHeightSm: 1.1;
+--lineHeightMd: 1.8;
+--transitionDuration: 300ms;
+--transitionTF: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+/* floated labels */
+--inputPaddingV: var(--gutterMd);
+--inputPaddingH: var(--gutterLg);
+--inputFontSize: var(--fontSizeMd);
+--inputLineHeight: var(--lineHeightMd);
+--labelScaleFactor: 0.8;
+--labelDefaultPosY: 110%;
+--labelTransformedPosY: calc(
+  (var(--labelDefaultPosY)) -
+  (var(--inputPaddingV) * var(--labelScaleFactor)) -
+  (var(--inputFontSize) * var(--inputLineHeight))
+);
+--inputTransitionDuration: var(--transitionDuration);
+--inputTransitionTF: var(--transitionTF);
+}
+
+.input-text2 {
+  display: block;
+  margin: 30px 0 30px 0;
+  padding: var(--inputPaddingV) var(--inputPaddingH);
+  color: inherit;
+  width: 100%;
+  height: 40px;
+  font-family: inherit;
+  font-size: var(--inputFontSize);
+  font-weight: inherit;
+  line-height: var(--inputLineHeight);
+  border: none;
+  border-radius: 0.2rem;
+  // transition: box-shadow var(--transitionDuration);
+  }
+
+  .input-text2 {
+    border: #36B3D4 solid 2px;
+  }
+  .input-text2::placeholder {
+  color: #B0BEC5;
+  }
+  .input-text2:focus {
+  outline: none;
+  box-shadow: 0.2rem 0.8rem 1.6rem var(--colorPrimary600);
+  }
+  .input-text2:placeholder-shown + .Input-label {
+  visibility: hidden;
+  z-index: -1;
+}
+.input-text2:not(:placeholder-shown) + .input-label,
+.input-text2:focus:not(:placeholder-shown) + .input-label {
+  visibility: visible;
+  z-index: 1;
+  opacity: 1;
+  transform:
+    translate3d(0, var(--labelTransformedPosY), 0)
+    scale(var(--labelScaleFactor));
+  transition:
+    transform var(--inputTransitionDuration),
+    visibility 0ms,
+    z-index 0ms;
+  }
+>>>>>>> 3d7dc201503544b76fa02e570e724e0b1e910ba1

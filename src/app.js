@@ -27,11 +27,24 @@ import MessageApp from './components/messages/MessageApp'
 // SecureRoute to be imported and tested towards the end
 
 class App extends React.Component {
+  constructor() {
+    super()
+
+    this.state = { navFontColor: '#FFFFFF' }
+
+    this.setNavFontColor = this.setNavFontColor.bind(this)
+  }
+
+  setNavFontColor(color) {
+    this.setState({ navFontColor: color })
+  }
+
+
   render() {
     return (
       <BrowserRouter>
         <main>
-          <Navbar />
+          <Navbar fontColor={this.state.navFontColor} />
           <Switch>
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
@@ -44,7 +57,7 @@ class App extends React.Component {
             <Route path="/locations/:id/edit" component={LocationsEdit} />
             <Route path="/locations/:id" component={LocationCard} />
             <Route path="/msg" component={MessageApp} />
-            <Route exact path="/" component={FullPage} />
+            <Route exact path="/" render={(props) => <FullPage {...props} setNavFontColor={(color) => this.setNavFontColor(color)} />} />
           </Switch>
         </main>
       </BrowserRouter>

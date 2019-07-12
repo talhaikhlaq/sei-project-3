@@ -49,12 +49,16 @@ class Navbar extends React.Component {
   }
 
 
+
   render() {
+
     const { currentUser } = this.state
+    const { fontColor } = this.props
+
     return (
-      <nav className="navbar is-fixed-top">
+      <nav className="navbar is-fixed-top" style={ { color: fontColor } }>
         <div className="navbar-brand">
-          <Link to="/" className="navbar-item pet-meet">🐾 Pet Meet</Link>
+          <Link to="/" className="navbar-item pet-meet" >🐾 Meet Pups</Link>
 
           <a role="button" className={`navbar-burger ${this.state.navbarOpen ? 'is-active' : ''}`} aria-label="menu" aria-expanded="false" onClick={this.toggleNavbar}>
             <span aria-hidden="true"></span>
