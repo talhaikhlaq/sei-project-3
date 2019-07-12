@@ -79,7 +79,6 @@ class ProfileShow extends React.Component {
         </div>
 
       </main>
-
     )
   }
 }

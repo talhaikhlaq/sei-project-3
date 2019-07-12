@@ -415,9 +415,6 @@ a {
 
   // Location show
 
-
-  // Location show
-
   .location-main {
     display: flex;
     position: relative;
@@ -690,17 +687,6 @@ a {
   }
 }
 
-//Location forms
-.select-wrapper, .new-location-form {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  select {
-    width: 80%;
-    height: 40px;
-  }
-}
-
 
 
 
@@ -737,12 +723,6 @@ a {
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
-}
-
-.register-title {
-  font-size: 30px;
-  font-weight: bold;
-  margin: 20px 20px 40px 20px;
 }
 
 :root {
@@ -821,4 +801,120 @@ a {
     transform var(--inputTransitionDuration),
     visibility 0ms,
     z-index 0ms;
+  }
+
+
+  //Location and Register Form Titles Styling
+
+  .register-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 20px 20px 40px 20px;
+  }
+
+  .location-title {
+    text-align: center;
+    margin: 60px 60px 0 60px;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+
+
+  // About Us Page
+  .main-show2 {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin: 60px 0;
+    flex-direction: column;
+    .wrapper-aboutus {
+      display: flex;
+      width: 90%;
+      height: 90%;
+      justify-content: center;
+      align-items: center;
+    }
+    #aboutus-title {
+      font-size: 50px;
+      font-weight: bold;
+      margin-top: 30px;
+    }
+    .profile-show2 {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      width: 80%;
+      height: 70%;
+      margin: 15px;
+      box-shadow: -5px 5px 20px 5px #777;
+      div.profile-body2 {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        .about-info2 {
+          width: 200px;
+          margin: 10px;
+          font-size: 18px;
+        }
+      }
+
+      div.profile-text2 {
+        width: 65%;
+        height: 100%;
+      }
+
+      div.profile-picture2 {
+        position: relative;
+        margin: 10px 0 10px 0;
+        box-shadow: -5px 5px 20px 5px #777;
+        z-index: 1;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 50%;
+        width: 100%;
+        background-position: center;
+      }
+
+      .about-info2 {
+        text-align: center;
+      }
+
+      #names2 {
+        margin: 15px 0 0 0;
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+      }
+    }
+
+    @media only screen and (max-width: 700px) {
+      .main-show2 {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+      }
+      .profile-show2 {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        div.profile-text2 {
+          width: 100%;
+        }
+        div.profile-pictures2 {
+          width: 100%;
+          height: 100%;
+          top: 0;
+          right: 0;
+        }
+        .edit-button2 {
+          margin-top: 0;
+          margin-left: 15%;
+          margin-right: 0;
+          margin-bottom: 40%;
+        }
+      }
+    }
   }

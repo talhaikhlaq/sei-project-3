@@ -7,8 +7,7 @@ const EditForm = ({ data, handleChange, handleAddressChange, handleSubmit }) => 
       <div className="wrapper">
         <div className="wrapper-2">
           <input
-            id="input"
-            className="input-text"
+            className="input-text2"
             name="name"
             placeholder="Name"
             onChange={handleChange}
@@ -36,8 +35,7 @@ const EditForm = ({ data, handleChange, handleAddressChange, handleSubmit }) => 
       <div className="wrapper">
         <div className="wrapper-2">
           <input
-            id="input"
-            className="input-text"
+            className="input-text2"
             name="buildingNumber"
             placeholder="House number"
             onChange={handleAddressChange}
@@ -51,8 +49,7 @@ const EditForm = ({ data, handleChange, handleAddressChange, handleSubmit }) => 
       <div className="wrapper">
         <div className="wrapper-2">
           <input
-            id="input"
-            className="input-text"
+            className="input-text2"
             name="street"
             placeholder="Street"
             onChange={handleAddressChange}
@@ -65,8 +62,7 @@ const EditForm = ({ data, handleChange, handleAddressChange, handleSubmit }) => 
       <div className="wrapper">
         <div className="wrapper-2">
           <input
-            id="input"
-            className="input-text"
+            className="input-text2"
             name="postcode"
             placeholder="Postcode"
             onChange={handleAddressChange}
@@ -80,8 +76,7 @@ const EditForm = ({ data, handleChange, handleAddressChange, handleSubmit }) => 
       <div className="wrapper">
         <div className="wrapper-2">
           <input
-            id="input"
-            className="input-text"
+            className="input-text2"
             name="image"
             placeholder="Image"
             onChange={handleChange}

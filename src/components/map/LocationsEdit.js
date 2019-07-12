@@ -62,6 +62,7 @@ class LocationsEdit extends React.Component {
     console.log(this.state.data)
     return (
       <section className="section-newform">
+        <h1 className="location-title">Edit this Location</h1>
         <LocationsForm
           data={this.state.data}
           handleChange={this.handleChange}

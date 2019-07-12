@@ -62,6 +62,7 @@ class LocationsNew extends React.Component {
   render() {
     return (
       <section className="section-newform">
+        <h1 className="location-title">Add a Pet Friendly Location</h1>
         <LocationsForm
           data={this.state.data}
           handleChange={this.handleChange}

@@ -102,7 +102,7 @@ class Navbar extends React.Component {
                   Log in
                 </Link>}
 
-                
+
                 {Auth.isAuthenticated() &&
                   <div className="navbar-item has-dropdown is-hoverable">
                     <a className="navbar-link is-arrowless">
@@ -111,13 +111,13 @@ class Navbar extends React.Component {
 
                     <div className="navbar-dropdown is-right">
                       <Link to="/msg" className="navbar-item">Chatroom</Link>
+                      
                       <a className="navbar-item">
-
                         Reviews & Ratings
                       </a>
-                      <a className="navbar-item">
-                        About Us
-                      </a>
+
+                      <Link to="/aboutus" className="navbar-item">About Us</Link>
+
                       <hr className="navbar-divider"/>
                       <a className="navbar-item">
                         Report an issue
