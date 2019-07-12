@@ -140,28 +140,7 @@ a {
 }
 
 
-.popuptext {
-color: Tomato;
-}
 
-.popupbutton {
-  display: inline-block;
-  margin: 3px;
-  font-size: 24px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #grey;
-  background-color: white;
-  border: none;
-  border-radius: 25px;
-  box-shadow: 0 5px #999;
-  .button:hover {
-    background-color: Tomato;
-  }
-
-}
 
   .main-profiles {
     display: flex;
@@ -432,6 +411,9 @@ color: Tomato;
     }
   }
 
+
+  // Location show
+
   .location-main {
     display: flex;
     position: relative;
@@ -541,7 +523,12 @@ color: Tomato;
   }
 
 
+// Forms
+
+
+
 // New profile and edit form styling
+
   :root {
   /* generic */
   --gutterSm: 0.4rem;
@@ -689,6 +676,30 @@ color: Tomato;
 }
 
 
+
+
+.popupbutton  {
+   display: inline-block;
+  margin: 3px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none !important;
+  outline: none;
+  background-color:white;
+  color: #36B3D4;
+  border: none;
+  box-shadow: -5px 5px 20px #D3D3D3;
+  .button:hover {
+    background-color: white;
+  }
+}
+
+// .button:active {
+//   background-color: #gray;
+//   box-shadow: -5px 5px 20px #36B3D4;
+//   transform: translateY(4px);
+// }
 
 
 // Register & LogIn Form styling
