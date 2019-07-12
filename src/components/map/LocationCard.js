@@ -40,9 +40,9 @@ class LocationCard extends React.Component {
       .catch(err => console.log(err))
   }
 
-  // isOwner(comment) {
-  //   return Auth.getPayload().sub === comment.user._id
-  // }
+  isOwner(comment) {
+    return Auth.getPayload().sub === comment.user._id
+  }
 
   handleDelete() {
     axios.delete(`/api/locations/${this.props.match.params.id}`)
@@ -130,7 +130,7 @@ class LocationCard extends React.Component {
                   <div className="card-content">
                     {comment.text} - {new Date(comment.createdAt).toLocaleString()}
                   </div>
-                  <button
+                    {this.isOwner(comment) && <button
                     className="button delete-com-button"
                     onClick={() => this.handleCommentDelete(comment)}
                   >Delete
