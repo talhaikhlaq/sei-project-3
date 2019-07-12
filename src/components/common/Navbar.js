@@ -88,10 +88,11 @@ class Navbar extends React.Component {
                   Log in
                 </Link>}
 
-                {currentUser && Auth.isAuthenticated() &&
+                
+                {Auth.isAuthenticated() &&
                   <div className="navbar-item has-dropdown is-hoverable">
                     <a className="navbar-link is-arrowless">
-                      <img className="" src={currentUser.image} alt={currentUser.firstName}/>
+                      {currentUser ? <img className="" src={currentUser.image} alt={currentUser.firstName}/> : 'Menu'}
                     </a>
 
                     <div className="navbar-dropdown is-right">
