@@ -10,6 +10,7 @@ class LocationCard extends React.Component {
 
     this.state = { location: null, comment: {} }
     this.handleChange = this.handleChange.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleCommentDelete = this.handleCommentDelete.bind(this)
 
@@ -34,7 +35,7 @@ class LocationCard extends React.Component {
     axios.delete(`/api/locations/${this.props.match.params.id}`, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
-      .then(() => this.props.history.push('/locations'))
+      .then(() => this.props.history.push('/map'))
       .catch(err => console.log(err.response))
   }
 
@@ -49,9 +50,13 @@ class LocationCard extends React.Component {
       .catch(err => console.log(err))
   }
 
-  // isOwner(comment) {
-  //   return Auth.getPayload().sub === comment.user._id
-  // }
+  isOwner() {
+    return Auth.getPayload().sub === this.state.location.user
+  }
+
+  isOwnerComment(comment) {
+    return Auth.getPayload().sub === comment.user
+  }
 
 
 
@@ -71,7 +76,9 @@ class LocationCard extends React.Component {
     if (!this.state.location) return null
     const { location } =  this.state
     console.log('render state', this.state)
-
+    console.log('auth payload sub', Auth.getPayload().sub)
+    console.log('location user', this.state.location.user)
+    console.log(this.isOwner())
     return (
       <main className="location-main">
         <div className="location-show">
@@ -87,7 +94,7 @@ class LocationCard extends React.Component {
 
             <a href={location.website} className="about-a" target="_blank" rel="noopener noreferrer">See their website</a>
 
-            {Auth.isAuthenticated() &&
+            {this.isOwner() &&
               <div className="locationButtons">
                 <Link
                   className="button edit-button-loc"
@@ -135,11 +142,13 @@ class LocationCard extends React.Component {
                   <div className="card-content">
                     {comment.text} - {new Date(comment.createdAt).toLocaleString()}
                   </div>
-                  <button
-                    className="button delete-com-button"
-                    onClick={() => this.handleCommentDelete(comment)}
-                  >Delete
-                  </button>
+                  {this.isOwner(comment) &&
+                    <button
+                      className="button delete-com-button"
+                      onClick={() => this.handleCommentDelete(comment)}
+                    >Delete
+                    </button>
+                  }
                 </div>
               ))}
             </div>
