@@ -42,11 +42,25 @@ class Navbar extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.location.pathname !== prevProps.location.pathname) {
+      this.setFontColor()
       this.getCurrentUser()
       this.setState({ navbarOpen: false })
     }
-
   }
+
+  setFontColor() {
+    let color
+    const { pathname } = this.props.location
+    switch (pathname) {
+      case '/map':
+        color = '#696969'
+        break
+      default:
+        color = '#36B3D4'
+    }
+    this.props.setNavFontColor(color)
+  }
+
 
 
 
