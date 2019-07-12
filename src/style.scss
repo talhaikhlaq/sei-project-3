@@ -98,7 +98,7 @@
   box-shadow: -5px 5px 20px #36B3D4;
   transform: translateY(4px);
 }
-.log-in, .log-out {
+.log-in {
   display: inline-block;
   margin: 3px;
   font-size: 15px;
@@ -111,15 +111,26 @@
   border: none;
   // border-radius: 25px;
   box-shadow: -5px 5px 20px #D3D3D3;
-  .log-in:hover, .log-out:hover {
+  .log-in:hover {
     background-color: white;
   }
 }
 
-.log-in:active, .log-out:active {
-  background-color: #gray;
-  box-shadow: -5px 5px 20px #36B3D4;
-  transform: translateY(4px);
+
+.log-out {
+  display: inline-block;
+  margin: 3px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #36B3D4;
+  background-color: white;
+  border: none;
+.log-out:hover {
+    background-color: white;
+  }
 }
 
 
