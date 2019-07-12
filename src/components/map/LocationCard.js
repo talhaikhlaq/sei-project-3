@@ -127,7 +127,7 @@ class LocationCard extends React.Component {
                          </textarea>
                        </div>
                      </div>
-                     <button className="button reviewbutton" type="submit">Sumbit review</button>
+                     <button className="button reviewbutton" type="submit">Submit review</button>
                    </form>}
 
               {location.comments.map(comment => (

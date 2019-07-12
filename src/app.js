@@ -24,6 +24,7 @@ import LocationsEdit from './components/map/LocationsEdit'
 import LocationsNew from './components/map/LocationsNew'
 import Login from './components/auth/Login'
 import MessageApp from './components/messages/MessageApp'
+import SecureRoute from './components/common/SecureRoute'
 // SecureRoute to be imported and tested towards the end
 
 class App extends React.Component {
@@ -48,15 +49,15 @@ class App extends React.Component {
           <Switch>
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-            <Route path="/friends/edit/:id" component={ProfileEdit} />
-            <Route path="/friends/new" component={ProfileNew} />
-            <Route path="/friends/:id" component={ProfileShow} />
-            <Route path="/friends" component={Profiles} />
+            <SecureRoute path="/friends/edit/:id" component={ProfileEdit} />
+            <SecureRoute path="/friends/new" component={ProfileNew} />
+            <SecureRoute path="/friends/:id" component={ProfileShow} />
+            <SecureRoute path="/friends" component={Profiles} />
             <Route path="/map" component={Map} />
-            <Route path="/locations/new" component={LocationsNew} />
-            <Route path="/locations/:id/edit" component={LocationsEdit} />
-            <Route path="/locations/:id" component={LocationCard} />
-            <Route path="/msg" component={MessageApp} />
+            <SecureRoute path="/locations/new" component={LocationsNew} />
+            <SecureRoute path="/locations/:id/edit" component={LocationsEdit} />
+            <SecureRoute path="/locations/:id" component={LocationCard} />
+            <SecureRoute path="/msg" component={MessageApp} />
             <Route exact path="/" render={(props) => <FullPage {...props} setNavFontColor={(color) => this.setNavFontColor(color)} />} />
           </Switch>
         </main>
