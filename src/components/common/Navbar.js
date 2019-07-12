@@ -27,11 +27,13 @@ class Navbar extends React.Component {
   }
 
 
+
   render() {
+    const { fontColor } = this.props
     return (
-      <nav className="navbar is-fixed-top">
+      <nav className="navbar is-fixed-top" style={ { color: fontColor } }>
         <div className="navbar-brand">
-          <Link to="/" className="navbar-item pet-meet">🐾 Pet Meet</Link>
+          <Link to="/" className="navbar-item pet-meet" >🐾 Meet Pups</Link>
 
           <a role="button" className={`navbar-burger ${this.state.navbarOpen ? 'is-active' : ''}`} aria-label="menu" aria-expanded="false" onClick={this.toggleNavbar}>
             <span aria-hidden="true"></span>
@@ -52,7 +54,7 @@ class Navbar extends React.Component {
             {Auth.isAuthenticated() && <Link to="/locations/new" className="navbar-item">Add location</Link>}
 
             <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link is-arrowless">
+              <a className="navbar-link is-arrowless" style={ { color: fontColor } }>
                 More
               </a>
 
