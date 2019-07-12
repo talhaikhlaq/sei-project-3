@@ -8,12 +8,21 @@ class ProfileShow extends React.Component {
     super()
 
     this.state = { profile: null }
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
   componentDidMount() {
     axios.get(`/api/profiles/${this.props.match.params.id}`)
       .then(res => this.setState({ profile: res.data }))
       .catch(err => console.log(err))
+  }
+
+  handleDelete() {
+    axios.delete(`/api/profiles/${this.props.match.params.id}`, {
+      headers: { Authorization: `${Auth.getToken()}` }
+    })
+      .then(() => this.props.history.push('/friends'))
+      .catch(err => console.log(err.response))
   }
 
   isOwner() {
@@ -23,6 +32,7 @@ class ProfileShow extends React.Component {
   render() {
     if (!this.state.profile) return null
     const { profile } = this.state
+    this.isOwner()
     return (
       <main className="main-show">
         <div className="profile-show">
@@ -47,7 +57,9 @@ class ProfileShow extends React.Component {
             >
             Edit Profile
             </Link>}
+            {this.isOwner() && <button onClick={this.handleDelete} className="button delete-button">Delete</button>}
           </div>
+
 
           <div className="profile-pictures">
             <div
