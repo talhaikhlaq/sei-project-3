@@ -9,7 +9,7 @@ import Register from '../auth/Register'
 import Login from '../auth/Login'
 import '../../scrolling.css'
 import Auth from '../../lib/Auth'
-import Profiles from '../profile/Profiles'
+
 
 
 
@@ -22,32 +22,12 @@ class FullPage extends React.Component {
     this.pageOnChange = this.pageOnChange.bind(this)
   }
 
-  componentDidMount() {
-    this.setFontColor()
-  }
-  
   goToPage(eventKey) {
     this._pageScroller.goToPage(eventKey)
   }
 
   pageOnChange(number) {
-    this.setState({ currentPage: number }, () => this.setFontColor())
-  }
-
-  setFontColor() {
-    let color
-    const { currentPage } = this.state
-    switch (currentPage) {
-      case 1:
-        color = '#FFFFFF'
-        break
-      case 2:
-        color = '#696969'
-        break
-      default:
-        color = '#36B3D4'
-    }
-    this.props.setNavFontColor(color)
+    this.setState({ currentPage: number })
   }
 
   getPagesNumbers() {
