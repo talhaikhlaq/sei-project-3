@@ -72,7 +72,7 @@ class Navbar extends React.Component {
     return (
       <nav className="navbar is-fixed-top" style={ { color: fontColor } }>
         <div className="navbar-brand">
-          <Link to="/" className="navbar-item pet-meet" >🐾 Meet Pups</Link>
+          <Link to="/" className="navbar-item pet-meet" >🐾 Just Fur Them</Link>
 
           <a role="button" className={`navbar-burger ${this.state.navbarOpen ? 'is-active' : ''}`} aria-label="menu" aria-expanded="false" onClick={this.toggleNavbar}>
             <span aria-hidden="true"></span>
@@ -111,7 +111,7 @@ class Navbar extends React.Component {
 
                     <div className="navbar-dropdown is-right">
                       <Link to="/msg" className="navbar-item">Chatroom</Link>
-                      
+
                       <a className="navbar-item">
                         Reviews & Ratings
                       </a>
