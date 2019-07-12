@@ -343,7 +343,7 @@ a {
         }
       }
 
-      .edit-button {
+      .edit-button, .delete-button {
         margin: 10%;
       }
       div.profile-text {
@@ -656,10 +656,25 @@ a {
     background: white;
     border-radius: 5px;
   }
-  textarea {
+  textarea, select {
     border: #36B3D4 solid 2px !important;
   }
+  select:active {
+    border: none !important;
+  }
 }
+
+//Location forms
+.select-wrapper, .new-location-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  select {
+    width: 80%;
+    height: 40px;
+  }
+}
+
 
 
 .popupbutton  {
