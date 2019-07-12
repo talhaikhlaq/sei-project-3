@@ -47,7 +47,7 @@ class MapSecond extends React.Component {
 
              <div style="background-image: url('${point.image}'); height: 120px; min-width: 150px; background-repeat: no-repeat; background-size: cover; background-position: center;"></div>
 
-         <button class="popupbutton"> <a href="/locations/${point._id}" class="subtitle is-6 is-link popuptext" target="_blank" rel="noopener noreferrer">Reviews & edit</a> </button>
+         <button class="popupbutton "> <a href="/locations/${point._id}" class="subtitle is-6 is-link popuptext" target="_blank" rel="noopener noreferrer">Reviews & edit</a> </button>
 
         <button class="popupbutton"><a href=${point.website} class="subtitle is-6 is-link popuptext" target="_blank" rel="noopener noreferrer">Go to their website</a> </button>
 

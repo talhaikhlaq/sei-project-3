@@ -313,6 +313,7 @@ a {
       color: black;
   }
 
+
   // Profile Show Page
   .main-show {
     display: flex;
@@ -410,6 +411,9 @@ a {
       }
     }
   }
+
+
+  // Location show
 
 
   // Location show
@@ -521,6 +525,28 @@ a {
       }
 
   }
+
+  // popup
+
+  .popupbutton  {
+   display: inline-block;
+  margin: 3px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none !important;
+  outline: none;
+  background-color:white;
+  color: #36B3D4;
+  border: none;
+  box-shadow: -5px 5px 20px #D3D3D3;
+
+}
+
+.popuptext {
+  color: #36B3D4;
+}
+
 
 
 // Forms
@@ -677,6 +703,7 @@ a {
 
 
 
+
 .popupbutton  {
    display: inline-block;
   margin: 3px;
@@ -700,7 +727,6 @@ a {
 //   transform: translateY(4px);
 // }
 
->>>>>>> development
 
 // Register & LogIn Form styling
 #register-form {
