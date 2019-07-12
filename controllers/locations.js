@@ -13,7 +13,6 @@ function indexRoute(req, res) {
 function showRoute (req, res, next) {
   Location
     .findById(req.params.id)
-    .populate('user')
     .then(location => {
       if (!location) return res.status(404).json({ message: 'Not Found' })
       return res.status(200).json(location)
