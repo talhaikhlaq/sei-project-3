@@ -30,7 +30,7 @@ class App extends React.Component {
   constructor() {
     super()
 
-    this.state = { navFontColor: '#FFFFFF' }
+    this.state = { navFontColor: '#36B3D4' }
 
     this.setNavFontColor = this.setNavFontColor.bind(this)
   }
@@ -44,7 +44,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <main>
-          <Navbar fontColor={this.state.navFontColor} />
+          <Navbar fontColor={this.state.navFontColor} setNavFontColor={(color) => this.setNavFontColor(color)} />
           <Switch>
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
