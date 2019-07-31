@@ -8,7 +8,7 @@
     "serve:front": "webpack-dev-server --mode-development",
     "seed": "node db/seeds.js",
     "build": "webpack -p",
-    "test": "mocha",
+    "test": "mocha"
   },
   "dependencies": {
     "@pusher/chatkit-client": "^1.9.1",
