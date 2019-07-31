@@ -9,11 +9,15 @@ const logger = require('./lib/logger')
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true })
 
+app.use(express.static(`${__dirname}/dist`))
+
 app.use(bodyParser.json())
 
 app.use(logger)
 
 app.use('/api', router)
+
+app.get('/*', (req, res) => res.send(`${__dirname}/dist/index.html`))
 
 // app.use(errorHandlers)
 

@@ -50,10 +50,10 @@ class App extends React.Component {
           <Switch>
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-            <SecureRoute path="/friends/edit/:id" component={ProfileEdit} />
-            <SecureRoute path="/friends/new" component={ProfileNew} />
-            <SecureRoute path="/friends/:id" component={ProfileShow} />
-            <SecureRoute path="/friends" component={Profiles} />
+            <Route path="/friends/edit/:id" component={ProfileEdit} />
+            <Route path="/friends/new" component={ProfileNew} />
+            <Route path="/friends/:id" component={ProfileShow} />
+            <Route path="/friends" component={Profiles} />
             <Route path="/map" component={Map} />
             <Route path="/locations/new" component={LocationsNew} />
             <Route path="/locations/:id/edit" component={LocationsEdit} />

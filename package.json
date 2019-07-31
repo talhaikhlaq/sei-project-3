@@ -9,7 +9,7 @@
     "seed": "node db/seeds.js",
     "build": "webpack -p",
     "start": "node index.js",
-    "test": "mocha"
+    "test": "mocha",
   },
   "dependencies": {
     "@pusher/chatkit-client": "^1.9.1",
