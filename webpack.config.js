@@ -49,6 +49,8 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: './src/assets', to: 'assets' }
     ]),
-    new Dotenv()
+    new webpack.DefinePlugin({
+      'process.env.MAPBOX': JSON.stringify(process.env.MAPBOX)
+    })
   ]
 }
