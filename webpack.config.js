@@ -52,7 +52,6 @@ module.exports = {
     new DotEnv(),
     new webpack.DefinePlugin({
       'process.env.MAPBOX': JSON.stringify(process.env.MAPBOX),
-      'process.env.NEWS': JSON.stringify(process.env.NEWS)
     })
   ]
 }
