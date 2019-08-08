@@ -2,7 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-// const Dotenv = require('dotenv-webpack')
+const DotEnv = require('dotenv-webpack')
 
 module.exports = {
   entry: './src/app.js',
@@ -49,6 +49,7 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: './src/assets', to: 'assets' }
     ]),
+    new DotEnv(),
     new webpack.DefinePlugin({
       'process.env.MAPBOX': JSON.stringify(process.env.MAPBOX)
     })
