@@ -24,10 +24,11 @@ The project should be deployed (fully-working and bug-free) on Heroku
 ## Timeframe & Team
 ​
 1 week
-Team:
-Me
-Amy: https://github.com/amydaniellewilson
-Talha: https://github.com/talhaikhlaq
+
+The Team:
+* Kasia: https://github.com/kasiaaguti
+* Amy: https://github.com/amydaniellewilson
+* Talha: https://github.com/talhaikhlaq
 ​
 ## Technologies
 
@@ -37,7 +38,7 @@ Talha: https://github.com/talhaikhlaq
 | ReactDOM | MongoDB | Chai | Webpack |
 | React Router DOM | Express |  Babel |
 | Bulma | Mongoose | | Axios |
-| mongoose-autopopulate  | | |
+| mongoose  | | |
 | Mapbox GL JS | JSON Web Tokens (JWT) | | |
 | | bcrypt | | |
 | | dotenv | | &nbsp; |
