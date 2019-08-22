@@ -25,7 +25,7 @@ The project should be deployed (fully-working and bug-free) on Heroku
 ​
 1 week
 
-The Team:
+Our Team:
 * Kasia: https://github.com/kasiaaguti
 * Amy: https://github.com/amydaniellewilson
 * Talha: https://github.com/talhaikhlaq
@@ -188,7 +188,7 @@ translatePostcode() {
 
 <img src="src/assets/map.png" width="900">
 
-**Logged in users can add new locations**
+**Logged in users can add new locations. Each marker has a popup showing more details**
 
 
 <img src="src/assets/location.png" width="900">
