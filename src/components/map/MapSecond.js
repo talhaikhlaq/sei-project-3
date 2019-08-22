@@ -7,7 +7,7 @@ import Auth from '../../lib/Auth'
 
 
 mapboxgl.accessToken = process.env.MAPBOX
-
+console.log(process.env.MAPBOX)
 
 class MapSecond extends React.Component {
   constructor() {
