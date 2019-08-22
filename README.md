@@ -181,7 +181,7 @@ translatePostcode() {
 
 **Home page scrolls down, navbar changes colour at scrolling**
 
-<img src="src/assets/scroll.png" width="900">
+<img src="src/assets/scrolling.png" width="900">
 
 **Map showing pet friendly locations**
 
